@@ -1,6 +1,7 @@
-package it.fides.sportivo.repository;
-import it.fides.sportivo.entity.*;
-import it.fides.sportivo.entity.*;
+package it.fides.sportivo.servicesimplementation;
+
+import it.fides.sportivo.entity.Stadio;
+import it.fides.sportivo.repository.DataSourceSingleton;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,7 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dao_Stadio
+public class ServiceStadioDao
 {
 
     public ArrayList<Stadio> stadio = new ArrayList<Stadio>();
