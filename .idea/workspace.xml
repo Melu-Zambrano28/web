@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b34274c-b52d-4061-8d7f-4a6a43045d21" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceScontoDao.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/entity/Sconto.java" afterPath="$PROJECT_DIR$/src/it/fides/sportivo/entity/Sconto.java" />
-    </list>
+    <list default="true" id="2b34274c-b52d-4061-8d7f-4a6a43045d21" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -268,12 +264,12 @@
       <option name="presentableId" value="Default" />
       <updated>1518020425417</updated>
       <workItem from="1518020431993" duration="2120000" />
-      <workItem from="1518023423024" duration="806000" />
+      <workItem from="1518023423024" duration="1103000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2926000" />
+    <option name="totallyTimeSpent" value="3223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
