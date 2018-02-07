@@ -1,41 +1,61 @@
 package it.fides.sportivo.servicesimplementation;
 
-import com.mysql.jdbc.PreparedStatement;
 import it.fides.sportivo.entity.Partita;
 import it.fides.sportivo.entity.Squadra;
 import it.fides.sportivo.entity.Stadio;
 import it.fides.sportivo.repository.DataSourceSingleton;
-import it.fides.sportivo.services.ServicePartita;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
+import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class ServicePartitaDao implements ServicePartita {
-    private static Connection conx;
-    private static PreparedStatement st;
-    private static ResultSet rs;
-    private static final String queryCreaPartita="INSERT INTO partita(data_partita, goal_sql_home, goal_sql_visitor, id_sq_home, id_sq_visitor, id_stadio)"+"VALUES(?,?,?,?,?,?)";
-    private static final String queryUpdateUtente="UPDATE cliente SET nome=?, cognome=?, data_nascita=? " +" WHERE id=? ";
-    private static final String queryDeleteUtente="DELETE FROM cliente WHERE id=?";
-    private static final String queryFind="SELECT * FROM cliente WHERE id=?";
+public class ServicePartitaDao {
 
 
-    public void insertPartita(Partita partita, Squadra squadra, Stadio stadio) throws SQLException {
-        conx= DataSourceSingleton.getInstance().getConnection();
+    private static final String insert_partita = "INSERT INTO partita (data_partita, goal_sq_home, goal_sq_visitor, id_sq_home, id_sq_visitor, id_stadio)" +
+            " VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String update_partita = "UPDATE partita SET data_partita = ?, id_sq_home = ?, id_sq_visitor = ?, id_stadio = ? WHERE id = ?";
+    private static final String aggiorna_risultato = "UPDATE  partita SET goal_sq_home = ?, goal_sq_visitor = ? WHERE id = ?";
 
+    public static void inserisciPartita(Squadra sq_home, Squadra sq_visitor, Stadio stadio) throws SQLException {
+        Connection conn = DataSourceSingleton.getInstance().getConnection();
+        PreparedStatement stmt = conn.prepareStatement(insert_partita);
+        stmt.setDate(1, new Date(1234-5-7));
+        //stmt.setInt(2, 1);
+        //stmt.setInt(3, 1);
+        stmt.setInt(2, sq_home.getId());
+        stmt.setInt(3, sq_visitor.getId());
+        stmt.setInt(4, stadio.getId());
+        stmt.execute();
+        stmt.close();
+        conn.close();
+    }
+
+    public static void aggiornaPartita(Squadra sq_home, Squadra sq_visitor, Stadio stadio, Partita partita) throws SQLException {
+        Connection conn = DataSourceSingleton.getInstance().getConnection();
+        PreparedStatement stmt = conn.prepareStatement(insert_partita);
+        stmt.setDate(1, partita.getData_partita());
+        stmt.setInt(2, 1);
+        stmt.setInt(3, 1);
+        stmt.setInt(4, sq_home.getId());
+        stmt.setInt(5, sq_visitor.getId());
+        stmt.setInt(6, stadio.getId());
+        stmt.execute();
+        stmt.close();
+        conn.close();
+    }
+
+    public static void aggiornaRisultatoPartita(int goal_home, int goal_visitor, Partita partita) throws SQLException {
+        Connection conn = DataSourceSingleton.getInstance().getConnection();
+        PreparedStatement stmt = conn.prepareStatement(aggiorna_risultato);
+        stmt.setInt(1, goal_home);
+        stmt.setInt(2, goal_visitor);
+        stmt.setInt(3, partita.getId());
+        stmt.execute();
+        stmt.close();
+        conn.close();
+    }
 
     }
 
-    public void updatePartita(Partita partita) throws SQLException {
-
-    }
-
-    public void deletePartita(Partita partita) throws SQLException {
-
-    }
-
-    public Partita TrovaclienteById(int i) throws SQLException {
-        return null;
-    }
-}
