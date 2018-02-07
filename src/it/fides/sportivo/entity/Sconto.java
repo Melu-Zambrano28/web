@@ -6,11 +6,11 @@ public class Sconto
 {
     private int id;
     private String descrizione;
-    private BigDecimal perc_scon;
+    private double perc_scon;
 
     public Sconto(){}
 
-    public Sconto(int id, String descrizione, BigDecimal perc_scon) {
+    public Sconto(int id, String descrizione, double perc_scon) {
         this.id = id;
         this.descrizione = descrizione;
         this.perc_scon = perc_scon;
@@ -32,11 +32,11 @@ public class Sconto
         this.descrizione = descrizione;
     }
 
-    public BigDecimal getPerc_scon() {
+    public double getPerc_scon() {
         return perc_scon;
     }
 
-    public void setPerc_scon(BigDecimal perc_scon) {
+    public void setPerc_scon(double perc_scon) {
         this.perc_scon = perc_scon;
     }
 
