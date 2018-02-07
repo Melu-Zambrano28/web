@@ -1,5 +1,7 @@
 package it.fides.sportivo.servicesimplementation;
 
+//alfonso
+
 import it.fides.sportivo.entity.Stadio;
 import it.fides.sportivo.repository.DataSourceSingleton;
 
@@ -14,6 +16,7 @@ public class ServiceStadioDao
 {
 
     public ArrayList<Stadio> stadio = new ArrayList<Stadio>();
+
     public List<Stadio> lista()
     {
         Connection coni=null;
