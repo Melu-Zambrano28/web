@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="gestionale_sportivo:war exploded">
+    <output-path>$PROJECT_DIR$/target/gestionale_sportivo</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="gestionale_sportivo" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.45" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/gestionale_sportivo/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="gestionale_sportivo/web/Web" />
+    </root>
+  </artifact>
+</component>
