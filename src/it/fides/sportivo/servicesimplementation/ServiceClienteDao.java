@@ -8,7 +8,7 @@ import it.fides.sportivo.services.ServiceCliente;
 import java.sql.*;
 import java.util.GregorianCalendar;
 
-public class ServiceClienteDao implements ServiceCliente {
+public class ServiceClienteDao  {
   private static Connection conex=null;
   private static PreparedStatement st = null;
   private static ResultSet rs = null;
@@ -18,7 +18,7 @@ public class ServiceClienteDao implements ServiceCliente {
   private static final String queryFind="SELECT * FROM cliente WHERE id=?";
 
 
-    public void  createCliente(Cliente cliente) throws SQLException {
+    public static void  createCliente(Cliente cliente) throws SQLException {
         conex= DataSourceSingleton.getInstance().getConnection();
         java.sql.Date sqlData= UtilClientDao.trasformaDataUtilSql(cliente.getData_nascita()); //trasformazione della data in formato sql
         st=conex.prepareStatement(queryCreaUtente);
@@ -28,7 +28,7 @@ public class ServiceClienteDao implements ServiceCliente {
         st.executeUpdate();
     }
 
-    public void updateCliente(Cliente cliente) throws SQLException {
+    public static void updateCliente(Cliente cliente) throws SQLException {
       conex =DataSourceSingleton.getInstance().getConnection();
       java.sql.Date sqlData= UtilClientDao.trasformaDataUtilSql(cliente.getData_nascita());
       st= conex.prepareStatement(queryUpdateUtente);
@@ -42,7 +42,7 @@ public class ServiceClienteDao implements ServiceCliente {
     }
 
 
-    public void deleteCliente(Cliente cliente) throws SQLException {
+    public static void deleteCliente(Cliente cliente) throws SQLException {
       conex =DataSourceSingleton.getInstance().getConnection();
       st=conex.prepareStatement(queryDeleteUtente);
       st.setInt(1,cliente.getId());
@@ -60,7 +60,7 @@ public class ServiceClienteDao implements ServiceCliente {
     }
 
     //mappatura di ogni singolo cliente
-   private Cliente mappaturaCliente(ResultSet result) throws SQLException {
+   private static Cliente mappaturaCliente(ResultSet result) throws SQLException {
       Cliente c = new Cliente();
       c.setId(result.getInt("id"));
       c.setNome(result.getString("nome"));
@@ -72,12 +72,12 @@ public class ServiceClienteDao implements ServiceCliente {
       return c;
     }
 
-    public  Cliente TrovaclienteById(int id) throws SQLException {
+    public static  Cliente TrovaclienteById(int id) throws SQLException {
       conex =DataSourceSingleton.getInstance().getConnection();
       rs=st.executeQuery("SELECT * FROM  cliente WHERE id="+id);
       Cliente cliente=null;
       while ((rs.next())){
-        cliente=this.mappaturaCliente(rs);
+        cliente=ServiceClienteDao.mappaturaCliente(rs);
       }
       return cliente;
 
