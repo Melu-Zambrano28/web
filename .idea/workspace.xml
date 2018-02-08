@@ -288,14 +288,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1518020425417</updated>
+<<<<<<< HEAD
+      <workItem from="1518020431993" duration="2120000" />
+      <workItem from="1518023423024" duration="1103000" />
+=======
       <workItem from="1518020431993" duration="208000" />
+<<<<<<< HEAD
       <workItem from="1518021074586" duration="3852000" />
       <workItem from="1518077246692" duration="10143000" />
+=======
+>>>>>>> parent of fcddbed... Correzione sconto to double e ServiceScontoDao
+>>>>>>> 26172edc4bcfc746b0df341712fa98ce04007b91
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="14246000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="3223000" />
+=======
+    <option name="totallyTimeSpent" value="208000" />
+>>>>>>> parent of fcddbed... Correzione sconto to double e ServiceScontoDao
+>>>>>>> 26172edc4bcfc746b0df341712fa98ce04007b91
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
