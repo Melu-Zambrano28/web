@@ -5,124 +5,95 @@ package it.fides.sportivo.servicesimplementation;
 import it.fides.sportivo.entity.Stadio;
 import it.fides.sportivo.repository.DataSourceSingleton;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceStadioDao
-{
+public class ServiceStadioDao {
+    private static Connection conex;
+    private static ResultSet rs;
+    private static PreparedStatement st;
+    private static Stadio stadio= new Stadio();
+    private static  ArrayList<Stadio> lista_stadio = new ArrayList<Stadio>();
+    private static String select="SELECT FROM * stadio";
+    private static String trova_per_id ="SELECT * FROM stadio WHERE id=?";
+    private static final String insert_stadio = "INSERT INTO stadio (nome, capienza, costo_blg) VALUES (?,?,?)";
+    private static final String delete_stadio = "DELETE FROM stadio WHERE id = ?";
+    private static final String update_stadio= "UPDATE squadra SET nome = ? ,capienza= ? ,costo_blg= ? WHERE id = ?";
 
-    public ArrayList<Stadio> stadio = new ArrayList<Stadio>();
 
-    public List<Stadio> lista()
-    {
-        Connection coni=null;
-        try
-        {
-            coni= DataSourceSingleton.getInstance().getConnection();
-            Statement comandoSQL = coni.createStatement();
-            ResultSet rs = comandoSQL.executeQuery("select * from stadio");
+    public static void insertStadio(Stadio stadio) throws SQLException {
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(insert_stadio);
+        st.setString(1, stadio.getNome());
+        st.setInt(2,stadio.getCapienza());
+        st.setDouble(3,stadio.getCosto_biglietto());
+        st.execute();
+        st.close();
+        conex.close();
+    }
 
-            while(rs.next())
-            {
-                stadio.add(
-                        new Stadio(rs.getInt(1),
-                                rs.getString(2),
-                                rs.getInt(3),
-                                rs.getDouble(4)));
-            }
+
+    public static Stadio TrovaStadioById(int id) throws SQLException {
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(trova_per_id);
+        st.setInt(1, id);
+        rs= st.executeQuery();
+        while (rs.next()) {
+            stadio.setId(rs.getInt("id"));
+            stadio.setNome(rs.getString("nome"));
+            stadio.setCapienza(rs.getInt("capienza"));
+            stadio.setCosto_biglietto(rs.getDouble("costo_blg"));
         }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }
-        finally
-        {
-            if (coni != null )
-                try
-                {
-                   coni.close();
-                }
-                catch (SQLException e)
-                {
-                    e.printStackTrace();
-                }
-        }
+        st.close();
+        conex.close();
         return stadio;
     }
-    public static void insert(int id, String nome, int grand, double price) throws SQLException
-    {
-        Connection coni = null;
-        {
-            try {
-                coni = DataSourceSingleton.getInstance().getConnection();
-                Statement comandoSQL = coni.createStatement();
-                comandoSQL.execute("insert into stadio values(" + id + ",'" + nome + "'," + grand + "," + price + ")");
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                if (coni != null)
-                    try {
-                        coni.close();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-            }
-        }
+    public static void deleteStadio(int id) throws SQLException {
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(delete_stadio);
+        st.setInt(1, id);
+        st.execute();
+        st.close();
+        conex.close();
     }
-    public static void update ( String nome, int grand, double price,int id)
-    {
-        Connection coni = null;
-        try
-        {
-            coni = DataSourceSingleton.getInstance().getConnection();
-            Statement comandoSQL = coni.createStatement();
-            String query = "UPDATE stadio SET nome ='"+nome+"',capienza="+grand+",costo_blg="+price+" WHERE id = "+id+"";
-            System.out.println(query);
-            comandoSQL.execute(query);
 
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }
-        finally {
-            if (coni != null)
-                try {
-                    coni.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-        }
+    public static void aggiornaStadio(Stadio stadio) throws SQLException {
+        Connection conn = DataSourceSingleton.getInstance().getConnection();
+        st= conn.prepareStatement(update_stadio);
+        st.setString(1, stadio.getNome());
+        st.setInt(2,stadio.getCapienza());
+        st.setDouble(3,stadio.getCosto_biglietto());
+        st.setInt(4,stadio.getId());
+        st.executeUpdate();
+        st.execute();
+        st.close();
+        conn.close();
     }
-    public static void delete (int id)
-    {
-        Connection coni = null;
-        try
-        {
-            coni = DataSourceSingleton.getInstance().getConnection();
-            Statement comandoSQL = coni.createStatement();
-            String query = "delete from stadio  WHERE id= "+id;
-            comandoSQL.execute(query);
 
-        }
-        catch(Exception e)
+    public static  ArrayList<Stadio> listaStadio() throws SQLException {
+        conex=DataSourceSingleton.getInstance().getConnection();
+
+        st = conex.prepareStatement(select);
+        rs =st.executeQuery();
+
+        while(rs.next())
         {
-            e.printStackTrace();
+            lista_stadio.add(
+                    new Stadio(rs.getInt(1),
+                            rs.getString(2),
+                            rs.getInt(3),
+                            rs.getDouble(4)));
         }
-        finally {
-            if (coni != null)
-                try {
-                    coni.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-        }
+        return lista_stadio;
     }
+
+
+
+
+
+
 
 
 }

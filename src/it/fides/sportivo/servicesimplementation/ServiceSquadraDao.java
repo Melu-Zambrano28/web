@@ -12,6 +12,11 @@ import java.util.List;
 
 public class ServiceSquadraDao {
 
+    private static  Connection conex;
+    private static ResultSet rs;
+    private static PreparedStatement st;
+    private static ArrayList<Squadra> elencoSquadra=new ArrayList<Squadra>();
+
     private static final String insert_squadra = "INSERT INTO squadra (nome) VALUES (?)";
     private static final String delete_squadra = "DELETE FROM squadra WHERE id = ?";
     private static final String update_squadra = "UPDATE squadra SET nome = ? WHERE id = ?";
@@ -19,78 +24,77 @@ public class ServiceSquadraDao {
     private static final String select_listaSquadra = "SELECT id, nome FROM squadra";
 
     public static void insertSquadra(String nome) throws SQLException {
-        Connection conn = DataSourceSingleton.getInstance().getConnection();
-        PreparedStatement stmt = conn.prepareStatement(insert_squadra);
-        stmt.setString(1, nome);
-        stmt.execute();
-        stmt.close();
-        conn.close();
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(insert_squadra);
+        st.setString(1, nome);
+        st.execute();
+        st.close();
+        conex.close();
     }
 
     public static void insertSquadra(Squadra squadra) throws SQLException {
-        Connection conn = DataSourceSingleton.getInstance().getConnection();
-        PreparedStatement stmt = conn.prepareStatement(insert_squadra);
-        stmt.setString(1, squadra.getNome());
-        stmt.execute();
-        stmt.close();
-        conn.close();
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(insert_squadra);
+        st.setString(1, squadra.getNome());
+        st.execute();
+        st.close();
+        conex.close();
     }
 
     public static Squadra selectSquadra(int id) throws SQLException {
-        Connection conn = DataSourceSingleton.getInstance().getConnection();
-        PreparedStatement stmt = conn.prepareStatement(select_squadra);
+        conex= DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(select_squadra);
         Squadra squadra = null;
-        stmt.setInt(1, id);
-        ResultSet resultSet = stmt.executeQuery();
+        st.setInt(1, id);
+        ResultSet resultSet = st.executeQuery();
         while (resultSet.next()) {
             squadra = new Squadra(resultSet.getInt(1), resultSet.getString(2));
             System.out.println(squadra.toString());
         }
-        stmt.close();
-        conn.close();
+        st.close();
+        conex.close();
         return squadra;
     }
 
     public static void deleteSquadra(int id) throws SQLException {
-        Connection conn = DataSourceSingleton.getInstance().getConnection();
-        PreparedStatement stmt = conn.prepareStatement(delete_squadra);
-        stmt.setInt(1, id);
-        stmt.execute();
-        stmt.close();
-        conn.close();
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(delete_squadra);
+        st.setInt(1, id);
+        st.execute();
+        st.close();
+        conex.close();
     }
 
     public static void aggiornaSquadra(String nome, int id) throws SQLException {
-        Connection conn = DataSourceSingleton.getInstance().getConnection();
-        PreparedStatement stmt = conn.prepareStatement(update_squadra);
-        stmt.setString(1, nome);
-        stmt.setInt(2, id);
-        stmt.execute();
-        stmt.close();
-        conn.close();
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(update_squadra);
+        st.setString(1, nome);
+        st.setInt(2, id);
+        st.execute();
+        st.close();
+        conex.close();
     }
 
     public static void aggiornaSquadra(Squadra squadra, String nome) throws SQLException {
-        Connection conn = DataSourceSingleton.getInstance().getConnection();
-        PreparedStatement stmt = conn.prepareStatement(update_squadra);
-        stmt.setString(1, nome);
-        stmt.setInt(2, squadra.getId());
-        stmt.execute();
-        stmt.close();
-        conn.close();
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(update_squadra);
+        st.setString(1, nome);
+        st.setInt(2, squadra.getId());
+        st.execute();
+        st.close();
+        conex.close();
     }
 
-    public static List<Squadra> listaSquadra() throws  SQLException {
-        List<Squadra> listaSquadre = new ArrayList<Squadra>();
+    public static ArrayList<Squadra> listaSquadra() throws  SQLException {
         Connection conn = DataSourceSingleton.getInstance().getConnection();
         PreparedStatement stmt = conn.prepareStatement(select_listaSquadra);
         Squadra squadra = null;
         ResultSet resultSet = stmt.executeQuery();
         while(resultSet.next()) {
             squadra = new Squadra(resultSet.getInt(1), resultSet.getString(2));
-            listaSquadre.add(squadra);
+            elencoSquadra.add(squadra);
         }
-        return listaSquadre;
+        return elencoSquadra;
     }
 
 }

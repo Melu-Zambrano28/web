@@ -9,9 +9,9 @@ public class GeneraSerialBiglietto {
 
     //generatore di seriali
     public static String getSeriale(){
-        seriale=UUID.randomUUID();
-        serialeString =seriale.toString();
-        return serialeString;
+        seriale=UUID.randomUUID(); //ogg
+        serialeString =seriale.toString(); //string cast
+        return serialeString; //return string
 
     }
 }

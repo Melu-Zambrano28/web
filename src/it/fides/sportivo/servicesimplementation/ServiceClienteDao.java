@@ -2,20 +2,26 @@ package it.fides.sportivo.servicesimplementation;
 
 import it.fides.sportivo.Util.UtilClientDao;
 import it.fides.sportivo.entity.Cliente;
+import it.fides.sportivo.entity.Squadra;
+import it.fides.sportivo.entity.Stadio;
 import it.fides.sportivo.repository.DataSourceSingleton;
 import it.fides.sportivo.services.ServiceCliente;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 public class ServiceClienteDao  {
   private static Connection conex=null;
   private static PreparedStatement st = null;
   private static ResultSet rs = null;
+
+  private static ArrayList<Cliente> elencoCliente;
   private static final String queryCreaUtente="INSERT INTO cliente(nome,cognome,data_nascita)"+"VALUES(?,?,?)";
   private static final String queryUpdateUtente="UPDATE cliente SET nome=?, cognome=?, data_nascita=? " +" WHERE id=? ";
   private static final String queryDeleteUtente="DELETE FROM cliente WHERE id=?";
-  private static final String queryFind="SELECT * FROM cliente WHERE id=?";
+  private static final String querySelect="SELECT * FROM cliente";
 
 
     public static void  createCliente(Cliente cliente) throws SQLException {
@@ -83,6 +89,27 @@ public class ServiceClienteDao  {
 
 
     }
+
+    public static  ArrayList<Cliente> listaCliente() throws SQLException {
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(querySelect);
+        GregorianCalendar dataNascita = null;
+        Cliente c=null;
+        rs = st.executeQuery();
+        while(rs.next()) {
+            c = new Cliente();
+            c.setId(rs.getInt("id"));
+            c.setNome(rs.getString("nome"));
+            c.setCognome(rs.getString("cognome"));
+            java.sql.Date sqlDate=rs.getDate("data_nascita");
+            dataNascita= UtilClientDao.trasformaDataSqlaUtil(sqlDate);
+            c.setData_nascita(dataNascita);
+            elencoCliente.add(c);
+        }
+        return elencoCliente;
+    }
+
+
 
 
 }

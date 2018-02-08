@@ -2,7 +2,9 @@ package it.fides.sportivo.repository;
 
 import it.fides.sportivo.Util.GeneraSerialBiglietto;
 import it.fides.sportivo.Util.UtilClientDao;
+import it.fides.sportivo.entity.Biglietto;
 import it.fides.sportivo.services.ServiceStatoBiglietto;
+import it.fides.sportivo.servicesimplementation.ServiceBigliettoDao;
 import it.fides.sportivo.servicesimplementation.ServiceStatoBigliettoDao;
 
 import java.sql.*;
@@ -32,6 +34,16 @@ public class maino {
        System.out.print(seriale+"\nSeriale 2 :"+seriale2);
        System.out.println("lunghezze del seriale 1: "+seriale.length()+"\nseriale 2 lungh: "+seriale2.length());
 
+       Biglietto biglietto = new Biglietto();
+       biglietto.setNome("melissa");
+       biglietto.setId_partecipazione(3);
+       biglietto.setCognome("zambrano");
+       biglietto.setId_sconto(1);
+       biglietto.setId_stato_biglietto(2);
+       biglietto.setSeriale_biglietto("7d7d4134-e78c-449e-a85d-b0002b95b036");
+
+
+        ServiceBigliettoDao.deleteBiglietto("7d7d4134-e78c-449e-a85d-b0002b95b036");
 
 
 
