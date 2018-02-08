@@ -52,7 +52,7 @@ public class ServiceScontoDao {
         conn.close();
     }
 
-    public static void aggiornaSconto(Sconto sconto, String descrizione, double perc_scon, int id) throws SQLException {
+    public static void aggiornaSconto(Sconto sconto, String descrizione,double perc_scon,int id) throws SQLException {
         Connection conn = DataSourceSingleton.getInstance().getConnection();
         PreparedStatement stmt = conn.prepareStatement(update_sconto);
         stmt.setString(1, descrizione);
