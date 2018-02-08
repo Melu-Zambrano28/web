@@ -1,5 +1,8 @@
 package it.fides.sportivo.entity;
 
+import it.fides.sportivo.Util.GeneraSerialBiglietto;
+import sun.java2d.loops.FillRect;
+
 public class Biglietto
 {
     private String seriale_biglietto;
