@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2b34274c-b52d-4061-8d7f-4a6a43045d21" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/file.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/provaGit.txt" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,122 +13,27 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ServiceSquadraDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.java">
+    <leaf>
+      <file leaf-file-name="Biglietto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/entity/Biglietto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-731">
-              <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1518020847911" expanded="true" signature="406:443" ph="INSERT INTO squadra... " />
-                <marker date="1518020847911" expanded="true" signature="496:528" ph="DELETE FROM squadra... " />
-                <marker date="1518020847911" expanded="true" signature="581:621" ph="UPDATE squadra... " />
-                <marker date="1518020847911" expanded="true" signature="674:715" ph="SELECT id, n... squadra" />
-                <marker date="1518020847911" expanded="true" signature="773:801" ph="SELECT id, n... squadra" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceStatoBigliettoDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceStatoBigliettoDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="17" column="64" lean-forward="true" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
-              <folding>
-                <marker date="1518017907921" expanded="true" signature="270:322" ph="INSERT INTO stato_biglietto... " />
-                <marker date="1518017907921" expanded="true" signature="376:432" ph="UPDATE stato_biglietto... " />
-                <marker date="1518017907921" expanded="true" signature="487:525" ph="DELETE FROM stato_biglietto... " />
-                <marker date="1518017907921" expanded="true" signature="1747:1786" ph="SELECT * FRO... stato_biglietto" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GeneraSerialBiglietto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/Util/GeneraSerialBiglietto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            <state relative-caret-position="-238">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sconto.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/entity/Sconto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="maino.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/repository/maino.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="32" column="112" lean-forward="false" selection-start-line="32" selection-start-column="112" selection-end-line="32" selection-end-column="112" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceStadioDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceStadioDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1680">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="e#408#416#0" expanded="true" />
-                <marker date="1518024315628" expanded="true" signature="691:711" ph="select * fro... stadio" />
-                <marker date="1518024315628" expanded="true" signature="1722:1802" ph="insert into stadio... " />
-                <marker date="1518024315628" expanded="true" signature="2440:2525" ph="UPDATE stadio... " />
-                <marker date="1518024315628" expanded="true" signature="3181:3211" ph="delete from stadio... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServicePartitaDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServicePartitaDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-              <folding>
-                <marker date="1518021563567" expanded="true" signature="432:578" ph="INSERT INTO partita... " />
-                <marker date="1518021563567" expanded="true" signature="786:856" ph="UPDATE partita " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceBigliettoDao.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ServiceBigliettoDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="459">
+              <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding>
-                <marker date="1517994381232" expanded="true" signature="364:517" ph="INSERT INTO biglietto... " />
-                <marker date="1517994381232" expanded="true" signature="576:627" ph="SELECT * FRO... biglietto" />
-                <marker date="1517994381232" expanded="true" signature="686:862" ph="UPDATE biglietto... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceClienteDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceClienteDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="79" column="55" lean-forward="true" selection-start-line="79" selection-start-column="55" selection-end-line="79" selection-end-column="55" />
-              <folding>
-                <marker date="1518021864916" expanded="true" signature="506:568" ph="INSERT INTO cliente... " />
-                <marker date="1518021864916" expanded="true" signature="620:688" ph="UPDATE cliente... " />
-                <marker date="1518021864916" expanded="true" signature="741:771" ph="DELETE FROM cliente... " />
-                <marker date="1518021864916" expanded="true" signature="2826:2858" ph="SELECT * FRO... cliente" />
+                <marker date="1518091076604" expanded="true" signature="560:713" ph="INSERT INTO biglietto... " />
+                <marker date="1518091076604" expanded="true" signature="772:823" ph="SELECT * FRO... biglietto" />
+                <marker date="1518091076604" expanded="true" signature="882:1035" ph="UPDATE biglietto... " />
+                <marker date="1518091076604" expanded="true" signature="1094:1143" ph="DELETE FROM biglietto... " />
               </folding>
             </state>
           </provider>
@@ -157,11 +60,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/SquadraDao.java" />
-        <option value="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.java" />
-        <option value="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceClienteDao.java" />
         <option value="$PROJECT_DIR$/src/it/fides/sportivo/Util/GeneraSerialBiglietto.java" />
+        <option value="$PROJECT_DIR$/src/it/fides/sportivo/entity/Biglietto.java" />
         <option value="$PROJECT_DIR$/src/it/fides/sportivo/repository/maino.java" />
         <option value="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceStadioDao.java" />
+        <option value="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.java" />
+        <option value="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceClienteDao.java" />
+        <option value="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServicePartitaDao.java" />
+        <option value="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.java" />
+        <option value="$PROJECT_DIR$/.ignore" />
       </list>
     </option>
   </component>
@@ -172,7 +79,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="392" />
+    <option name="x" value="-8" />
     <option name="width" value="957" />
     <option name="height" value="770" />
   </component>
@@ -191,6 +98,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -221,36 +131,13 @@
               <item name="gestionale_sportivo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sportivo" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gestionale_sportivo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gestionale_sportivo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sportivo" type="462c0819:PsiDirectoryNode" />
               <item name="servicesimplementation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gestionale_sportivo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gestionale_sportivo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sportivo" type="462c0819:PsiDirectoryNode" />
-              <item name="Util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gestionale_sportivo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gestionale_sportivo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="proprieta" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -402,45 +289,69 @@
       <option name="presentableId" value="Default" />
       <updated>1518020425417</updated>
       <workItem from="1518020431993" duration="208000" />
-      <workItem from="1518021074586" duration="3607000" />
+      <workItem from="1518021074586" duration="3852000" />
+      <workItem from="1518077246692" duration="10143000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3815000" />
+    <option name="totallyTimeSpent" value="14246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25340393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25718608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,64 +365,46 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.java">
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/entity/Biglietto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1518020847911" expanded="true" signature="406:443" ph="INSERT INTO squadra... " />
-            <marker date="1518020847911" expanded="true" signature="496:528" ph="DELETE FROM squadra... " />
-            <marker date="1518020847911" expanded="true" signature="581:621" ph="UPDATE squadra... " />
-            <marker date="1518020847911" expanded="true" signature="674:715" ph="SELECT id, n... squadra" />
-            <marker date="1518020847911" expanded="true" signature="773:801" ph="SELECT id, n... squadra" />
-          </folding>
+        <state relative-caret-position="-238">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="425">
+          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
-            <marker date="1517994381232" expanded="true" signature="364:517" ph="INSERT INTO biglietto... " />
-            <marker date="1517994381232" expanded="true" signature="576:627" ph="SELECT * FRO... biglietto" />
-            <marker date="1517994381232" expanded="true" signature="686:862" ph="UPDATE biglietto... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceClienteDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="79" column="55" lean-forward="true" selection-start-line="79" selection-start-column="55" selection-end-line="79" selection-end-column="55" />
-          <folding>
-            <marker date="1518021864916" expanded="true" signature="506:568" ph="INSERT INTO cliente... " />
-            <marker date="1518021864916" expanded="true" signature="620:688" ph="UPDATE cliente... " />
-            <marker date="1518021864916" expanded="true" signature="741:771" ph="DELETE FROM cliente... " />
-            <marker date="1518021864916" expanded="true" signature="2826:2858" ph="SELECT * FRO... cliente" />
+            <marker date="1518091076604" expanded="true" signature="560:713" ph="INSERT INTO biglietto... " />
+            <marker date="1518091076604" expanded="true" signature="772:823" ph="SELECT * FRO... biglietto" />
+            <marker date="1518091076604" expanded="true" signature="882:1035" ph="UPDATE biglietto... " />
+            <marker date="1518091076604" expanded="true" signature="1094:1143" ph="DELETE FROM biglietto... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-731">
-          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        <state relative-caret-position="306">
+          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1518020847911" expanded="true" signature="406:443" ph="INSERT INTO squadra... " />
-            <marker date="1518020847911" expanded="true" signature="496:528" ph="DELETE FROM squadra... " />
-            <marker date="1518020847911" expanded="true" signature="581:621" ph="UPDATE squadra... " />
-            <marker date="1518020847911" expanded="true" signature="674:715" ph="SELECT id, n... squadra" />
-            <marker date="1518020847911" expanded="true" signature="773:801" ph="SELECT id, n... squadra" />
+            <element signature="e#533#542#0" expanded="true" />
+            <marker date="1518090525187" expanded="true" signature="597:634" ph="INSERT INTO squadra... " />
+            <marker date="1518090525187" expanded="true" signature="687:719" ph="DELETE FROM squadra... " />
+            <marker date="1518090525187" expanded="true" signature="772:812" ph="UPDATE squadra... " />
+            <marker date="1518090525187" expanded="true" signature="865:906" ph="SELECT id, n... squadra" />
+            <marker date="1518090525187" expanded="true" signature="964:992" ph="SELECT id, n... squadra" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceStatoBigliettoDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="289">
           <caret line="17" column="64" lean-forward="true" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
           <folding>
             <marker date="1518017907921" expanded="true" signature="270:322" ph="INSERT INTO stato_biglietto... " />
@@ -522,52 +415,234 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/Util/GeneraSerialBiglietto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/repository/maino.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="425">
           <caret line="32" column="112" lean-forward="false" selection-start-line="32" selection-start-column="112" selection-end-line="32" selection-end-column="112" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceStadioDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#488#496#0" expanded="true" />
+            <marker date="1518090026943" expanded="true" signature="534:554" ph="SELECT FROM *... " />
+            <marker date="1518090026943" expanded="true" signature="598:618" ph="SELECT * FRO... stadio" />
+            <marker date="1518090026943" expanded="true" signature="598:629" ph="SELECT * FRO... stadio" />
+            <marker date="1518090026943" expanded="true" signature="681:742" ph="INSERT INTO stadio... " />
+            <marker date="1518090026943" expanded="true" signature="794:825" ph="DELETE FROM squadra... " />
+            <marker date="1518090026943" expanded="true" signature="876:943" ph="UPDATE squadra... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServicePartitaDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
+        <state relative-caret-position="901">
           <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
-            <marker date="1518021563567" expanded="true" signature="432:578" ph="INSERT INTO partita... " />
-            <marker date="1518021563567" expanded="true" signature="786:856" ph="UPDATE partita " />
+            <marker date="1518090832542" expanded="true" signature="467:613" ph="INSERT INTO partita... " />
+            <marker date="1518090832542" expanded="true" signature="821:891" ph="UPDATE partita " />
+            <marker date="1518090832542" expanded="true" signature="944:976" ph="DELETE FROM biglietto... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <marker date="1518091076604" expanded="true" signature="560:713" ph="INSERT INTO biglietto... " />
+            <marker date="1518091076604" expanded="true" signature="772:823" ph="SELECT * FRO... biglietto" />
+            <marker date="1518091076604" expanded="true" signature="882:1035" ph="UPDATE biglietto... " />
+            <marker date="1518091076604" expanded="true" signature="1094:1143" ph="DELETE FROM biglietto... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceClienteDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="79" column="55" lean-forward="true" selection-start-line="79" selection-start-column="55" selection-end-line="79" selection-end-column="55" />
+          <folding>
+            <marker date="1518090832438" expanded="true" signature="690:752" ph="INSERT INTO cliente... " />
+            <marker date="1518090832438" expanded="true" signature="804:872" ph="UPDATE cliente... " />
+            <marker date="1518090832438" expanded="true" signature="925:955" ph="DELETE FROM cliente... " />
+            <marker date="1518090832438" expanded="true" signature="1001:1022" ph="SELECT * FRO... cliente" />
+            <marker date="1518090832438" expanded="true" signature="3001:3033" ph="SELECT * FRO... cliente" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/entity/Sconto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="34" column="3" lean-forward="false" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#533#542#0" expanded="true" />
+            <marker date="1518090525187" expanded="true" signature="597:634" ph="INSERT INTO squadra... " />
+            <marker date="1518090525187" expanded="true" signature="687:719" ph="DELETE FROM squadra... " />
+            <marker date="1518090525187" expanded="true" signature="772:812" ph="UPDATE squadra... " />
+            <marker date="1518090525187" expanded="true" signature="865:906" ph="SELECT id, n... squadra" />
+            <marker date="1518090525187" expanded="true" signature="964:992" ph="SELECT id, n... squadra" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/entity/Sconto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="34" column="3" lean-forward="false" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/Util/GeneraSerialBiglietto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="45" lean-forward="false" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/repository/maino.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="45" column="82" lean-forward="false" selection-start-line="45" selection-start-column="82" selection-end-line="45" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/entity/Biglietto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-238">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/Util/ConnectionUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/Util/UtilClientDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceStatoBigliettoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="64" lean-forward="false" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
+          <folding>
+            <marker date="1518017907921" expanded="true" signature="270:322" ph="INSERT INTO stato_biglietto... " />
+            <marker date="1518017907921" expanded="true" signature="376:432" ph="UPDATE stato_biglietto... " />
+            <marker date="1518017907921" expanded="true" signature="487:525" ph="DELETE FROM stato_biglietto... " />
+            <marker date="1518017907921" expanded="true" signature="1747:1786" ph="SELECT * FRO... stato_biglietto" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceStadioDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1680">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="81" column="9" lean-forward="true" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
           <folding>
-            <element signature="e#408#416#0" expanded="true" />
-            <marker date="1518024315628" expanded="true" signature="691:711" ph="select * fro... stadio" />
-            <marker date="1518024315628" expanded="true" signature="1722:1802" ph="insert into stadio... " />
-            <marker date="1518024315628" expanded="true" signature="2440:2525" ph="UPDATE stadio... " />
-            <marker date="1518024315628" expanded="true" signature="3181:3211" ph="delete from stadio... " />
+            <element signature="e#488#496#0" expanded="true" />
+            <marker date="1518090026943" expanded="true" signature="534:554" ph="SELECT FROM *... " />
+            <marker date="1518090026943" expanded="true" signature="598:618" ph="SELECT * FRO... stadio" />
+            <marker date="1518090026943" expanded="true" signature="598:629" ph="SELECT * FRO... stadio" />
+            <marker date="1518090026943" expanded="true" signature="681:742" ph="INSERT INTO stadio... " />
+            <marker date="1518090026943" expanded="true" signature="794:825" ph="DELETE FROM squadra... " />
+            <marker date="1518090026943" expanded="true" signature="876:943" ph="UPDATE squadra... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/Util/GeneraSerialBiglietto.java">
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        <state relative-caret-position="765">
+          <caret line="96" column="29" lean-forward="true" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#533#542#0" expanded="true" />
+            <marker date="1518090525187" expanded="true" signature="597:634" ph="INSERT INTO squadra... " />
+            <marker date="1518090525187" expanded="true" signature="687:719" ph="DELETE FROM squadra... " />
+            <marker date="1518090525187" expanded="true" signature="772:812" ph="UPDATE squadra... " />
+            <marker date="1518090525187" expanded="true" signature="865:906" ph="SELECT id, n... squadra" />
+            <marker date="1518090525187" expanded="true" signature="964:992" ph="SELECT id, n... squadra" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServicePartitaDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+          <folding>
+            <marker date="1518090832542" expanded="true" signature="467:613" ph="INSERT INTO partita... " />
+            <marker date="1518090832542" expanded="true" signature="821:891" ph="UPDATE partita " />
+            <marker date="1518090832542" expanded="true" signature="944:976" ph="DELETE FROM biglietto... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceClienteDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="17" selection-end-column="37" />
+          <folding>
+            <marker date="1518090832438" expanded="true" signature="690:752" ph="INSERT INTO cliente... " />
+            <marker date="1518090832438" expanded="true" signature="804:872" ph="UPDATE cliente... " />
+            <marker date="1518090832438" expanded="true" signature="925:955" ph="DELETE FROM cliente... " />
+            <marker date="1518090832438" expanded="true" signature="1001:1022" ph="SELECT * FRO... cliente" />
+            <marker date="1518090832438" expanded="true" signature="3001:3033" ph="SELECT * FRO... cliente" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.ignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/entity/Sconto.java">
+    <entry file="file://$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="459">
+          <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <marker date="1518091076604" expanded="true" signature="560:713" ph="INSERT INTO biglietto... " />
+            <marker date="1518091076604" expanded="true" signature="772:823" ph="SELECT * FRO... biglietto" />
+            <marker date="1518091076604" expanded="true" signature="882:1035" ph="UPDATE biglietto... " />
+            <marker date="1518091076604" expanded="true" signature="1094:1143" ph="DELETE FROM biglietto... " />
+          </folding>
         </state>
       </provider>
     </entry>
