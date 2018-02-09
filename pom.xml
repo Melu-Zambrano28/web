@@ -7,6 +7,8 @@
   <version>1.0-SNAPSHOT</version>
   <name>gestionale_sportivo Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -21,8 +23,41 @@
       <version>5.1.45</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.7.0</version>
+    </dependency>
+
+
   </dependencies>
+
   <build>
-    <finalName>gestionale_sportivo</finalName>
-  </build>
+
+      <finalName>gestionale_sportivo</finalName>
+
+
+      <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.1</version>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>2.4</version>
+          <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
+        </plugin>
+
+      </plugins>
+
+    </build>
+
 </project>

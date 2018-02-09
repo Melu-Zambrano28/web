@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="gestionale_sportivo" target="1.5" />
+      <module name="gestionale_sportivo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
