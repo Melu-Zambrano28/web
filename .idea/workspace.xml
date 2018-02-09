@@ -6,70 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b34274c-b52d-4061-8d7f-4a6a43045d21" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/gestionale_sportivo_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/gestionale_sportivo_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_45.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/config.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/file.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/gestionale_sportivo.iml" afterPath="$PROJECT_DIR$/gestionale_sportivo.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/Util/ConnectionUtil.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/Util/ConnectionUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/Util/GeneraSerialBiglietto.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/Util/GeneraSerialBiglietto.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/Util/UtilClientDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/Util/UtilClientDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/entity/Biglietto.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/entity/Biglietto.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/entity/Cliente.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/entity/Cliente.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/entity/Partecipazione.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/entity/Partecipazione.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/entity/Partita.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/entity/Partita.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/entity/Sconto.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/entity/Sconto.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/entity/Squadra.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/entity/Squadra.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/entity/Stadio.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/entity/Stadio.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/entity/Stato_biglietto.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/entity/Stato_biglietto.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/repository/DataSourceSingleton.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/repository/DataSourceSingleton.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/repository/maino.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/repository/maino.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/services/ServiceCliente.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/services/ServiceCliente.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/services/ServicePartita.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/services/ServicePartita.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/services/ServiceStatoBiglietto.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/services/ServiceStatoBiglietto.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceClienteDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceClienteDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServicePartitaDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServicePartitaDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceScontoDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceScontoDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceStadioDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceStadioDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/it/fides/sportivo/servicesimplementation/ServiceStatoBigliettoDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceStatoBigliettoDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/index.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/Util/ConnectionUtil.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/Util/GeneraSerialBiglietto.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/Util/UtilClientDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/entity/Biglietto.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/entity/Cliente.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/entity/Partecipazione.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/entity/Partita.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/entity/Sconto.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/entity/Squadra.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/entity/Stadio.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/entity/Stato_biglietto.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/repository/DataSourceSingleton.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/repository/maino.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/services/ServiceCliente.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/services/ServicePartita.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/services/ServiceStatoBiglietto.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceClienteDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServicePartitaDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceStadioDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceStatoBigliettoDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/proprieta/LeggiFileProperties.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/proprieta/StoreProperties.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/proprieta/ciao.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/proprieta/file.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/proprieta/nuovoFile.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/webapp/WEB-INF/web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/webapp/index.jsp" afterPath="" />
-    </list>
+    <list default="true" id="2b34274c-b52d-4061-8d7f-4a6a43045d21" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -237,6 +174,21 @@
               <item name="gestionale_sportivo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gestionale_sportivo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestionale_sportivo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gestionale_sportivo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestionale_sportivo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="front-end" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gestionale_sportivo" type="b2602c69:ProjectViewProjectNode" />
@@ -510,12 +462,12 @@
       <workItem from="1518020431993" duration="208000" />
       <workItem from="1518167489344" duration="1263000" />
       <workItem from="1518168794400" duration="5979000" />
-      <workItem from="1518176492742" duration="2019000" />
+      <workItem from="1518176492742" duration="2497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9469000" />
+    <option name="totallyTimeSpent" value="9947000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -523,7 +475,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -541,7 +493,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4232026" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26096824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26096824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
