@@ -70,7 +70,7 @@
 <div class="inserisciSquadra">
 
     <table>
-        <form  name="formularioSquadra" method="post" action="/gestionaleSportivo/inserisciSquadra">
+        <form  name="formularioSquadra" method="post" action="inserisciSquadra">
             <tr>
                 <td><label>Nome squadra: </label></td>
                 <td><input type="text" name="nomeSquadra" id =" nomeSquadra"/></td>

@@ -42,7 +42,7 @@ public class DataSourceSingleton {
     private DataSourceSingleton() throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gestionale_sportivo?useSSL=false", "root", "2809");
+            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3333/gestionale_sportivo?useSSL=false", "root", "password");
         } catch (ClassNotFoundException ex) {
             System.out.println("Database Connection Creation Failed : " + ex.getMessage());
         }
@@ -55,9 +55,9 @@ public class DataSourceSingleton {
     public static DataSourceSingleton getInstance() throws SQLException {
         if (istanza == null)
             istanza = new DataSourceSingleton();
-//        } else if (istanza.getConnection().isClosed()) {
-//            istanza = new DataSourceSingleton();
-//        }
+        else if (istanza.getConnection().isClosed()) {
+           istanza = new DataSourceSingleton();
+       }
 
         return istanza;
     }

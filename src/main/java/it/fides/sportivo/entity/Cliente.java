@@ -20,6 +20,12 @@ public class Cliente {
         this.data_nascita = data_nascita;
     }
 
+    public Cliente(String nome, String cognome, GregorianCalendar data_nascita) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.data_nascita = data_nascita;
+    }
+
     public int getId() {
         return id;
     }

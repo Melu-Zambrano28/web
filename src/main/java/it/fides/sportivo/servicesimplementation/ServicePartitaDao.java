@@ -6,6 +6,7 @@ import it.fides.sportivo.entity.Stadio;
 import it.fides.sportivo.repository.DataSourceSingleton;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class ServicePartitaDao {
 
@@ -19,6 +20,7 @@ public class ServicePartitaDao {
     private static final String update_partita = "UPDATE partita SET data_partita = ?, id_sq_home = ?, id_sq_visitor = ?, id_stadio = ? WHERE id = ?";
     private static final String aggiorna_risultato = "UPDATE  partita SET goal_sq_home = ?, goal_sq_visitor = ? WHERE id = ?";
     private final static String delete_partita = "DELETE FROM partita WHERE id = ?";
+    private static final String select_listaSquadra = "SELECT id, nome FROM squadra";
 
     public static void inserisciPartita(Squadra sq_home, Squadra sq_visitor, Stadio stadio) throws SQLException {
         conex = DataSourceSingleton.getInstance().getConnection();
@@ -62,7 +64,20 @@ public class ServicePartitaDao {
         st = conex.prepareStatement(delete_partita);
         st.setInt(1,id);
         st.execute();
+    }
 
+    public static ArrayList<Squadra> listaSquadra() throws  SQLException {
+        ArrayList<Squadra> elencoSquadre = new ArrayList<>();
+        Connection conn = DataSourceSingleton.getInstance().getConnection();
+        PreparedStatement stmt = conn.prepareStatement(select_listaSquadra);
+        Squadra squadra = null;
+        ResultSet resultSet = stmt.executeQuery();
+        while(resultSet.next()) {
+            squadra = new Squadra(resultSet.getInt(1), resultSet.getString(2));
+                   elencoSquadre.add(squadra);
+        }
+        conex.close();
+        return elencoSquadre;
     }
 
     }

@@ -15,7 +15,7 @@ public class ServiceSquadraDao {
     private static  Connection conex;
     private static ResultSet rs;
     private static PreparedStatement st;
-    private static ArrayList<Squadra> elencoSquadra=new ArrayList<Squadra>();
+    //private static ArrayList<Squadra> elencoSquadra=new ArrayList<Squadra>();
 
     private static final String insert_squadra = "INSERT INTO squadra (nome) VALUES (?)";
     private static final String delete_squadra = "DELETE FROM squadra WHERE id = ?";
@@ -86,6 +86,7 @@ public class ServiceSquadraDao {
     }
 
     public static ArrayList<Squadra> listaSquadra() throws  SQLException {
+        ArrayList<Squadra> elencoSquadra=new ArrayList<Squadra>();
         Connection conn = DataSourceSingleton.getInstance().getConnection();
         PreparedStatement stmt = conn.prepareStatement(select_listaSquadra);
         Squadra squadra = null;

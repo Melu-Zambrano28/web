@@ -5,21 +5,17 @@
 <web-app>
     <display-name>gestionaleSportivo</display-name>
     <servlet>
-                <servlet-name>ServletInserisciStadio</servlet-name>
-                <servlet-class>it.fides.sportivo.servlet.ServletInserisciStadio</servlet-class>
-            </servlet>
-        <servlet>
-            <servlet-name>ServletInserisciSquadra</servlet-name>
-            <servlet-class>it.fides.sportivo.servlet.ServletInserisciSquadra</servlet-class>
-        </servlet>
-        <servlet-mapping>
-            <servlet-name>ServletInserisciStadio</servlet-name>
-            <url-pattern>/inserisciStadio</url-pattern>
-        </servlet-mapping>
-        <servlet-mapping>
-            <servlet-name>ServletInserisciSquadra</servlet-name>
-            <url-pattern>/inserisciSquadra</url-pattern>
-        </servlet-mapping>
+        <servlet-name>ServletInserisciStadio</servlet-name>
+        <servlet-class>it.fides.sportivo.servlet.ServletInserisciStadio</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletInserisciSquadra</servlet-name>
+        <servlet-class>it.fides.sportivo.servlet.ServletInserisciSquadra</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletInserisciCliente</servlet-name>
+        <servlet-class>it.fides.sportivo.servlet.ServletInserisciCliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletInserisciStadio</servlet-name>
         <url-pattern>/inserisciStadio</url-pattern>
@@ -28,4 +24,16 @@
         <servlet-name>ServletInserisciSquadra</servlet-name>
         <url-pattern>/inserisciSquadra</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletInserisciCliente</servlet-name>
+        <url-pattern>/cliente</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location></location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location></location>
+    </error-page>
 </web-app>

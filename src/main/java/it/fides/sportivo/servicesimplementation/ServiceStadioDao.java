@@ -14,8 +14,8 @@ public class ServiceStadioDao {
     private static ResultSet rs;
     private static PreparedStatement st;
     private static Stadio stadio= new Stadio();
-    private static  ArrayList<Stadio> lista_stadio = new ArrayList<Stadio>();
-    private static String select="SELECT FROM * stadio";
+    //private static  ArrayList<Stadio> lista_stadio = new ArrayList<Stadio>();
+    private static String select="SELECT * FROM stadio";
     private static String trova_per_id ="SELECT * FROM stadio WHERE id=?";
     private static final String insert_stadio = "INSERT INTO stadio (nome, capienza, costo_blg) VALUES (?,?,?)";
     private static final String delete_stadio = "DELETE FROM stadio WHERE id = ?";
@@ -72,9 +72,9 @@ public class ServiceStadioDao {
         conn.close();
     }
 
-    public static  ArrayList<Stadio> listaStadio() throws SQLException {
+    public static ArrayList<Stadio> listaStadio() throws SQLException {
         conex=DataSourceSingleton.getInstance().getConnection();
-
+        ArrayList<Stadio> lista_stadio = new ArrayList<Stadio>();
         st = conex.prepareStatement(select);
         rs =st.executeQuery();
 
@@ -86,6 +86,7 @@ public class ServiceStadioDao {
                             rs.getInt(3),
                             rs.getDouble(4)));
         }
+        conex.close();
         return lista_stadio;
     }
 
