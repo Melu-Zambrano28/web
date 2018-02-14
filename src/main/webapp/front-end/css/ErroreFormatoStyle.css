@@ -1,0 +1,107 @@
+.erroreFormat h1:first-child{
+    text-align: center;
+    color:red;
+    background-color: #b5c3cc;
+}
+
+.erroreFormat{
+    margin: 150px auto;
+    background-color: #b5c3cc;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    border: 5px solid red;
+    animation-name: lampeggio;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+
+}
+
+div ul li{
+    font-size: 20px;
+    list-style: none;
+
+}
+
+body {
+    background: white;
+    animation-name: cambiaColore;
+    animation-delay: 2ms; /*ritardo*/
+    animation-duration: 1s; /*durazione di tutta la animation*/
+    animation-iteration-count: infinite; /*volte*/
+}
+
+@keyframes cambiaColore {
+    from {
+        background: white;
+    }
+
+    to {
+        background: black;
+    }
+}
+
+
+@keyframes cambiaColorebianco {
+    from {
+        background: black;
+    }
+
+    to {
+        background: white;
+    }
+}
+
+
+    @keyframes lampeggio {
+        from{
+            border: 5px solid red;
+        }
+
+        to{
+            border: 40px solid red;
+
+        }
+
+    }
+
+
+div:hover{ /*quando pasi il mouse sopra pausi la animation*/
+    animation-play-state: paused;
+
+}
+
+body:hover{
+    animation-play-state: paused;
+    animation-name: cambiaColorebianco;
+
+}
+.torna{
+    width: 100px;
+    height: 100px;
+
+}
+
+
+a img{ /*imagen*/
+    width: 50px;
+    height: 50px;
+
+
+}
+
+
+a{/*letra del link*/
+    color: greenyellow;
+    font-size: 20px;
+    padding: 5px;
+}
+a:hover{
+    color:mediumvioletred;
+
+}
+
+
+

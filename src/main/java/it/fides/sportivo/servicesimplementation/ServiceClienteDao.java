@@ -17,7 +17,6 @@ public class ServiceClienteDao  {
   private static PreparedStatement st = null;
   private static ResultSet rs = null;
 
-  private static ArrayList<Cliente> elencoCliente;
   private static final String queryCreaUtente="INSERT INTO cliente(nome,cognome,data_nascita)"+"VALUES(?,?,?)";
   private static final String queryUpdateUtente="UPDATE cliente SET nome=?, cognome=?, data_nascita=? " +" WHERE id=? ";
   private static final String queryDeleteUtente="DELETE FROM cliente WHERE id=?";
@@ -90,11 +89,12 @@ public class ServiceClienteDao  {
 
     }
 
-    public static  ArrayList<Cliente> listaCliente() throws SQLException {
+    public ArrayList<Cliente> listaCliente() throws SQLException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(querySelect);
         GregorianCalendar dataNascita = null;
         Cliente c=null;
+        ArrayList<Cliente> elencoCliente= new ArrayList<Cliente>();
         rs = st.executeQuery();
         while(rs.next()) {
             c = new Cliente();
