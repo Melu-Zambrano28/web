@@ -1,0 +1,39 @@
+
+
+div{ /*tutti i div saranno uguali*/
+    font-size: 10px;
+    float: left;
+    margin: 20px auto;
+    padding: 20px 150px;
+}
+
+.listaStadio th, .listaStadio td{ /*righe e colonne*/
+    background-color: lightcyan;
+    border: 2px solid black;
+    padding: 3px;
+
+}
+
+.listaSquadre th, .listaSquadre td{
+    background-color: wheat;
+    border: 2px solid black;
+    padding: 3px;
+}
+
+.listaStadio, .listaSquadre{
+    width: 200px;
+    height: 200px;
+}
+
+body h1{
+    text-align: center;
+    color: white;
+    font-style: italic;
+    text-shadow: 3px 2px cadetblue ;
+
+}
+
+body{
+    background-color: #b5c3cc;
+}
+
