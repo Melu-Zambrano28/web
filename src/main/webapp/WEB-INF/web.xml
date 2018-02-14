@@ -4,7 +4,28 @@
 
 <web-app>
     <display-name>gestionaleSportivo</display-name>
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
+    <servlet>
+                <servlet-name>ServletInserisciStadio</servlet-name>
+                <servlet-class>it.fides.sportivo.servlet.ServletInserisciStadio</servlet-class>
+            </servlet>
+        <servlet>
+            <servlet-name>ServletInserisciSquadra</servlet-name>
+            <servlet-class>it.fides.sportivo.servlet.ServletInserisciSquadra</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>ServletInserisciStadio</servlet-name>
+            <url-pattern>/inserisciStadio</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+            <servlet-name>ServletInserisciSquadra</servlet-name>
+            <url-pattern>/inserisciSquadra</url-pattern>
+        </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletInserisciStadio</servlet-name>
+        <url-pattern>/inserisciStadio</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletInserisciSquadra</servlet-name>
+        <url-pattern>/inserisciSquadra</url-pattern>
+    </servlet-mapping>
 </web-app>
