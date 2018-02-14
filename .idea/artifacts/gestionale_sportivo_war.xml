@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="gestionale_sportivo:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="gestionale_sportivo.war">
+    <root id="archive" name="gestionale_sportivo-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="gestionale_sportivo:war exploded" />
     </root>
   </artifact>

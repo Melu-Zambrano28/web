@@ -10,11 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-<<<<<<< HEAD
       <module name="gestionale_sportivo" target="1.8" />
-=======
-      <module name="gestionale_sportivo" target="1.6" />
->>>>>>> d98eaf568a3705e1c801780c5c941a480633f07b
     </bytecodeTargetLevel>
   </component>
 </project>
