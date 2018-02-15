@@ -31,7 +31,6 @@ public class ServletInserisciCliente extends HttpServlet {
         String cognome = req.getParameter("cognome");
         String data = req.getParameter("data-nascita");
 
-        System.out.println(nome + "  " + cognome  + "    "  + data);
 
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         Date date = null;
@@ -52,10 +51,6 @@ public class ServletInserisciCliente extends HttpServlet {
             e.printStackTrace();
         }
 
-
-        //System.out.println(cal.setTime(date));
-
-        System.out.println(nome + "  " + cognome  + "    "  +  data);
 
     }
 }

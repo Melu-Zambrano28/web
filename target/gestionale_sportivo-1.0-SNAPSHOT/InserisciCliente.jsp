@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Benvenuto</title>
-    <link rel="stylesheet" type="text/css" href="frontend/css/Cliente.css">
+    <link rel="stylesheet" type="text/css" href="front-end/css/InserisciCliente.css">
 </head>
 <body>
 <form action="cliente" method="post">
