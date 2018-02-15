@@ -65,7 +65,7 @@ public class ServiceScontoDao {
 
 
 
-    public static List<Sconto> listaSconto() throws  SQLException {
+    public List<Sconto> listaSconto() throws  SQLException {
         List<Sconto> listaSconti = new ArrayList<Sconto>();
         Connection conn = DataSourceSingleton.getInstance().getConnection();
         PreparedStatement stmt = conn.prepareStatement(select_listaSconto);
