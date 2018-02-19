@@ -21,7 +21,7 @@ public class ServiceStadioDao {
     private static final String update_stadio= "UPDATE squadra SET nome = ? ,capienza= ? ,costo_blg= ? WHERE id = ?";
 
 
-    public static void insertStadio(Stadio stadio) throws SQLException {
+    public static void insertStadio(Stadio stadio) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(insert_stadio);
         st.setString(1, stadio.getNome());
@@ -33,7 +33,7 @@ public class ServiceStadioDao {
     }
 
 
-    public static Stadio TrovaStadioById(int id) throws SQLException {
+    public static Stadio TrovaStadioById(int id) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(trova_per_id);
         st.setInt(1, id);
@@ -49,7 +49,7 @@ public class ServiceStadioDao {
         return stadio;
     }
 
-    public static void deleteStadio(int id) throws SQLException {
+    public static void deleteStadio(int id) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(delete_stadio);
         st.setInt(1, id);
@@ -58,7 +58,7 @@ public class ServiceStadioDao {
         conex.close();
     }
 
-    public static void aggiornaStadio(Stadio stadio) throws SQLException {
+    public static void aggiornaStadio(Stadio stadio) throws SQLException, ClassNotFoundException {
         Connection conn = DataSourceSingleton.getInstance().getConnection();
         st= conn.prepareStatement(update_stadio);
         st.setString(1, stadio.getNome());
@@ -71,7 +71,7 @@ public class ServiceStadioDao {
         conn.close();
     }
 
-    public  ArrayList<Stadio> listaStadio() throws SQLException {
+    public  ArrayList<Stadio> listaStadio() throws SQLException, ClassNotFoundException {
         conex=DataSourceSingleton.getInstance().getConnection();
 
         st = conex.prepareStatement(select);

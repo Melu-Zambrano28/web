@@ -34,12 +34,12 @@ public class ServletInserisciStadio extends HttpServlet {
 
                 try {
                     ServiceStadioDao.insertStadio(stadio);
-                } catch (SQLException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
                 out.print("<h1>OKKKKKKKKKKKKKKKKK</h1>");
-                response.sendRedirect("InserisciStadio.jsp");
+               response.sendRedirect("InserisciStadio.jsp");
 
 
             }else{

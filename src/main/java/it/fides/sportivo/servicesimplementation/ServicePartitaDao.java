@@ -26,7 +26,7 @@ public class ServicePartitaDao {
     private static final String querySelect="SELECT * FROM partita";
 
 
-    public static void inserisciPartita(Partita partita,Squadra sq_home, Squadra sq_visitor, Stadio stadio) throws SQLException {
+    public static void inserisciPartita(Partita partita,Squadra sq_home, Squadra sq_visitor, Stadio stadio) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(insert_partita);
         st.setDate(1,partita.getData_partita());
@@ -38,7 +38,7 @@ public class ServicePartitaDao {
         conex.close();
     }
 
-    public static void aggiornaPartita(Squadra sq_home, Squadra sq_visitor, Stadio stadio, Partita partita) throws SQLException {
+    public static void aggiornaPartita(Squadra sq_home, Squadra sq_visitor, Stadio stadio, Partita partita) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(update_partita);
         st.setDate(1, partita.getData_partita());
@@ -51,7 +51,7 @@ public class ServicePartitaDao {
         conex.close();
     }
 
-    public static void aggiornaRisultatoPartita(int goal_home, int goal_visitor, Partita partita) throws SQLException {
+    public static void aggiornaRisultatoPartita(int goal_home, int goal_visitor, Partita partita) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(aggiorna_risultato);
         st.setInt(1, goal_home);
@@ -62,7 +62,7 @@ public class ServicePartitaDao {
         conex.close();
     }
 
-    public static void deletePartita(int id) throws SQLException {
+    public static void deletePartita(int id) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(delete_partita);
         st.setInt(1,id);
@@ -71,7 +71,7 @@ public class ServicePartitaDao {
     }
 
 
-    public ArrayList<Partita> listaPartita() throws SQLException {
+    public ArrayList<Partita> listaPartita() throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(querySelect);
         Partita partita=null;

@@ -39,16 +39,27 @@ public class DataSourceSingleton {
         return conn;
     } */
 
+    private final static String URL_DB = "jdbc:mysql://localhost:3306/gestionale_sportivo?useSSL=false";
+    private final static String USR_DB = "root";
+    private final static String PWD_DB = "2809";
+
+    private void initConnection() throws SQLException, ClassNotFoundException{
+        Class.forName("com.mysql.jdbc.Driver");
+        this.conn = DriverManager.getConnection(URL_DB, USR_DB, PWD_DB);
+    }
+
     private DataSourceSingleton() throws SQLException {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/gestionale_sportivo?useSSL=false", "root", "2809");
+            initConnection();
         } catch (ClassNotFoundException ex) {
             System.out.println("Database Connection Creation Failed : " + ex.getMessage());
         }
     }
 
-    public Connection getConnection() {
+    public Connection getConnection() throws SQLException, ClassNotFoundException {
+        if(conn==null || conn.isClosed()){
+            initConnection();
+        }
         return conn;
     }
 

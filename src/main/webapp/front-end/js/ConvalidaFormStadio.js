@@ -1,12 +1,18 @@
 
 
-/*function convalidaForm() {
-    var nomeStadio=document.formul.nomeStadio.value;
-    var capienza=parseInt(document.formul.capienza.value);
-    var prezzo=parseFloat(document.formul.prezzo.value);
-    if(nomeStadio=="" && capienza<=0 && prezzo<=0) {
-        alert("Il nome non puo essere vuoto");
-        console.log(nomeStadio);
+function convalidaForm() {
+    var nome = document.getElementById("nomeStadio").value;
+    var capienza=document.getElementById("capienza").value;
+    if(nome.length==0){
+        document.getElementById("nomeStadio").focus();
+        alert("inserisci il nome")
+    }
+
+    else if(capienza.length==0){
+
 
     }
-}*/
+    console.log(nome);
+
+
+}

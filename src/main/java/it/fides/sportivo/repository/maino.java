@@ -3,9 +3,11 @@ package it.fides.sportivo.repository;
 import it.fides.sportivo.Util.GeneraSerialBiglietto;
 import it.fides.sportivo.Util.UtilClientDao;
 import it.fides.sportivo.entity.Biglietto;
+import it.fides.sportivo.entity.Squadra;
 import it.fides.sportivo.entity.Stadio;
 import it.fides.sportivo.services.ServiceStatoBiglietto;
 import it.fides.sportivo.servicesimplementation.ServiceBigliettoDao;
+import it.fides.sportivo.servicesimplementation.ServiceSquadraDao;
 import it.fides.sportivo.servicesimplementation.ServiceStadioDao;
 import it.fides.sportivo.servicesimplementation.ServiceStatoBigliettoDao;
 
@@ -16,7 +18,7 @@ import java.util.UUID;
 
 public class maino {
 
-    public static void main(String args[]) throws SQLException {
+    public static void main(String args[]) throws SQLException, ClassNotFoundException {
 
 
 //        Connection con = DataSourceSingleton.getInstance().getConnection(); //aperta
@@ -47,6 +49,11 @@ public class maino {
 
 
         ServiceBigliettoDao.deleteBiglietto("7d7d4134-e78c-449e-a85d-b0002b95b036");*/
+        ServiceSquadraDao dqdao= new ServiceSquadraDao();
+        ArrayList<Squadra> elenco = dqdao.listaSquadra();
+        for(int i=0; i<elenco.size(); i++){
+            System.out.println(elenco);
+        }
 
 
 
@@ -65,6 +72,7 @@ public class maino {
 //        data.deleteCliente(cliente);
 //
 //        ServiceClienteDao.chiudiTutto();
+
 
 
 

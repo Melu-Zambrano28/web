@@ -1,0 +1,26 @@
+
+body{
+    background-color: #b5c3cc;
+}
+
+#inserisciPartita{
+    text-align: center;
+    text-shadow: 3px 2px cadetblue ;
+    color: white;
+    font-style: italic;
+    font-size: 30px;
+
+}
+
+.partita a img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+
+
+}
+
+.partita{
+
+}

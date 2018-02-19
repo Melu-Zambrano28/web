@@ -18,7 +18,7 @@ public class ServiceScontoDao {
     private static final String select_listaSconto = "SELECT id, descrizione, perc_scon FROM sconto";
 
 
-    public static void insertSconto(Sconto sconto) throws SQLException {
+    public static void insertSconto(Sconto sconto) throws SQLException, ClassNotFoundException {
         Connection conn = DataSourceSingleton.getInstance().getConnection();
         PreparedStatement stmt = conn.prepareStatement(insert_sconto);
         stmt.setString(1, sconto.getDescrizione());
@@ -28,7 +28,7 @@ public class ServiceScontoDao {
         conn.close();
     }
 
-    public static Sconto selectSconto(int id) throws SQLException {
+    public static Sconto selectSconto(int id) throws SQLException, ClassNotFoundException {
         Connection conn = DataSourceSingleton.getInstance().getConnection();
         PreparedStatement stmt = conn.prepareStatement(select_sconto);
         Sconto sconto = null;
@@ -43,7 +43,7 @@ public class ServiceScontoDao {
         return sconto;
     }
 
-    public static void deleteSconto(int id) throws SQLException {
+    public static void deleteSconto(int id) throws SQLException, ClassNotFoundException {
         Connection conn = DataSourceSingleton.getInstance().getConnection();
         PreparedStatement stmt = conn.prepareStatement(delete_sconto);
         stmt.setInt(1, id);
@@ -52,7 +52,7 @@ public class ServiceScontoDao {
         conn.close();
     }
 
-    public static void aggiornaSconto(Sconto sconto, String descrizione,double perc_scon,int id) throws SQLException {
+    public static void aggiornaSconto(Sconto sconto, String descrizione,double perc_scon,int id) throws SQLException, ClassNotFoundException {
         Connection conn = DataSourceSingleton.getInstance().getConnection();
         PreparedStatement stmt = conn.prepareStatement(update_sconto);
         stmt.setString(1, descrizione);
@@ -65,7 +65,7 @@ public class ServiceScontoDao {
 
 
 
-    public List<Sconto> listaSconto() throws  SQLException {
+    public List<Sconto> listaSconto() throws SQLException, ClassNotFoundException {
         List<Sconto> listaSconti = new ArrayList<Sconto>();
         Connection conn = DataSourceSingleton.getInstance().getConnection();
         PreparedStatement stmt = conn.prepareStatement(select_listaSconto);

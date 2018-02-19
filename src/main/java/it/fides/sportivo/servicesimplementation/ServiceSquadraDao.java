@@ -23,7 +23,7 @@ public class ServiceSquadraDao {
     private static final String select_squadra = "SELECT id, nome FROM squadra WHERE id = ?";
     private static final String select_listaSquadra = "SELECT id, nome FROM squadra";
 
-    public static void insertSquadra(String nome) throws SQLException {
+    public static void insertSquadra(String nome) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(insert_squadra);
         st.setString(1, nome);
@@ -32,16 +32,16 @@ public class ServiceSquadraDao {
         conex.close();
     }
 
-    public static void insertSquadra(Squadra squadra) throws SQLException {
+    public static void insertSquadra(Squadra squadra) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(insert_squadra);
         st.setString(1, squadra.getNome());
-        st.execute();
+        st.executeUpdate();
         st.close();
         conex.close();
     }
 
-    public static Squadra selectSquadra(int id) throws SQLException {
+    public static Squadra selectSquadra(int id) throws SQLException, ClassNotFoundException {
         conex= DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(select_squadra);
         Squadra squadra = null;
@@ -56,7 +56,7 @@ public class ServiceSquadraDao {
         return squadra;
     }
 
-    public static void deleteSquadra(int id) throws SQLException {
+    public static void deleteSquadra(int id) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(delete_squadra);
         st.setInt(1, id);
@@ -65,7 +65,7 @@ public class ServiceSquadraDao {
         conex.close();
     }
 
-    public static void aggiornaSquadra(String nome, int id) throws SQLException {
+    public static void aggiornaSquadra(String nome, int id) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(update_squadra);
         st.setString(1, nome);
@@ -75,7 +75,7 @@ public class ServiceSquadraDao {
         conex.close();
     }
 
-    public static void aggiornaSquadra(Squadra squadra, String nome) throws SQLException {
+    public static void aggiornaSquadra(Squadra squadra, String nome) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(update_squadra);
         st.setString(1, nome);
@@ -85,7 +85,7 @@ public class ServiceSquadraDao {
         conex.close();
     }
 
-    public  ArrayList<Squadra> listaSquadra() throws  SQLException {
+    public  ArrayList<Squadra> listaSquadra() throws SQLException, ClassNotFoundException {
         Connection conn = DataSourceSingleton.getInstance().getConnection();
         PreparedStatement stmt = conn.prepareStatement(select_listaSquadra);
         Squadra squadra = null;
