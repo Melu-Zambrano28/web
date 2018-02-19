@@ -8,6 +8,10 @@
   <name>GestionaleSportivo</name>
   <url>http://maven.apache.org</url>
 
+  <properties>
+    <spring.version>4.3.13.RELEASE</spring.version>
+  </properties>
+
 
   <dependencies>
     <dependency>
@@ -24,6 +28,19 @@
       <version>5.1.6</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api -->
+    <dependency>
+      <groupId>javax.servlet.jsp.jstl</groupId>
+      <artifactId>jstl-api</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
 
     <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
     <dependency>
@@ -35,22 +52,20 @@
 
     <dependency>
       <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>4.1.6.RELEASE</version>
+      <version>${spring.version}</version>
     </dependency>
 
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
       <version>1.2</version>
-    </dependency>
-
-
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -79,13 +94,6 @@
     </dependency>
 
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
       <groupId>javax.ws.rs</groupId>
       <artifactId>javax.ws.rs-api</artifactId>
       <version>2.0</version>
@@ -101,7 +109,10 @@
 
   </dependencies>
 
+
+
   <build>
+
 
       <plugins>
         <plugin>
@@ -124,6 +135,5 @@
       </plugins>
 
     </build>
-
 
 </project>

@@ -1,34 +1,60 @@
-body {
-    background-color: lightgreen;
+@import url("https://fonts.googleapis.com/css?family=Bowlby+One+SC");
 
+body {
+    background-color: #eeeedb;
+    font-family: 'Bowlby One SC';
 }
 
 #form {
-    background-color: darkorange;
+    background-color: rgba(25, 154, 83, 0.57);
     width: 50%;
     border-radius: 25px;
     margin: 0 auto;
-    width: 500px;
+    width: 70%;
     height: 400px;
     font-size: 25px;
+    border-color: springgreen;
+    border-style: solid;
+    border-width: thick;
 }
 
 #form > input {
     width: 100%;
     clear: both;
+    border-radius: 18px;
 }
 
 input[type="text"], input[type="date"] {
     padding: 14px;
 }
 
-input[type="submit"] {
-    background-color: coral;
+input[type="submit"],[type="reset"] {
+    background-color: #4f95ff;
+    text-decoration: none;
     cursor: pointer;
     padding: 14px;
     margin: 4px 2px;
     color: black;
     display: inline-block;
+    box-shadow: 0 9px #999;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#benvenuto{
+    text-align: center;
+}
+
+.btn-cliente {
+    background-color: #4f95ff;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 14px;
+    margin: 4px 2px;
+    color: black;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 9px #999;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }

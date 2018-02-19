@@ -30,6 +30,7 @@ public class ServletInserisciCliente extends HttpServlet {
         String nome = req.getParameter("nome");
         String cognome = req.getParameter("cognome");
         String data = req.getParameter("data-nascita");
+        String url = "";
 
 
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -40,17 +41,19 @@ public class ServletInserisciCliente extends HttpServlet {
             cal = new GregorianCalendar();
             cal.setTime(date);
             Date sql = UtilClientDao.trasformaDataUtilSql((GregorianCalendar) cal);
-            System.out.println(sql);
             GregorianCalendar nascita = UtilClientDao.trasformaDataSqlaUtil((java.sql.Date) sql);
             Cliente cliente = new Cliente(nome, cognome, nascita);
-            System.out.println(cliente.getData_nascita());
             ServiceClienteDao.createCliente(cliente);
+            req.setAttribute("cliente", cliente);
+            url = "/MostraCliente.jsp";
+
         } catch (ParseException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+        getServletContext().getRequestDispatcher(url).forward(req, resp);
 
     }
 }

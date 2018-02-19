@@ -1,3 +1,4 @@
+
 config.properties 
 desktop.ini
 file.properties 
@@ -5,4 +6,6 @@ file.txt
 gestionale_sportivo.iml 
 provaGit.txt
 vcs.xml
-.idea/*
+.idea/
+target
+.gitgnore
