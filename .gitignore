@@ -1,7 +1,3 @@
-config.properties 
-desktop.ini
-file.properties 
-file.txt 
-gestionale_sportivo.iml 
-provaGit.txt
-.idea/workspace.xml
+.idea/
+target
+gestionale_sportivo.iml
