@@ -43,7 +43,7 @@
 
             <tr>
                 <td><label>Costo del biglieto: </label></td>
-                <td><input type="text" name="prezzo" id =" prezzo"/></td>
+                <td><input type="text" name="prezzo" id ="prezzo"/></td>
             </tr>
 
             <tr><!-- colonna -->
