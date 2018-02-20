@@ -24,7 +24,7 @@
 <body>
 <h1>Identifica il codice della squadra/Stadio assocciato al nome:</h1>
 <div class="areasquadre">
-    <h1>Codice Squadra:</h1>
+    <h1>Codice Partita:</h1>
     <table class="listaSquadre">
 
     <tr>

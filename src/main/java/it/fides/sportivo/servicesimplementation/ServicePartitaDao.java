@@ -20,7 +20,7 @@ public class ServicePartitaDao {
     private static final String update_partita = "UPDATE partita SET data_partita = ?, id_sq_home = ?, id_sq_visitor = ?, id_stadio = ? WHERE id = ?";
     private static final String aggiorna_risultato = "UPDATE  partita SET goal_sq_home = ?, goal_sq_visitor = ? WHERE id = ?";
     private final static String delete_partita = "DELETE FROM partita WHERE id = ?";
-    private static final String select_listaSquadra = "SELECT id, nome FROM squadra";
+    private static final String select_listaPartita = "SELECT * FROM partita WHERE id_stadio = ?";
 
     public static void inserisciPartita(Squadra sq_home, Squadra sq_visitor, Stadio stadio) throws SQLException {
         conex = DataSourceSingleton.getInstance().getConnection();
@@ -66,18 +66,23 @@ public class ServicePartitaDao {
         st.execute();
     }
 
-    public static ArrayList<Squadra> listaSquadra() throws  SQLException {
-        ArrayList<Squadra> elencoSquadre = new ArrayList<>();
+    public static ArrayList<Partita> listaPartite(int id_stadio) throws  SQLException {
+        ArrayList<Partita> elencoPartite = new ArrayList<Partita>();
         Connection conn = DataSourceSingleton.getInstance().getConnection();
-        PreparedStatement stmt = conn.prepareStatement(select_listaSquadra);
-        Squadra squadra = null;
+        PreparedStatement stmt = conn.prepareStatement(select_listaPartita);
+        Partita partita = null;
+        stmt.setInt(1, id_stadio);
         ResultSet resultSet = stmt.executeQuery();
         while(resultSet.next()) {
-            squadra = new Squadra(resultSet.getInt(1), resultSet.getString(2));
-                   elencoSquadre.add(squadra);
+            int idsqhome = resultSet.getInt("id_sq_home");
+            partita = new Partita(resultSet.getInt("id"), resultSet.getDate("data_partita"),
+            resultSet.getInt("goal_sq_home"), resultSet.getInt("goal_sq_visitor"),
+                    idsqhome, resultSet.getInt("id_sq_visitor"),
+                    resultSet.getInt("id_stadio"));
+            System.out.println(resultSet.getInt("id_sq_home"));
+            elencoPartite.add(partita);
         }
-        conex.close();
-        return elencoSquadre;
+        return elencoPartite;
     }
 
     }

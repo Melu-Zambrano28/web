@@ -2,7 +2,9 @@ package it.fides.sportivo.servlet;
 
 import it.fides.sportivo.Util.UtilClientDao;
 import it.fides.sportivo.entity.Cliente;
+import it.fides.sportivo.entity.Partita;
 import it.fides.sportivo.servicesimplementation.ServiceClienteDao;
+import it.fides.sportivo.servicesimplementation.ServicePartitaDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +15,7 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
