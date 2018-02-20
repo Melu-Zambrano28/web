@@ -18,8 +18,8 @@ public class ServicePartitaDao {
     private static ResultSet rs = null;
 
 
-    private static final String insert_partita = "INSERT INTO partita (data_partita, goal_sq_home, goal_sq_visitor, id_sq_home, id_sq_visitor, id_stadio)" +
-            " VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String insert_partita = "INSERT INTO partita (data_partita, id_sq_home, id_sq_visitor, id_stadio)" +
+            " VALUES (?, ?, ?, ?)";
     private static final String update_partita = "UPDATE partita SET data_partita = ?, id_sq_home = ?, id_sq_visitor = ?, id_stadio = ? WHERE id = ?";
     private static final String aggiorna_risultato = "UPDATE  partita SET goal_sq_home = ?, goal_sq_visitor = ? WHERE id = ?";
     private final static String delete_partita = "DELETE FROM partita WHERE id = ?";
@@ -29,9 +29,12 @@ public class ServicePartitaDao {
     public static void inserisciPartita(Partita partita,Squadra sq_home, Squadra sq_visitor, Stadio stadio) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(insert_partita);
+        int idStadio=ServiceStadioDao.trovaStadioByName(stadio.getNome());
+        int idSquadraVisitor=ServiceSquadraDao.trovaSquadraByName(sq_visitor.getNome());
+        int idSquadrahome=ServiceSquadraDao.trovaSquadraByName(sq_home.getNome());
         st.setDate(1,partita.getData_partita());
-        st.setInt(2, sq_home.getId());
-        st.setInt(3, sq_visitor.getId());
+        st.setInt(2, idSquadrahome);
+        st.setInt(3, idSquadraVisitor);
         st.setInt(4, stadio.getId());
         st.execute();
         st.close();

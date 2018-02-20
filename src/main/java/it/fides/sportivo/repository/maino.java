@@ -49,11 +49,15 @@ public class maino {
 
 
         ServiceBigliettoDao.deleteBiglietto("7d7d4134-e78c-449e-a85d-b0002b95b036");*/
-        ServiceSquadraDao dqdao= new ServiceSquadraDao();
-        ArrayList<Squadra> elenco = dqdao.listaSquadra();
-        for(int i=0; i<elenco.size(); i++){
-            System.out.println(elenco);
-        }
+//        ServiceSquadraDao dqdao= new ServiceSquadraDao();
+//        ArrayList<Squadra> elenco = dqdao.listaSquadra();
+//        for(int i=0; i<elenco.size(); i++){
+//            System.out.println(elenco);
+//        }
+
+        int idStadio=ServiceStadioDao.trovaStadioByName("olimpico");
+        int idSq=ServiceSquadraDao.trovaSquadraByName("milanS"); //zero se no existe
+        System.out.println(idStadio+"\n"+idSq);
 
 
 

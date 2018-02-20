@@ -1,4 +1,5 @@
-<%--
+<%@ page import="it.fides.sportivo.servicesimplementation.ServicePartitaDao" %>
+<%@ page import="it.fides.sportivo.servicesimplementation.ServiceSquadraDao" %><%--
   Created by IntelliJ IDEA.
   User: Fides
   Date: 14/02/2018
@@ -6,6 +7,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%!ServicePartitaDao daoPartita= new ServicePartitaDao();%>
+<%!ServiceSquadraDao visitor= new ServiceSquadraDao();%>
+<%!ServiceSquadraDao home= new ServiceSquadraDao();%>
 <html>
 <head>
     <title>Inserisci Partita</title>
@@ -33,19 +37,43 @@
 
                 </tr>
                 <tr>
-                    <td><label>Squadra Home: </label></td>
-                    <td><input type="text" name="sqHome" id ="sqHome"/></td>
+                    <td>
+                        <label>Home: </label>
+                    </td>
+
+                  <td>  <select name="sq_Home">
+
+                        <option value="milan">milan</option>
+
+                    </select>
+                  </td>
 
                 </tr>
                 <tr>
-                    <td><label>Squadra Visitor: </label></td>
-                    <td><input type="text" name="sqVisitor" id ="sqVisitor"/></td>
+                    <td>
+                        <label>Visitor: </label>
+                    </td>
+
+                    <td>  <select name="sq_Visitor">
+
+                        <option value="milan">barcellona</option>
+
+                    </select>
+                    </td>
 
                 </tr>
 
                 <tr>
-                    <td><label>Stadio: </label></td>
-                    <td><input type="text" name="idStadio" id ="idStadio"/></td>
+                    <td>
+                        <label>Home: </label>
+                    </td>
+
+                    <td>  <select name="Stadio">
+
+                        <option value="milan">san Siro</option>
+
+                    </select>
+                    </td>
 
                 </tr>
                 <tr><!-- colonna -->
