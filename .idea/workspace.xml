@@ -7,85 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0baf1454-3508-475b-a4ea-d5c484b369c4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servlet/ServletInserisciPartita.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/file.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/Gestore.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/InserisciPartita.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/InserisciSquadra.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/RisposteJson.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/front-end/css/GestoreStyle.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/front-end/css/InserisciPartitaStyle.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/front-end/img/gestore.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/front-end/js/ConvalidaFormCliente.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servlet/ServletInserisciPartita.class" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/gestionale_sportivo_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/gestionale_sportivo_war_exploded.xml" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/gestionale_sportivo.iml" afterPath="$PROJECT_DIR$/gestionale_sportivo.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/Util/ConnectionUtil.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/Util/ConnectionUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/Util/UtilClientDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/Util/UtilClientDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/repository/DataSourceSingleton.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/repository/DataSourceSingleton.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/repository/maino.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/repository/maino.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceClienteDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceClienteDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServicePartitaDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServicePartitaDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceScontoDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceScontoDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceStadioDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceStadioDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceStatoBigliettoDao.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servicesimplementation/ServiceStatoBigliettoDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servlet/ServletInserisciCliente.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servlet/ServletInserisciCliente.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servlet/ServletInserisciSquadra.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servlet/ServletInserisciSquadra.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servlet/ServletInserisciStadio.java" afterPath="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servlet/ServletInserisciStadio.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/InserisciCliente.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/InserisciCliente.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/InserisciStadio.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/InserisciStadio.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/MostraCliente.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/MostraCliente.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/front-end/css/InserisciStadioStyle.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/front-end/js/ConvalidaFormStadio.js" afterPath="$PROJECT_DIR$/src/main/webapp/front-end/js/ConvalidaFormStadio.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/Util/ConnectionUtil.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/Util/ConnectionUtil.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/Util/UtilClientDao.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/Util/UtilClientDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/repository/DataSourceSingleton.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/repository/DataSourceSingleton.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/repository/maino.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/repository/maino.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceClienteDao.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceClienteDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServicePartitaDao.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServicePartitaDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceScontoDao.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceScontoDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceStadioDao.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceStadioDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceStatoBigliettoDao.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servicesimplementation/ServiceStatoBigliettoDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servlet/ServletInserisciCliente.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servlet/ServletInserisciCliente.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servlet/ServletInserisciSquadra.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servlet/ServletInserisciSquadra.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servlet/ServletInserisciStadio.class" afterPath="$PROJECT_DIR$/target/classes/it/fides/sportivo/servlet/ServletInserisciStadio.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT.war" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/InserisciCliente.jsp" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/InserisciCliente.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/InserisciStadio.jsp" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/InserisciStadio.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/Util/ConnectionUtil.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/Util/ConnectionUtil.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/Util/UtilClientDao.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/Util/UtilClientDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/repository/DataSourceSingleton.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/repository/DataSourceSingleton.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/repository/maino.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/repository/maino.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceBigliettoDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceClienteDao.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceClienteDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServicePartitaDao.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServicePartitaDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceScontoDao.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceScontoDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceSquadraDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceStadioDao.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceStadioDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceStatoBigliettoDao.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceStatoBigliettoDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servlet/ServletInserisciCliente.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servlet/ServletInserisciCliente.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servlet/ServletInserisciSquadra.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servlet/ServletInserisciSquadra.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servlet/ServletInserisciStadio.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/classes/it/fides/sportivo/servlet/ServletInserisciStadio.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/front-end/css/InserisciStadioStyle.css" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/front-end/css/InserisciStadioStyle.css" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/front-end/js/ConvalidaFormStadio.js" afterPath="$PROJECT_DIR$/target/gestionale_sportivo-1.0-SNAPSHOT/front-end/js/ConvalidaFormStadio.js" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo/WEB-INF/classes/it/fides/sportivo/repository/DataSourceSingleton.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo/WEB-INF/classes/it/fides/sportivo/repository/DataSourceSingleton.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo/WEB-INF/classes/it/fides/sportivo/repository/maino.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo/WEB-INF/classes/it/fides/sportivo/repository/maino.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceClienteDao.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServiceClienteDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServicePartitaDao.class" afterPath="$PROJECT_DIR$/target/gestionale_sportivo/WEB-INF/classes/it/fides/sportivo/servicesimplementation/ServicePartitaDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/gestionale_sportivo/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/target/gestionale_sportivo/front-end/js/ConvalidaFormStadio.js" afterPath="$PROJECT_DIR$/target/gestionale_sportivo/front-end/js/ConvalidaFormStadio.js" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/gestionale_sportivo.iml" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -149,11 +73,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServletInserisciPartita.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServletInserisciPartita.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/it/fides/sportivo/servlet/ServletInserisciPartita.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+            <state relative-caret-position="207">
+              <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -216,7 +150,6 @@
         <option value="$PROJECT_DIR$/src/main/java/it/fides/sportivo/entity/Cliente.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/front-end/css/InserisciStyle.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/front-end/css/InserisciCliente.css" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/footer.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/InserisciCliente.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/footer.jsp" />
@@ -242,6 +175,7 @@
         <option value="$PROJECT_DIR$/src/main/java/it/fides/sportivo/repository/maino.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/MostraCliente.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/it/fides/sportivo/servlet/ServletInserisciPartita.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -328,15 +262,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sportivo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gestionale_sportivo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gestionale_sportivo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sportivo" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -579,12 +504,12 @@
       <workItem from="1518769680136" duration="16511000" />
       <workItem from="1519028055329" duration="25726000" />
       <workItem from="1519114469417" duration="21469000" />
-      <workItem from="1519203642187" duration="14803000" />
+      <workItem from="1519203642187" duration="14980000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98905000" />
+    <option name="totallyTimeSpent" value="99082000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -962,14 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/fides/sportivo/repository/DataSourceSingleton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1053">
@@ -1060,8 +977,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/it/fides/sportivo/servlet/ServletInserisciPartita.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        <state relative-caret-position="207">
+          <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>

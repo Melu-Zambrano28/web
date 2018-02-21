@@ -1,4 +1,5 @@
 
+
 config.properties 
 desktop.ini
 file.properties 
@@ -9,3 +10,22 @@ vcs.xml
 .idea/
 target
 .gitgnore
+=======
+# Eclipse artifacts, including WTP generated manifests
+.classpath
+.project
+.metadata/
+
+# IDEA artifacts and output dirs
+*.iml
+*.ipr
+*.iws
+.idea
+out
+test-output
+atlassian-ide-plugin.xml
+.gradletasknamecache
+
+# MISCELLANEA
+target/
+
