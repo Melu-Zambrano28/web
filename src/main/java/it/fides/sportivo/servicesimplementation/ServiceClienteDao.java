@@ -24,7 +24,7 @@ public class ServiceClienteDao  {
   private static final String querySelect="SELECT * FROM cliente";
 
 
-    public static void  createCliente(Cliente cliente) throws SQLException {
+    public static void  createCliente(Cliente cliente) throws SQLException, ClassNotFoundException {
         conex= DataSourceSingleton.getInstance().getConnection();
         java.sql.Date sqlData= UtilClientDao.trasformaDataUtilSql(cliente.getData_nascita()); //trasformazione della data in formato sql
         st=conex.prepareStatement(queryCreaUtente);
@@ -34,7 +34,7 @@ public class ServiceClienteDao  {
         st.executeUpdate();
     }
 
-    public static void updateCliente(Cliente cliente) throws SQLException {
+    public static void updateCliente(Cliente cliente) throws SQLException, ClassNotFoundException {
       conex =DataSourceSingleton.getInstance().getConnection();
       java.sql.Date sqlData= UtilClientDao.trasformaDataUtilSql(cliente.getData_nascita());
       st= conex.prepareStatement(queryUpdateUtente);
@@ -48,7 +48,7 @@ public class ServiceClienteDao  {
     }
 
 
-    public static void deleteCliente(Cliente cliente) throws SQLException {
+    public static void deleteCliente(Cliente cliente) throws SQLException, ClassNotFoundException {
       conex =DataSourceSingleton.getInstance().getConnection();
       st=conex.prepareStatement(queryDeleteUtente);
       st.setInt(1,cliente.getId());
@@ -78,7 +78,7 @@ public class ServiceClienteDao  {
       return c;
     }
 
-    public static  Cliente TrovaclienteById(int id) throws SQLException {
+    public static  Cliente TrovaclienteById(int id) throws SQLException, ClassNotFoundException {
       conex =DataSourceSingleton.getInstance().getConnection();
       rs=st.executeQuery("SELECT * FROM  cliente WHERE id="+id);
       Cliente cliente=null;
@@ -90,7 +90,7 @@ public class ServiceClienteDao  {
 
     }
 
-    public static  ArrayList<Cliente> listaCliente() throws SQLException {
+    public static  ArrayList<Cliente> listaCliente() throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(querySelect);
         GregorianCalendar dataNascita = null;

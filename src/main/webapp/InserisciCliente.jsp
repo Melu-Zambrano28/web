@@ -33,6 +33,6 @@
         <button type="reset" value="Reset" class="button">Reset</button>
     </div>
 </form>
-<script type="text/javascript" src="front-end/js/ConvalidaFormStadio.js"></script>
+<script type="text/javascript" src="front-end/js/ConvalidaFormCliente.js"></script>
 <%@ include file = "footer.jsp" %>
 </html>

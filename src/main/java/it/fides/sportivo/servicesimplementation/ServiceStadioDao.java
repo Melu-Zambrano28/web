@@ -14,15 +14,16 @@ public class ServiceStadioDao {
     private static ResultSet rs;
     private static PreparedStatement st;
     private static Stadio stadio= new Stadio();
-    //private static  ArrayList<Stadio> lista_stadio = new ArrayList<Stadio>();
-    private static String select="SELECT * FROM stadio";
-    private static String trova_per_id ="SELECT * FROM stadio WHERE id=?";
+
+    private static final String trovaIdperNome="SELECT id FROM stadio WHERE nome=?";
+    private static final String select="SELECT * FROM stadio";
+    private static final String trova_per_id ="SELECT * FROM stadio WHERE id=?";
     private static final String insert_stadio = "INSERT INTO stadio (nome, capienza, costo_blg) VALUES (?,?,?)";
     private static final String delete_stadio = "DELETE FROM stadio WHERE id = ?";
     private static final String update_stadio= "UPDATE squadra SET nome = ? ,capienza= ? ,costo_blg= ? WHERE id = ?";
 
 
-    public static void insertStadio(Stadio stadio) throws SQLException {
+    public static void insertStadio(Stadio stadio) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(insert_stadio);
         st.setString(1, stadio.getNome());
@@ -34,7 +35,7 @@ public class ServiceStadioDao {
     }
 
 
-    public static Stadio TrovaStadioById(int id) throws SQLException {
+    public static Stadio TrovaStadioById(int id) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(trova_per_id);
         st.setInt(1, id);
@@ -50,7 +51,21 @@ public class ServiceStadioDao {
         return stadio;
     }
 
-    public static void deleteStadio(int id) throws SQLException {
+    //Trova gli stadi per nome
+    public static int trovaStadioByName(String nome) throws SQLException, ClassNotFoundException {
+        conex =DataSourceSingleton.getInstance().getConnection();
+        st=conex.prepareStatement(trovaIdperNome);
+        st.setString(1,nome);
+        rs=st.executeQuery();
+        int idStadio=0;
+        while (rs.next()){
+            idStadio=rs.getInt("id");
+        }
+
+        return idStadio;
+    }
+
+    public static void deleteStadio(int id) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(delete_stadio);
         st.setInt(1, id);
@@ -59,7 +74,7 @@ public class ServiceStadioDao {
         conex.close();
     }
 
-    public static void aggiornaStadio(Stadio stadio) throws SQLException {
+    public static void aggiornaStadio(Stadio stadio) throws SQLException, ClassNotFoundException {
         Connection conn = DataSourceSingleton.getInstance().getConnection();
         st= conn.prepareStatement(update_stadio);
         st.setString(1, stadio.getNome());
@@ -72,7 +87,8 @@ public class ServiceStadioDao {
         conn.close();
     }
 
-    public static ArrayList<Stadio> listaStadio() throws SQLException {
+
+    public  ArrayList<Stadio> listaStadio() throws SQLException, ClassNotFoundException {
         conex=DataSourceSingleton.getInstance().getConnection();
         ArrayList<Stadio> lista_stadio = new ArrayList<Stadio>();
         st = conex.prepareStatement(select);

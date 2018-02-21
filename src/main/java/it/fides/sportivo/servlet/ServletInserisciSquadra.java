@@ -2,6 +2,7 @@ package it.fides.sportivo.servlet;
 
 import it.fides.sportivo.entity.Squadra;
 import it.fides.sportivo.servicesimplementation.ServiceSquadraDao;
+import org.json.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,9 @@ import java.sql.SQLException;
 
 public class ServletInserisciSquadra extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("application/json");
+
+        JSONObject json = new JSONObject();
         String nomeSquadra="";
         Squadra squadra= null;
         if(request.getParameter("inviaSquadra")!=null){
@@ -20,13 +24,18 @@ public class ServletInserisciSquadra extends HttpServlet {
                     squadra = new Squadra();
                     squadra.setNome(nomeSquadra);
                     request.setAttribute("squadra", squadra);
-                    try {
-                        ServiceSquadraDao.insertSquadra(squadra);
-                    } catch (SQLException e) {
+                    try{
+
+                    json.put("nome squadra", squadra.getNome());
+                    response.getWriter().write(json.toString());
+                    ServiceSquadraDao.insertSquadra(squadra);
+                    response.sendRedirect("InserisciSquadra.jsp");
+
+
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
 
-                    response.sendRedirect("MostraSquadre.jsp");
                 }
 
 

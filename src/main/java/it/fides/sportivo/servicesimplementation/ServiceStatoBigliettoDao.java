@@ -14,7 +14,7 @@ public class ServiceStatoBigliettoDao{
     private static PreparedStatement st;
 
 
-    public static void insertDescrizioneStato(String descrizione) throws SQLException {
+    public static void insertDescrizioneStato(String descrizione) throws SQLException, ClassNotFoundException {
         conx= DataSourceSingleton.getInstance().getConnection();
         st=conx.prepareStatement(insertDescrizione);
         st.setString(1,descrizione);
@@ -22,7 +22,7 @@ public class ServiceStatoBigliettoDao{
 
     }
 
-    public static void updateDescrizioneStato(int id,String descrizione) throws SQLException {
+    public static void updateDescrizioneStato(int id,String descrizione) throws SQLException, ClassNotFoundException {
         conx=DataSourceSingleton.getInstance().getConnection();
         st=conx.prepareStatement(updateDescrizione);
         st.setString(1,descrizione);
@@ -31,7 +31,7 @@ public class ServiceStatoBigliettoDao{
 
     }
 
-    public static  void deleteDescrizioneStato(int id) throws SQLException {
+    public static  void deleteDescrizioneStato(int id) throws SQLException, ClassNotFoundException {
         conx=DataSourceSingleton.getInstance().getConnection();
         st=conx.prepareStatement(deleteDescrizione);
         st.setInt(1,id);
@@ -40,7 +40,7 @@ public class ServiceStatoBigliettoDao{
 
     }
 
-    public static void TrovaStatoBigliettoById(int id) throws SQLException {
+    public static void TrovaStatoBigliettoById(int id) throws SQLException, ClassNotFoundException {
         conx=DataSourceSingleton.getInstance().getConnection();
         Statement stm =conx.createStatement();
         int idDb=0;

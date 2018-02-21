@@ -45,7 +45,8 @@ public class ServletInserisciCliente extends HttpServlet {
             cal.setTime(date);
             Date sql = UtilClientDao.trasformaDataUtilSql((GregorianCalendar) cal);
             GregorianCalendar nascita = UtilClientDao.trasformaDataSqlaUtil((java.sql.Date) sql);
-            Cliente cliente = new Cliente(nome, cognome, nascita);
+
+            Cliente cliente = new Cliente(nome, cognome, (GregorianCalendar) cal);
             ServiceClienteDao.createCliente(cliente);
             req.setAttribute("cliente", cliente);
             url = "/MostraCliente.jsp";
@@ -53,6 +54,8 @@ public class ServletInserisciCliente extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 

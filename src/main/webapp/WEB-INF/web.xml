@@ -4,8 +4,9 @@
 
 <web-app>
     <display-name>gestionaleSportivo</display-name>
-    
+
     <welcome-file-list>
+        <welcome-file>Gestore.jsp</welcome-file>
         <welcome-file>InserisciCliente.jsp</welcome-file>
     </welcome-file-list>
     <servlet>
@@ -20,6 +21,11 @@
         <servlet-name>ServletInserisciCliente</servlet-name>
         <servlet-class>it.fides.sportivo.servlet.ServletInserisciCliente</servlet-class>
     </servlet>
+        <servlet>
+        <servlet-name>ServletInserisciPartita</servlet-name>
+        <servlet-class>it.fides.sportivo.servlet.ServletInserisciPartita</servlet-class>
+        </servlet>
+
     <servlet-mapping>
         <servlet-name>ServletInserisciStadio</servlet-name>
         <url-pattern>/inserisciStadio</url-pattern>
@@ -31,6 +37,10 @@
     <servlet-mapping>
         <servlet-name>ServletInserisciCliente</servlet-name>
         <url-pattern>/cliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletInserisciPartita</servlet-name>
+        <url-pattern>/ajaxPartita</url-pattern>  <!-- da cambiare -->
     </servlet-mapping>
     <error-page>
         <error-code>404</error-code>
@@ -44,4 +54,7 @@
         <error-code>403</error-code>
         <location>/</location>
     </error-page>
+
+
+
 </web-app>

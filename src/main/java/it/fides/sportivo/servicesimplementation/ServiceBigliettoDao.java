@@ -21,7 +21,7 @@ public class ServiceBigliettoDao {
                 " nome = ?, cognome = ?, id_sconto = ?, id_stato_biglietto = ? WHERE seriale_biglietto = ?";
         private final static String delete_biglietto = "DELETE FROM biglietto WHERE seriale_biglietto = ?";
 
-        public static void inserisciBiglietto(Biglietto biglietto) throws SQLException {
+        public static void inserisciBiglietto(Biglietto biglietto) throws SQLException, ClassNotFoundException {
             conex = DataSourceSingleton.getInstance().getConnection();
             st = conex.prepareStatement(insert_biglietto);
             String seriale=GeneraSerialBiglietto.getSeriale();
@@ -36,7 +36,7 @@ public class ServiceBigliettoDao {
             conex.close();
         }
 
-        public static void aggiornaBiglietto(Biglietto biglietto) throws SQLException {
+        public static void aggiornaBiglietto(Biglietto biglietto) throws SQLException, ClassNotFoundException {
             conex = DataSourceSingleton.getInstance().getConnection();
             st = conex.prepareStatement(update_biglietto);
             st.setInt(1, biglietto.getId_partecipazione());
@@ -50,7 +50,7 @@ public class ServiceBigliettoDao {
             conex.close();
         }
 
-        public static Biglietto selectBiglietto(String seriale_biglietto) throws  SQLException{
+        public static Biglietto selectBiglietto(String seriale_biglietto) throws SQLException, ClassNotFoundException {
             Biglietto biglietto = null;
             conex = DataSourceSingleton.getInstance().getConnection();
             st = conex.prepareStatement(select_biglietto);
@@ -67,7 +67,7 @@ public class ServiceBigliettoDao {
             return biglietto;
         }
 
-        public static void deleteBiglietto(String s) throws SQLException {
+        public static void deleteBiglietto(String s) throws SQLException, ClassNotFoundException {
             conex = DataSourceSingleton.getInstance().getConnection();
             st = conex.prepareStatement(delete_biglietto);
             st.setString(1,s);

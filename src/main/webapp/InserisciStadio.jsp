@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Inserisci Stadio</title>
-    <link href="front-end/css/InserisciStadioStyle.css" rel="stylesheet" type="text/css">
+    <link href="front-end/css/GestoreStyle.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="front-end/js/ConvalidaFormStadio.js"></script>
 </head>
 <body>
@@ -32,7 +32,7 @@
         <form  name="formul" method="post" action="inserisciStadio" id="formul">
             <tr>
                 <td><label>Nome stadio: </label></td>
-                <td><input type="text" name="nomeStadio" id =" nomeStadio"/></td>
+                <td><input type="text" name="nomeStadio" id ="nomeStadio"/></td>
 
             </tr>
             <tr>
@@ -43,11 +43,11 @@
 
             <tr>
                 <td><label>Costo del biglieto: </label></td>
-                <td><input type="text" name="prezzo" id =" prezzo"/></td>
+                <td><input type="text" name="prezzo" id ="prezzo"/></td>
             </tr>
 
             <tr><!-- colonna -->
-                <td><input type="submit" name="invia" value="Invia" ></td>
+                <td><input type="submit" name="invia" value="Invia" onclick="convalidaForm()"></td>
                 <td><input type="reset" name="cancella" value="Cancella"></td>
             </tr>
         </form>
@@ -56,7 +56,7 @@
 </div>
 </div>
 
-<div class="squadra">
+
 
 <div class="imaginesquadra">
 

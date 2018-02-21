@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class ConnectionUtil {
     private static Connection conx =null;
 
-    public static Connection apreConnection() throws SQLException {
+    public static Connection apreConnection() throws SQLException, ClassNotFoundException {
         conx = DataSourceSingleton.getInstance().getConnection();
         return conx;
     }

@@ -24,13 +24,13 @@
 <h1 id="benvenuto"> Benvenuto <%= clio.getNome() %></h1>
 
 <div class="areasquadre">
-    <h1>Codice Squadra:</h1>
+    <h1>Partite:</h1>
     <table class="listaSquadre">
 
         <tr>
-            <th>id</th>
-            <th>Nome Squadre</th>
-
+            <th>Data</th>
+            <th>Squadra home</th>
+            <th>Squadra visitor</th>
         </tr>
         <%
             ArrayList<Partita> partite= daoPartita.listaPartite(3);
@@ -47,11 +47,37 @@
             }
         %>
     </table>
-
+</div>
 
 <form action="InserisciCliente.jsp">
     <input type="submit" value="Go to Home" />
 </form>
+
+
+    <div id="demo">
+        <h2>The XMLHttpRequest Object</h2>
+        <button type="button" onclick="loadDoc()">Change Content</button>
+    </div>
+
+    <script>
+        var giasone;
+        var listaSquadre;
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    giasone = this.responseText;
+                    listaSquadre = JSON.parse(giasone);
+                    document.getElementById("demo").innerHTML =
+                        this.responseText;
+                }
+            };
+            xhttp.open("GET", "http://localhost:8080/ajaxPartita", true);
+            xhttp.send();
+        }
+
+    </script>
+
 
 </body>
 </html>

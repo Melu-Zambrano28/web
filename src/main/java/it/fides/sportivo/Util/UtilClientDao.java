@@ -17,6 +17,12 @@ public class UtilClientDao {
         return utilDate;
     }
 
+    public static GregorianCalendar transfStringinGregorianCalendar(String s){
+
+
+        return null;
+    }
+
 }
 
 
