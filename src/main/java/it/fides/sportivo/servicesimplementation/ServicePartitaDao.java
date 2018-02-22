@@ -29,12 +29,10 @@ public class ServicePartitaDao {
     public static void inserisciPartita(Partita partita,Squadra sq_home, Squadra sq_visitor, Stadio stadio) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(insert_partita);
-        int idStadio=ServiceStadioDao.trovaStadioByName(stadio.getNome());
-        int idSquadraVisitor=ServiceSquadraDao.trovaSquadraByName(sq_visitor.getNome());
-        int idSquadrahome=ServiceSquadraDao.trovaSquadraByName(sq_home.getNome());
-        st.setDate(1,partita.getData_partita());
-        st.setInt(2, idSquadrahome);
-        st.setInt(3, idSquadraVisitor);
+        java.sql.Timestamp sqlData= UtilClientDao.trasformaDataTimeUtilSql(partita.getData_partita());
+        st.setTimestamp(1,sqlData);
+        st.setInt(2, sq_home.getId());
+        st.setInt(3, sq_visitor.getId());
         st.setInt(4, stadio.getId());
         st.execute();
         st.close();
@@ -44,7 +42,8 @@ public class ServicePartitaDao {
     public static void aggiornaPartita(Squadra sq_home, Squadra sq_visitor, Stadio stadio, Partita partita) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(update_partita);
-        st.setDate(1, partita.getData_partita());
+        java.sql.Date sqlData= UtilClientDao.trasformaDataUtilSql(partita.getData_partita());
+        st.setDate(1, sqlData);
         st.setInt(2, sq_home.getId());
         st.setInt(3, sq_visitor.getId());
         st.setInt(4,stadio.getId());

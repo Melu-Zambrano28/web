@@ -13,6 +13,7 @@ import it.fides.sportivo.servicesimplementation.ServiceStatoBigliettoDao;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.GregorianCalendar;
 import java.util.UUID;
 
@@ -55,9 +56,19 @@ public class maino {
 //            System.out.println(elenco);
 //        }
 
-        int idStadio=ServiceStadioDao.trovaStadioByName("olimpico");
-        int idSq=ServiceSquadraDao.trovaSquadraByName("milanS"); //zero se no existe
-        System.out.println(idStadio+"\n"+idSq);
+//        int idStadio=ServiceStadioDao.trovaStadioByName("olimpico");
+////        int idSq=ServiceSquadraDao.trovaSquadraByName("milanS"); //zero se no existe
+////        System.out.println(idStadio+"\n"+idSq);
+
+
+
+
+        GregorianCalendar data = UtilClientDao.transDataTimeinGregorianCalendar("28-08-1994,12:23");
+        System.out.println(data.getGregorianChange());
+
+
+
+
 
 
 

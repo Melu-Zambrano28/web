@@ -1,5 +1,9 @@
 <%@ page import="it.fides.sportivo.servicesimplementation.ServicePartitaDao" %>
-<%@ page import="it.fides.sportivo.servicesimplementation.ServiceSquadraDao" %><%--
+<%@ page import="it.fides.sportivo.servicesimplementation.ServiceSquadraDao" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="it.fides.sportivo.entity.Squadra" %>
+<%@ page import="it.fides.sportivo.servicesimplementation.ServiceStadioDao" %>
+<%@ page import="it.fides.sportivo.entity.Stadio" %><%--
   Created by IntelliJ IDEA.
   User: Fides
   Date: 14/02/2018
@@ -7,9 +11,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%!ServicePartitaDao daoPartita= new ServicePartitaDao();%>
-<%!ServiceSquadraDao visitor= new ServiceSquadraDao();%>
-<%!ServiceSquadraDao home= new ServiceSquadraDao();%>
+<%!ServicePartitaDao partita= new ServicePartitaDao();%>
+<%!ServiceSquadraDao squadra= new ServiceSquadraDao();%>
+<%!ServiceStadioDao stadio= new ServiceStadioDao();%>
+
 <html>
 <head>
     <title>Inserisci Partita</title>
@@ -30,10 +35,11 @@
     <div class="registraPartita">
 
         <table>
-            <form  name="registraPartita" method="post" action="/gestionaleSportivo/inserisciPartita">
+
+            <form  name="registraPartita" method="get" action="/gestionaleSportivo/inserisciPartita">
                 <tr>
                     <td><label>Data partita: </label></td>
-                    <td><input type="date" name="dataPartita" id =" dataPartita"/></td>
+                    <td><input type="datetime-local" min='2018-01-01' name="dataPartita" id =" dataPartita"/></td>
 
                 </tr>
                 <tr>
@@ -42,10 +48,20 @@
                     </td>
 
                   <td>  <select name="sq_Home">
+                      <%
+                          ArrayList<Squadra> elencoSquadre = squadra.listaSquadra();
+                          ArrayList<Stadio> elencoStadio = stadio.listaStadio();
+                          for(int i=0; i<elencoSquadre.size(); i++){
+                              String nomehome=elencoSquadre.get(i).getNome();
+                              int idHome=elencoSquadre.get(i).getId();
+                      %>
 
-                        <option value="milan">milan</option>
+                        <option value=<%=idHome%>><%=nomehome%></option>
+                      <%
+                          }
+                      %>
 
-                    </select>
+                  </select>
                   </td>
 
                 </tr>
@@ -56,7 +72,18 @@
 
                     <td>  <select name="sq_Visitor">
 
-                        <option value="milan">barcellona</option>
+                        <%
+                            for(int i=0; i<elencoSquadre.size(); i++){
+                                String nomeVisitor=elencoSquadre.get(i).getNome();
+                                int idVisitor=elencoSquadre.get(i).getId();
+                        %>
+
+
+                        <option value=<%=idVisitor%>><%=nomeVisitor%></option>
+
+                     <%
+                         }
+                     %>
 
                     </select>
                     </td>
@@ -68,14 +95,25 @@
                         <label>Home: </label>
                     </td>
 
-                    <td>  <select name="Stadio">
+                    <td>  <select name="stadio">
 
-                        <option value="milan">san Siro</option>
+                        <%
+                            for(int i=0; i<elencoStadio.size(); i++){
+                                String nomeStadio=elencoStadio.get(i).getNome();
+                                int idStadio=elencoStadio.get(i).getId();
+                        %>
 
+                        <option value=<%=idStadio%>>
+                            <%=nomeStadio%>
+                        </option>
+                        <%
+                            }
+                        %>
                     </select>
                     </td>
 
                 </tr>
+
                 <tr><!-- colonna -->
                     <td><input type="submit" name="inviaPartita" value="Invia"></td>
                     <td><input type="reset" name="cancellaPartita" value="Cancella"></td>

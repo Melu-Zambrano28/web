@@ -16,7 +16,7 @@
 
 <div class="torna">
 
-<a href="InserisciStadio.jsp">
+<a href="Gestore.jsp">
     <img src="front-end/img/torna.jpg">
     TORNA</a>
 </div>
