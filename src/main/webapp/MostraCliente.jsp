@@ -72,7 +72,7 @@
                         this.responseText;
                 }
             };
-            xhttp.open("GET", "http://localhost:8080/ajaxPartita", true);
+            xhttp.open("GET", "/ajaxPartita", true);
             xhttp.send();
         }
 
