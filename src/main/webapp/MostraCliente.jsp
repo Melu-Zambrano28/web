@@ -55,7 +55,7 @@
 
 
     <div id="demo">
-        <h2>The XMLHttpRequest Object</h2>
+        <h2>The XMLHttpRequest for Squadre in A Object</h2>
         <button type="button" onclick="loadDoc()">Change Content</button>
     </div>
 

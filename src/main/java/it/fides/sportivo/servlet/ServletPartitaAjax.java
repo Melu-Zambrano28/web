@@ -2,7 +2,6 @@ package it.fides.sportivo.servlet;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import it.fides.sportivo.Util.UtilClientDao;
 import it.fides.sportivo.entity.Squadra;
 
 import javax.servlet.ServletException;
@@ -19,7 +18,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-public class ServletInserisciPartita extends HttpServlet {
+public class ServletPartitaAjax extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //System.out.println("CUCU");
         response.setContentType("application/json");

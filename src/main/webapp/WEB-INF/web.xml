@@ -22,8 +22,8 @@
         <servlet-class>it.fides.sportivo.servlet.ServletInserisciCliente</servlet-class>
     </servlet>
         <servlet>
-        <servlet-name>ServletInserisciPartita</servlet-name>
-        <servlet-class>it.fides.sportivo.servlet.ServletInserisciPartita</servlet-class>
+        <servlet-name>ServletPartitaAjax</servlet-name>
+        <servlet-class>it.fides.sportivo.servlet.ServletPartitaAjax</servlet-class>
         </servlet>
 
     <servlet-mapping>
@@ -39,7 +39,7 @@
         <url-pattern>/cliente</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServletInserisciPartita</servlet-name>
+        <servlet-name>ServletPartitaAjax</servlet-name>
         <url-pattern>/ajaxPartita</url-pattern>  <!-- da cambiare -->
     </servlet-mapping>
     <error-page>
