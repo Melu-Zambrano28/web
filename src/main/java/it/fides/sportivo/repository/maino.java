@@ -1,21 +1,10 @@
 package it.fides.sportivo.repository;
 
 import it.fides.sportivo.Util.GeneraSerialBiglietto;
-import it.fides.sportivo.Util.UtilClientDao;
-import it.fides.sportivo.entity.Biglietto;
-import it.fides.sportivo.entity.Squadra;
-import it.fides.sportivo.entity.Stadio;
-import it.fides.sportivo.services.ServiceStatoBiglietto;
-import it.fides.sportivo.servicesimplementation.ServiceBigliettoDao;
-import it.fides.sportivo.servicesimplementation.ServiceSquadraDao;
-import it.fides.sportivo.servicesimplementation.ServiceStadioDao;
-import it.fides.sportivo.servicesimplementation.ServiceStatoBigliettoDao;
+import it.fides.sportivo.Util.Util_Data_Time;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.GregorianCalendar;
-import java.util.UUID;
 
 public class maino {
 
@@ -28,11 +17,11 @@ public class maino {
 
 
         GregorianCalendar date = new GregorianCalendar(1977,4-1,8);
-        java.sql.Date risult=UtilClientDao.trasformaDataUtilSql(date);
+        java.sql.Date risult= Util_Data_Time.covertiGregorianCalendar_Sql(date);
         System.out.println("dal metodo trasforma "+risult);
 
 
-        GregorianCalendar cal1 =UtilClientDao.trasformaDataSqlaUtil(risult);
+        GregorianCalendar cal1 = Util_Data_Time.convertiDataSql_Gregorian(risult);
         System.out.println("Sql a gregoriian: "+cal1.getGregorianChange());
        //ServiceStatoBigliettoDao.updateDescrizioneStato(1,"sconto per studenti");
        String seriale= GeneraSerialBiglietto.getSeriale();
@@ -63,7 +52,7 @@ public class maino {
 
 
 
-        GregorianCalendar data = UtilClientDao.transDataTimeinGregorianCalendar("28-08-1994,12:23");
+        GregorianCalendar data = Util_Data_Time.convertiStringDataTime_GregorianCalendar("28-08-1994,12:23");
         System.out.println(data.getGregorianChange());
 
 

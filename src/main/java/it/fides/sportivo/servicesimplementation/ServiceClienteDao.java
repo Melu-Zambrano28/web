@@ -1,16 +1,12 @@
 package it.fides.sportivo.servicesimplementation;
 
-import it.fides.sportivo.Util.UtilClientDao;
+import it.fides.sportivo.Util.Util_Data_Time;
 import it.fides.sportivo.entity.Cliente;
-import it.fides.sportivo.entity.Squadra;
-import it.fides.sportivo.entity.Stadio;
 import it.fides.sportivo.repository.DataSourceSingleton;
-import it.fides.sportivo.services.ServiceCliente;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
-import java.util.List;
 
 public class ServiceClienteDao  {
   private static Connection conex=null;
@@ -25,7 +21,7 @@ public class ServiceClienteDao  {
 
     public static void  createCliente(Cliente cliente) throws SQLException, ClassNotFoundException {
         conex= DataSourceSingleton.getInstance().getConnection();
-        java.sql.Date sqlData= UtilClientDao.trasformaDataUtilSql(cliente.getData_nascita()); //trasformazione della data in formato sql
+        java.sql.Date sqlData= Util_Data_Time.covertiGregorianCalendar_Sql(cliente.getData_nascita()); //trasformazione della data in formato sql
         st=conex.prepareStatement(queryCreaUtente);
         st.setString(1, cliente.getNome());
         st.setString(2,cliente.getCognome());
@@ -35,7 +31,7 @@ public class ServiceClienteDao  {
 
     public static void updateCliente(Cliente cliente) throws SQLException, ClassNotFoundException {
       conex =DataSourceSingleton.getInstance().getConnection();
-      java.sql.Date sqlData= UtilClientDao.trasformaDataUtilSql(cliente.getData_nascita());
+      java.sql.Date sqlData= Util_Data_Time.covertiGregorianCalendar_Sql(cliente.getData_nascita());
       st= conex.prepareStatement(queryUpdateUtente);
       st.setString(1,cliente.getNome());
       st.setString(2, cliente.getCognome());
@@ -71,7 +67,7 @@ public class ServiceClienteDao  {
       c.setNome(result.getString("nome"));
       c.setCognome(result.getString("cognome"));
       java.sql.Date sqlDate=result.getDate("data_nascita");
-      GregorianCalendar newDate= UtilClientDao.trasformaDataSqlaUtil(sqlDate);
+      GregorianCalendar newDate= Util_Data_Time.convertiDataSql_Gregorian(sqlDate);
       c.setData_nascita(newDate);
 
       return c;
@@ -102,7 +98,7 @@ public class ServiceClienteDao  {
             c.setNome(rs.getString("nome"));
             c.setCognome(rs.getString("cognome"));
             java.sql.Date sqlDate=rs.getDate("data_nascita");
-            dataNascita= UtilClientDao.trasformaDataSqlaUtil(sqlDate);
+            dataNascita= Util_Data_Time.convertiDataSql_Gregorian(sqlDate);
             c.setData_nascita(dataNascita);
             elencoCliente.add(c);
         }

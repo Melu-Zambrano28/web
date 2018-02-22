@@ -1,10 +1,9 @@
 package it.fides.sportivo.servlet;
 
-import it.fides.sportivo.Util.UtilClientDao;
+import it.fides.sportivo.Util.Util_Data_Time;
 import it.fides.sportivo.entity.Partita;
 import it.fides.sportivo.entity.Squadra;
 import it.fides.sportivo.entity.Stadio;
-import it.fides.sportivo.services.ServicePartita;
 import it.fides.sportivo.servicesimplementation.ServicePartitaDao;
 import it.fides.sportivo.servicesimplementation.ServiceSquadraDao;
 import it.fides.sportivo.servicesimplementation.ServiceStadioDao;
@@ -14,19 +13,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.TimeZone;
 
 public class ServletInserisciPartita extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String data = request.getParameter("dataPartita").replace("T",","); //sistemar
-        GregorianCalendar dataPartita=UtilClientDao.transDataTimeinGregorianCalendar(data);
+        GregorianCalendar dataPartita= Util_Data_Time.convertiStringDataTime_GregorianCalendar(data);
         int idsqHome=Integer.parseInt(request.getParameter("sq_Home"));
         int  idStadio=Integer.parseInt(request.getParameter("stadio"));
         int idVisitor=Integer.parseInt(request.getParameter("sq_Visitor"));
