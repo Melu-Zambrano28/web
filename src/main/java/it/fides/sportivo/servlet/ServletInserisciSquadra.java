@@ -13,9 +13,9 @@ import java.sql.SQLException;
 
 public class ServletInserisciSquadra extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("application/json");
+       // response.setContentType("application/json");
 
-        JSONObject json = new JSONObject();
+        //JSONObject json = new JSONObject();
         String nomeSquadra="";
         Squadra squadra= null;
         if(request.getParameter("inviaSquadra")!=null){
@@ -26,10 +26,10 @@ public class ServletInserisciSquadra extends HttpServlet {
                     request.setAttribute("squadra", squadra);
                     try{
 
-                    json.put("nome squadra", squadra.getNome());
-                    response.getWriter().write(json.toString());
+                    //json.put("nome squadra", squadra.getNome());
+                    //response.getWriter().write(json.toString());
                     ServiceSquadraDao.insertSquadra(squadra);
-                    response.sendRedirect("InserisciSquadra.jsp");
+                    response.sendRedirect("Gestore.jsp");
 
 
                     } catch (Exception e) {

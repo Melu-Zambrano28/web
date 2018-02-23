@@ -1,12 +1,13 @@
 package it.fides.sportivo.entity;
 
 import java.sql.Date;
+import java.util.GregorianCalendar;
 
 public class Partita {
 
 
     private int id;
-    private Date data_partita;
+    private GregorianCalendar data_partita;
     private Squadra squadra_home;
     private Squadra squadra_visitor;
     private int gol_home;
@@ -51,11 +52,11 @@ public class Partita {
         this.id = id;
     }
 
-    public Date getData_partita() {
+    public GregorianCalendar getData_partita() {
         return data_partita;
     }
 
-    public void setData_partita(Date data_partita) {
+    public void setData_partita(GregorianCalendar data_partita) {
         this.data_partita = data_partita;
     }
 
