@@ -23,7 +23,7 @@ public class Partita {
  //   public Partita(int anInt, Date date, int anInt1, int anInt2, int anInt3, int anInt4, int anInt5) {
  //   }
 
-    public Partita(int id, Date data_partita, Squadra squadra_home, Squadra squadra_visitor, int gol_home, int gol_visitor, int id_stadio, Stadio stadio) {
+    public Partita(int id, GregorianCalendar data_partita, Squadra squadra_home, Squadra squadra_visitor, int gol_home, int gol_visitor, Stadio stadio) {
         this.id = id;
         this.data_partita = data_partita;
         this.squadra_home = squadra_home;
@@ -34,7 +34,7 @@ public class Partita {
         this.stadio = stadio;
     }
 
-    public Partita(int id, Date data_partita, int goal_sq_home, int goal_sq_visitor, int id_sq_home, int id_sq_visitor, int id_stadio) {
+    public Partita(int id, GregorianCalendar data_partita, int goal_sq_home, int goal_sq_visitor, int id_sq_home, int id_sq_visitor, int id_stadio) {
         this.id = id;
         this.data_partita = data_partita;
         this.gol_home = goal_sq_home;

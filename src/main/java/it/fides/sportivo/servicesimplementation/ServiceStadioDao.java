@@ -13,11 +13,12 @@ public class ServiceStadioDao {
     private static Connection conex;
     private static ResultSet rs;
     private static PreparedStatement st;
-    private static Stadio stadio= new Stadio();
+   private static Stadio stadio= new Stadio();
 
     private static final String trovaIdperNome="SELECT id FROM stadio WHERE nome=?";
     private static final String select="SELECT * FROM stadio";
     private static final String trova_per_id ="SELECT * FROM stadio WHERE id=?";
+    private static final String trova_per_nome ="SELECT id, nome, capienza, costo_blg FROM stadio WHERE nome = ?";
     private static final String insert_stadio = "INSERT INTO stadio (nome, capienza, costo_blg) VALUES (?,?,?)";
     private static final String delete_stadio = "DELETE FROM stadio WHERE id = ?";
     private static final String update_stadio= "UPDATE squadra SET nome = ? ,capienza= ? ,costo_blg= ? WHERE id = ?";
@@ -46,8 +47,22 @@ public class ServiceStadioDao {
             stadio.setCapienza(rs.getInt("capienza"));
             stadio.setCosto_biglietto(rs.getDouble("costo_blg"));
         }
-        st.close();
+
         conex.close();
+        return stadio;
+    }
+
+    public static Stadio TrovaStadioByName(String stadio_nome) throws SQLException, ClassNotFoundException {
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(trova_per_nome);
+        st.setString(1, stadio_nome);
+        rs= st.executeQuery();
+        while (rs.next()) {
+            stadio.setId(rs.getInt("id"));
+            stadio.setNome(rs.getString("nome"));
+            stadio.setCapienza(rs.getInt("capienza"));
+            stadio.setCosto_biglietto(rs.getDouble("costo_blg"));
+        }
         return stadio;
     }
 
@@ -61,7 +76,6 @@ public class ServiceStadioDao {
         while (rs.next()){
             idStadio=rs.getInt("id");
         }
-
         return idStadio;
     }
 
@@ -93,7 +107,6 @@ public class ServiceStadioDao {
         ArrayList<Stadio> lista_stadio = new ArrayList<Stadio>();
         st = conex.prepareStatement(select);
         rs =st.executeQuery();
-
         while(rs.next())
         {
             lista_stadio.add(
@@ -105,14 +118,6 @@ public class ServiceStadioDao {
         conex.close();
         return lista_stadio;
     }
-
-
-
-
-
-
-
-
 }
 
 

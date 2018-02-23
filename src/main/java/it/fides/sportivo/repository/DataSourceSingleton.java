@@ -31,7 +31,6 @@ public class DataSourceSingleton {
         else if (istanza.getConnection().isClosed()) {
            istanza = new DataSourceSingleton();
        }
-
         return istanza;
     }
 } */
@@ -70,7 +69,6 @@ public class DataSourceSingleton {
         else if (istanza.getConnection().isClosed()) {
            istanza = new DataSourceSingleton();
        }
-
         return istanza;
     }
 }

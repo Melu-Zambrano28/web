@@ -61,13 +61,13 @@
 
     <script>
         var giasone;
-        var listaSquadre;
+        var listaPartite;
         function loadDoc() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     giasone = this.responseText;
-                    listaSquadre = JSON.parse(giasone);
+                    listaPartite = JSON.parse(giasone);
                     document.getElementById("demo").innerHTML =
                         this.responseText;
                 }

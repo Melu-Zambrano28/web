@@ -21,6 +21,7 @@ public class ServiceSquadraDao {
     private static final String delete_squadra = "DELETE FROM squadra WHERE id = ?";
     private static final String update_squadra = "UPDATE squadra SET nome = ? WHERE id = ?";
     private static final String select_squadra = "SELECT id, nome FROM squadra WHERE id = ?";
+    private static final String select_squadra_nome = "SELECT id, nome FROM squadra WHERE nome = ?";
     private static final String select_listaSquadra = "SELECT id, nome FROM squadra";
 
     public static void insertSquadra(String nome) throws SQLException, ClassNotFoundException {
@@ -51,8 +52,18 @@ public class ServiceSquadraDao {
             squadra = new Squadra(resultSet.getInt(1), resultSet.getString(2));
             System.out.println(squadra.toString());
         }
-        st.close();
-        conex.close();
+        return squadra;
+    }
+
+    public static Squadra selectSquadra(String sq_nome) throws SQLException, ClassNotFoundException {
+        conex= DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(select_squadra_nome);
+        Squadra squadra = null;
+        st.setString(1, sq_nome);
+        ResultSet resultSet = st.executeQuery();
+        while (resultSet.next()) {
+            squadra = new Squadra(resultSet.getInt(1), resultSet.getString(2));
+        }
         return squadra;
     }
 
@@ -65,7 +76,6 @@ public class ServiceSquadraDao {
         while (rs.next()){
             idSquadra=rs.getInt("id");
         }
-
         return idSquadra;
     }
 
