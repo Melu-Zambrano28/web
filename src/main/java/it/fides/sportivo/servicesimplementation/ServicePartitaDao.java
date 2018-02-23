@@ -1,14 +1,18 @@
 package it.fides.sportivo.servicesimplementation;
 
-import it.fides.sportivo.Util.UtilClientDao;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Map;
+import it.fides.sportivo.Util.Util_Data_Time;
 import it.fides.sportivo.entity.Partita;
 import it.fides.sportivo.entity.Squadra;
 import it.fides.sportivo.entity.Stadio;
 import it.fides.sportivo.repository.DataSourceSingleton;
 
 import java.sql.*;
-import java.sql.Date;
-import java.util.*;
+
+import java.util.ArrayList;
+
 
 public class ServicePartitaDao {
 
@@ -36,8 +40,9 @@ public class ServicePartitaDao {
     public static void inserisciPartita(Partita partita, Squadra sq_home, Squadra sq_visitor, Stadio stadio) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(insert_partita);
-        java.sql.Timestamp sqlData = UtilClientDao.trasformaDataTimeUtilSql(partita.getData_partita());
-        st.setTimestamp(1, sqlData);
+
+        java.sql.Timestamp sqlData= Util_Data_Time.convertiDataTimeUtil_Sql(partita.getData_partita());
+        st.setTimestamp(1,sqlData);
         st.setInt(2, sq_home.getId());
         st.setInt(3, sq_visitor.getId());
         st.setInt(4, stadio.getId());
@@ -49,7 +54,7 @@ public class ServicePartitaDao {
     public static void aggiornaPartita(Squadra sq_home, Squadra sq_visitor, Stadio stadio, Partita partita) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(update_partita);
-        java.sql.Date sqlData = UtilClientDao.trasformaDataUtilSql(partita.getData_partita());
+        java.sql.Date sqlData= Util_Data_Time.covertiGregorianCalendar_Sql(partita.getData_partita());
         st.setDate(1, sqlData);
         st.setInt(2, sq_home.getId());
         st.setInt(3, sq_visitor.getId());
@@ -105,7 +110,7 @@ public class ServicePartitaDao {
             partita_sq_visitor = ServiceSquadraDao.selectSquadra(squadraB);
             stadio = ServiceStadioDao.TrovaStadioByName(stadio_n);
             System.out.println(resultSet.isClosed());
-            data_partita_gregoriana = UtilClientDao.trasformaDataSqlaUtil(data_partita);
+            data_partita_gregoriana = Util_Data_Time.convertiDataSql_Gregorian(data_partita);
             partita = new Partita(id, data_partita_gregoriana,
                     partita_sq_home, partita_sq_visitor, gh, gv,
                     stadio);
