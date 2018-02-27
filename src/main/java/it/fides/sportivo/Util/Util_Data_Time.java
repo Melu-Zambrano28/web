@@ -56,7 +56,7 @@ public class Util_Data_Time {
         return dataSql;
     }
 
-    /*Trasforma una string in gregorian calendar senza splittare
+    /*Trasforma una string in gregorian calendar senza splittare*/
     public static GregorianCalendar transStringDateGregorianDate(String data){
         String data_Partita = data;
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -76,7 +76,7 @@ public class Util_Data_Time {
             e.printStackTrace();
         }
         return dataPartitaG;
-    }*/
+    }
 
     //splita una string e la ritorna come gregorianCalendar
     public static GregorianCalendar convertiStringDataTime_GregorianCalendar(String data){
