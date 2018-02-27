@@ -1,0 +1,76 @@
+ body {
+     background: #d33b3a;
+ }
+
+ img{
+     width: 600px;
+     height: 600px;
+
+ }
+
+ #errorArea{
+     margin: 50px;
+     padding: 20px;
+     display: flex;
+
+
+ }
+
+ #imagineErrore{
+    align-content: left;
+    float: left;
+ }
+
+ #msgErrore{
+     padding: 10px;
+     margin-top: 20px;
+     width: 350px;
+     height: 250px;
+     background-color: white;
+     float: left;
+     overflow: scroll;/*il contenuto si vedrà solo nella pagina agg barra di scorrimento*/
+     /*posizione*/
+     position: absolute;
+     top: 150px;
+     right: 250px;
+     border-radius: 10px;
+     box-shadow: 0 0 15px #a32111;
+ }
+
+ #errorArea ,#imagineErrore , #msgErrore{
+     align-content: center;
+     float: left;
+ }
+
+ h1{
+     background: #b5c3cc;
+     font-style: italic;
+     color: #d33b3a;
+     text-align: center;
+ }
+
+ button{
+     position: absolute;
+     right: 50%;
+     left: auto;
+     width: 75px;
+     margin: 3px;
+     height: 50px;
+     padding: 10px;
+     background-color: #b5c3cc;
+     color: #d33b3a;
+     text-align: center;
+     font-style: italic;
+     font-size: 15px;
+     text-decoration:none ;
+     font-weight: bold;
+     border-radius: 5px;
+     box-shadow: 0 0 15px #a32111;
+ }
+
+ button:hover{
+     background-color: darkseagreen;
+     color: mediumvioletred;
+ }
+
+

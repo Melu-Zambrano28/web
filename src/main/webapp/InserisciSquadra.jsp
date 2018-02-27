@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>Inserisci Squadra</title>
+    <link href="front-end/css/InserisciSquadraStyle.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 

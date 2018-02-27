@@ -19,6 +19,11 @@ public class Stadio {
         this.costo_biglietto = costo_biglietto;
     }
 
+    public Stadio(int id, String nome, int capienza) {
+        this.id = id;
+        this.nome = nome;
+        this.capienza = capienza;
+    }
     public Stadio() {
     }
 

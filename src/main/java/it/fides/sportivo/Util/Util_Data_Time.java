@@ -21,6 +21,12 @@ public class Util_Data_Time {
         return dataTime;
     }
 
+    public static GregorianCalendar convertiTimeStampSql_GregorianCalendar(java.sql.Timestamp data){
+        java.util.GregorianCalendar dataGragorian= new java.util.GregorianCalendar();
+        dataGragorian.setGregorianChange(data);
+        return dataGragorian;
+    }
+
     //trasforma una data con formato sql in gregorianCalendar
     public static GregorianCalendar convertiDataSql_Gregorian(java.sql.Date sqlDate){
         GregorianCalendar utilDate=new GregorianCalendar();
@@ -83,6 +89,7 @@ public class Util_Data_Time {
        GregorianCalendar dataPartitaG=new GregorianCalendar(anni, mesi,giorni,ore, minuti);
         return dataPartitaG;
     }
+
 
 }
 

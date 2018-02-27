@@ -10,7 +10,7 @@
 <head>
     <title>Gestore</title>
     <link href="front-end/css/GestoreStyle.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="front-end/js/ConvalidaFormStadio.js"></script>
+    <script type="text/javascript" src="front-end/js/FunzioniPartite.js"></script>
     <link rel="shortcut icon" href="front-end/img/gestore.jpg" type="image/ico" />
 </head>
 <body>
@@ -52,6 +52,41 @@
             <img src="front-end/img/partita.jpg">
         </a>
     </div>
+</div>
+
+<div class="areaVisualizza" onmouseover="mostra()" onmouseout="nascondi()">
+        <div id="imagineVisualizza">
+            <p id="visualizza">VISUALIZZA PARTITA</p>
+            <a href="" onclick="mostra()">
+                <img src="front-end/img/cerca.png">
+            </a>
+        </div>
+
+            <div id="bottoni">
+
+                <label>Cerca per capienza: </label>
+                <a href="VisualizzaPartita.jsp?tipologia=capienza">
+                    <button name="BotoneCapienza" type="button" formtarget="_blank">Cerca</button>
+                </a>
+                <br>
+
+                <label>Cerca in ordine Coronologico: </label>
+                <a href="VisualizzaPartita.jsp?tipologia=cronologico">
+                    <button name="botoneConologico" type="button" formtarget="_blank" value="tablla1">Cerca</button>
+                </a>
+
+            </div>
+    <script>
+        var divBottoni=document.getElementById("bottoni");
+        function nascondi () {
+            divBottoni.style.display="none";
+        }
+
+
+        function mostra() {
+            divBottoni.style.display="block";
+        }
+    </script>
 
 
 </div>

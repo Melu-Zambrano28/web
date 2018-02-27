@@ -30,7 +30,7 @@ public class Squadra {
         this.nome = nome;
     }
 
-    @Override
+
     public String toString() {
         return "Squadra{" +
                 "id=" + id +

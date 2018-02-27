@@ -69,7 +69,7 @@ public class Partita {
         this.gol_visitor = gol_visitor;
     }
 
-   public void setId_stadio(Stadio stadio) {
+   public void set_stadio(Stadio stadio) {
        this.stadio=stadio;
    }
 

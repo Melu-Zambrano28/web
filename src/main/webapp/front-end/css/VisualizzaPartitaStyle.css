@@ -1,0 +1,47 @@
+body{
+    background: #b5c3cc;
+}
+
+#titulo{
+    text-align: center;
+    color: white;
+    font-style: italic;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+div h1:first-child{
+
+    text-align: left;
+    color: white;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 5px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#cronologico, #capienza{
+    margin: 0 auto ;
+    float: none;/*non voglio nessuno accanto*/
+    display: table;
+    position: static;
+}
+
+table, th,td{
+    border: 1px solid black;
+    padding: 3px;
+    text-align: center;
+    background: #ffe6cc;
+}
+table{
+    background:  #b30047;
+
+}
+th{
+    background:  #c6ecc6;
+}
+
+
+
+

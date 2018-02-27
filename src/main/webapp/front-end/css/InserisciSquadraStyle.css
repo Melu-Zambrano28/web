@@ -1,0 +1,16 @@
+body{
+    background-color: #b5c3cc;
+}
+
+#inserisciSq{
+    text-align: center;
+    text-shadow: 3px 2px cadetblue ;
+    color: white;
+    font-style: italic;
+    font-size: 30px;
+}
+
+img{
+   display: block;
+    margin: auto;
+}

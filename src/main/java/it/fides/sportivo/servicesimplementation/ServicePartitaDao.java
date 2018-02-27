@@ -8,6 +8,7 @@ import it.fides.sportivo.repository.DataSourceSingleton;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 public class ServicePartitaDao {
 
@@ -22,6 +23,21 @@ public class ServicePartitaDao {
     private static final String aggiorna_risultato = "UPDATE  partita SET goal_sq_home = ?, goal_sq_visitor = ? WHERE id = ?";
     private final static String delete_partita = "DELETE FROM partita WHERE id = ?";
     private static final String querySelect="SELECT * FROM partita";
+    private static final String ordinaPerData="SELECT partita.id AS id,\n" +
+            "sq1.id AS id_sq_home,\n" +
+            " sq1.nome AS sq_home, \n" +
+            "sq2.id AS id_sq_Visitor,\n" +
+            " sq2.nome AS sq_visitor,  \n" +
+            "\n" +
+            " stad.nome AS stadio,\n" +
+            " stad.id AS idStadio,\n" +
+            " stad.capienza AS capienza,\n" +
+            " partita.data_partita AS orario \n" +
+            " FROM partita \n" +
+            " INNER JOIN squadra sq1 ON partita.id_sq_home = sq1.id \n" +
+            " INNER JOIN squadra sq2 ON partita.id_sq_visitor = sq2.id \n" +
+            " INNER JOIN stadio stad ON partita.id_stadio = stad.id\n" +
+            " ORDER BY orario";
 
 
     public static void inserisciPartita(Partita partita,Squadra sq_home, Squadra sq_visitor, Stadio stadio) throws SQLException, ClassNotFoundException {
@@ -71,7 +87,7 @@ public class ServicePartitaDao {
     }
 
 
-    public ArrayList<Partita> listaPartita() throws SQLException, ClassNotFoundException {
+  /*  public ArrayList<Partita> listaPartita() throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(querySelect);
         Partita partita=null;
@@ -84,7 +100,48 @@ public class ServicePartitaDao {
             listaPartita.add(partita);
         }
         return listaPartita;
-    }
+    }*/
+
+    public ArrayList<Partita> elencoOrdinatoPerData() throws SQLException, ClassNotFoundException {
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(ordinaPerData);
+        Partita partita=null;
+
+        ArrayList<Partita> listaPartita= new ArrayList<Partita>();
+        rs = st.executeQuery();
+        while(rs.next()) {
+            partita = new Partita();
+            partita.setId(rs.getInt("id"));
+
+            //data
+            GregorianCalendar data_partita =Util_Data_Time.convertiTimeStampSql_GregorianCalendar(rs.getTimestamp("orario"));
+            partita.setData_partita(data_partita);
+            //stadio
+            Stadio stadio=new Stadio();
+            stadio.setId(rs.getInt("idStadio"));
+            stadio.setNome(rs.getString("stadio"));
+            stadio.setCapienza(rs.getInt("capienza"));
+
+            //home
+            Squadra home=new  Squadra();
+            home.setId(rs.getInt("id_sq_home"));
+            home.setNome(rs.getString("sq_home"));
+
+            //visitor
+            Squadra visitor=new Squadra();
+            visitor.setId(rs.getInt("id_sq_visitor"));
+            visitor.setNome(rs.getString("sq_visitor"));
+
+            partita.setSquadra_home(home);
+            partita.setSquadra_visitor(visitor);
+            partita.set_stadio(stadio);
+            listaPartita.add(partita);
+
+        }
+        return listaPartita;
+
 
     }
+
+}
 
