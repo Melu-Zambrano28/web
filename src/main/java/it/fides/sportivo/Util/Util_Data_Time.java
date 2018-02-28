@@ -36,7 +36,7 @@ public class Util_Data_Time {
 
     //trasforma una string in sqlDate = in una data per sql
 
-    public static java.sql.Date convertiString_SqlDate(String data){
+    public static java.sql.Date convertiString_SqlDataTime(String data){
         String data_Partita = data;
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm");
         java.util.Date date = null;
@@ -47,8 +47,6 @@ public class Util_Data_Time {
             cal = new GregorianCalendar();
             cal.setTime(date);
             dataSql= Util_Data_Time.covertiGregorianCalendar_Sql((GregorianCalendar) cal); //sql
-           // GregorianCalendar dataPartitaSql = Util_Data_Time.convertiDataSql_Gregorian(sql); //util
-
 
         } catch (ParseException e) {
             e.printStackTrace();
@@ -57,18 +55,17 @@ public class Util_Data_Time {
     }
 
     /*Trasforma una string in gregorian calendar senza splittare*/
-    public static GregorianCalendar transStringDateGregorianDate(String data){
+    public static GregorianCalendar convertiStringDate_GregorianDate(String data){
         String data_Partita = data;
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         java.util.Date date = null;
-        Calendar cal = null;
+        GregorianCalendar cal = null;
         java.sql.Date dataSql=null;
         GregorianCalendar dataPartitaG=null;
         try {
             date = df.parse(data_Partita);
             cal = new GregorianCalendar();
             cal.setTime(date);
-            dataSql= Util_Data_Time.covertiGregorianCalendar_Sql((GregorianCalendar) cal); //sql
             dataPartitaG = Util_Data_Time.convertiDataSql_Gregorian(dataSql); //util
 
 
@@ -78,6 +75,13 @@ public class Util_Data_Time {
         return dataPartitaG;
     }
 
+    public static String convertiGregorianCalendar_String (GregorianCalendar data){
+        SimpleDateFormat fmt = new SimpleDateFormat("dd-MMM-yyyy");
+        fmt.setCalendar(data);
+        String dateFormatted = fmt.format(data.getGregorianChange());
+        return dateFormatted;
+
+    }
     //splita una string e la ritorna come gregorianCalendar
     public static GregorianCalendar convertiStringDataTime_GregorianCalendar(String data){
        String [] dataSplit=data.split("\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");
@@ -86,9 +90,11 @@ public class Util_Data_Time {
        int anni=Integer.parseInt(dataSplit[0]);
        int ore=Integer.parseInt(dataSplit[3]);
        int minuti=Integer.parseInt(dataSplit[4]);
-       GregorianCalendar dataPartitaG=new GregorianCalendar(anni, mesi,giorni,ore, minuti);
+       GregorianCalendar dataPartitaG=new GregorianCalendar(anni, (mesi-1),giorni,ore, minuti);
         return dataPartitaG;
     }
+
+
 
 
 }

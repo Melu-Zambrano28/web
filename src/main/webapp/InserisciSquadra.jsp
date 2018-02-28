@@ -10,14 +10,14 @@
 <head>
     <title>Inserisci Squadra</title>
     <link href="front-end/css/InserisciSquadraStyle.css" rel="stylesheet" type="text/css">
-
+    <link rel="shortcut icon" href="front-end/img/gestore.jpg" type="image/ico" />
 </head>
 <body>
+<h1 id="registroSquadra">Registro Squadra</h1>
+
 
 <div class="partita">
     <div class="imaginesPartita">
-
-        <p id="inserisciSq">INSERISCI SQUADRA</p>
         <a href="#registraSquadra">
             <img src="front-end/img/squadra.jpg">
         </a>
@@ -25,6 +25,8 @@
 </div>
 
 <div class="inserisciSquadra">
+
+    <h1>INSERISCI SQUADRA</h1>
 
     <table>
         <form  name="formularioSquadra" method="post" action="inserisciSquadra">

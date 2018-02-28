@@ -3,7 +3,9 @@
 <%@ page import="it.fides.sportivo.servicesimplementation.ServiceStadioDao" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="it.fides.sportivo.entity.Partita" %>
-<%@ page import="java.util.GregorianCalendar" %><%--
+<%@ page import="java.util.GregorianCalendar" %>
+<%@ page import="com.sun.webkit.network.Util" %>
+<%@ page import="it.fides.sportivo.Util.Util_Data_Time" %><%--
   Created by IntelliJ IDEA.
   User: Fides
   Date: 26/02/2018
@@ -19,6 +21,8 @@
 <%!String nomeHome="";%>
 <%!String nomeVisitor="";%>
 <%!String nomeStadio="";%>
+<%!double prezzo=0;%>
+
 
 
 <html>
@@ -60,6 +64,7 @@
                 <th>Capienza</th>
                 <th>Home</th>
                 <th>Visitor</th>
+                <th>Prezzo della Partita</th>
             </tr>
             <tr>
                 <%
@@ -71,15 +76,17 @@
                         nomeHome=elencoPartita.get(i).getSquadra_home().getNome();
                         nomeVisitor=elencoPartita.get(i).getSquadra_visitor().getNome();
                         nomeStadio=elencoPartita.get(i).getStadio().getNome();
+                        prezzo=elencoPartita.get(i).getStadio().getCosto_biglietto();
 
 
                 %>
                 <td><%=id_Partita1%></td>
-                <td><%=data.getGregorianChange()%></td>
+                <td><%=Util_Data_Time.convertiGregorianCalendar_String(data)%></td>
                 <td><%=nomeStadio%></td>
                 <td style="background: burlywood"><%=capienza%></td>
                 <td><%=nomeHome%></td>
                 <td><%=nomeVisitor%></td>
+                <td><%=prezzo%></td>
             </tr>
 
             <%
@@ -101,6 +108,7 @@
                 <th>Stadio</th>
                 <th>Home</th>
                 <th>Visitor</th>
+                <th>Prezzo della partita</th>
             </tr>
             <tr>
                 <%
@@ -111,14 +119,17 @@
                         nomeHome= elencoPartita2.get(i).getSquadra_home().getNome();
                         nomeVisitor= elencoPartita2.get(i).getSquadra_visitor().getNome();
                         nomeStadio= elencoPartita2.get(i).getStadio().getNome();
+                        prezzo=elencoPartita.get(i).getStadio().getCosto_biglietto();
+
 
 
                 %>
                 <td><%=id_Partita1%></td>
-                <td style="background: burlywood"><%=data.getGregorianChange()%></td>
+                <td style="background: burlywood"><%=Util_Data_Time.convertiGregorianCalendar_String(data)%></td>
                 <td><%=nomeStadio%></td>
                 <td><%=nomeHome%></td>
                 <td><%=nomeVisitor%></td>
+                <td><%=prezzo %></td>
             </tr>
 
             <%

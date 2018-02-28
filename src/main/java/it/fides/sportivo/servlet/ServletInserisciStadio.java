@@ -22,8 +22,8 @@ public class ServletInserisciStadio extends HttpServlet {
         double costoBiglietto=0;
 
         if(request.getParameter("invia")!=null && nomeStadio.length()>0 && prezzoS.length()>0 && capienzaS.length()>0) {
-            capienza=Integer.parseInt(capienzaS);
-            costoBiglietto=Double.parseDouble(prezzoS);
+            capienza = Integer.parseInt(capienzaS);
+            costoBiglietto = Double.parseDouble(prezzoS);
 
 
             if (nomeStadio.length() > 0 && capienza > 0 && costoBiglietto > 0) {
@@ -39,15 +39,18 @@ public class ServletInserisciStadio extends HttpServlet {
                 }
 
                 out.print("<h1>OKKKKKKKKKKKKKKKKK</h1>");
-               response.sendRedirect("InserisciStadio.jsp");
+                response.sendRedirect("InserisciStadio.jsp");
 
 
-            }else{
+            } else {
                 response.sendRedirect("ErrorFormato.jsp");
             }
+
         }else {
             response.sendRedirect("ErrorFormato.jsp");
         }
+
+
 
     }
 

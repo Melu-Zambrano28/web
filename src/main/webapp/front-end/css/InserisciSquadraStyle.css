@@ -1,8 +1,7 @@
 body{
     background-color: #b5c3cc;
 }
-
-#inserisciSq{
+#registroSquadra{
     text-align: center;
     text-shadow: 3px 2px cadetblue ;
     color: white;
@@ -13,4 +12,13 @@ body{
 img{
    display: block;
     margin: auto;
+}
+
+.inserisciSquadra h1{
+    text-align: left;
+    text-shadow: 3px 2px cadetblue ;
+    color: white;
+    font-style: italic;
+    font-size: 30px;
+
 }

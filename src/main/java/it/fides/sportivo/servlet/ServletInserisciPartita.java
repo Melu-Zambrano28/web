@@ -18,11 +18,12 @@ import java.util.GregorianCalendar;
 public class ServletInserisciPartita extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String data = request.getParameter("dataPartita").replace("T",","); //sistemar
-        GregorianCalendar dataPartita= Util_Data_Time.convertiStringDataTime_GregorianCalendar(data);
+        //GregorianCalendar dataPartita= Util_Data_Time.convertiStringDataTime_GregorianCalendar(data);
         int idsqHome=Integer.parseInt(request.getParameter("sq_Home"));
         int  idStadio=Integer.parseInt(request.getParameter("stadio"));
         int idVisitor=Integer.parseInt(request.getParameter("sq_Visitor"));
-        if(idsqHome!= idVisitor) {
+        if(idsqHome!= idVisitor && data.length()>0) {
+            GregorianCalendar dataPartita= Util_Data_Time.convertiStringDataTime_GregorianCalendar(data);
             Squadra home = null;
             Squadra visitor = null;
             Stadio stadio = null;

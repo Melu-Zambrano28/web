@@ -19,7 +19,7 @@ public class ServiceStadioDao {
     private static final String trova_per_id ="SELECT * FROM stadio WHERE id=?";
     private static final String insert_stadio = "INSERT INTO stadio (nome, capienza, costo_blg) VALUES (?,?,?)";
     private static final String delete_stadio = "DELETE FROM stadio WHERE id = ?";
-    private static final String update_stadio= "UPDATE squadra SET nome = ? ,capienza= ? ,costo_blg= ? WHERE id = ?";
+    private static final String update_stadio= "UPDATE stadio SET nome = ? , capienza = ? ,costo_blg= ? WHERE id = ?";
 
 
     public static void insertStadio(Stadio stadio) throws SQLException, ClassNotFoundException {
@@ -74,16 +74,15 @@ public class ServiceStadioDao {
     }
 
     public static void aggiornaStadio(Stadio stadio) throws SQLException, ClassNotFoundException {
-        Connection conn = DataSourceSingleton.getInstance().getConnection();
-        st= conn.prepareStatement(update_stadio);
+        conex= DataSourceSingleton.getInstance().getConnection();
+        st= conex.prepareStatement(update_stadio);
         st.setString(1, stadio.getNome());
         st.setInt(2,stadio.getCapienza());
         st.setDouble(3,stadio.getCosto_biglietto());
         st.setInt(4,stadio.getId());
         st.executeUpdate();
-        st.execute();
         st.close();
-        conn.close();
+        conex.close();
     }
 
     public  ArrayList<Stadio> listaStadio() throws SQLException, ClassNotFoundException {

@@ -32,6 +32,7 @@ public class ServicePartitaDao {
             " stad.nome AS stadio,\n" +
             " stad.id AS idStadio,\n" +
             " stad.capienza AS capienza,\n" +
+            "stad.costo_blg AS prezzo, \n"+
             " partita.data_partita AS orario \n" +
             " FROM partita \n" +
             " INNER JOIN squadra sq1 ON partita.id_sq_home = sq1.id \n" +
@@ -121,6 +122,7 @@ public class ServicePartitaDao {
             stadio.setId(rs.getInt("idStadio"));
             stadio.setNome(rs.getString("stadio"));
             stadio.setCapienza(rs.getInt("capienza"));
+            stadio.setCosto_biglietto(rs.getDouble("prezzo"));
 
             //home
             Squadra home=new  Squadra();

@@ -9,24 +9,26 @@
 <html>
 <head>
     <title>Inserisci Stadio</title>
-    <link href="front-end/css/GestoreStyle.css" rel="stylesheet" type="text/css">
+    <link href="front-end/css/InserisciPartitaStyle.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="front-end/img/gestore.jpg" type="image/ico" />
     <script type="text/javascript" src="front-end/js/ConvalidaFormStadio.js"></script>
 </head>
 <body>
-<h1>REGISTRO STADIO</h1>
+<h1 id="registroStadio">REGISTRO STADIO</h1>
 
 
 <div class="stadio">
 
 <div class="imaginestadio">
 
-    <p id="inserisci">INSERISCI UN STADIO</p>
     <a href="#registraStadio">
         <img src="front-end/img/stadio.jpg">
     </a>
 </div>
 
-<div class="registraStadio">
+<div id="registraStadio">
+
+    <h1 style="color: white; text-align: left; text-shadow: 3px 2px cadetblue ;">INSERISCI UN STADIO</h1>
 
     <table>
         <form  name="formul" method="post" action="inserisciStadio" id="formul">
@@ -49,13 +51,59 @@
             <tr><!-- colonna -->
                 <td><input type="submit" name="invia" value="Invia" onclick="convalidaForm()"></td>
                 <td><input type="reset" name="cancella" value="Cancella"></td>
+                <td><input type="button" name="modifica" value="Modifica" onclick="mostraModifica(), nascondeInsertStadio()"></td>
+
             </tr>
         </form>
+
 
     </table>
 </div>
 </div>
+</div>
 
+<div id="modifica">
+    <h1 style="text-align: left; color: white; text-shadow: 3px 2px cadetblue ;">Modifica capienza dello stadio</h1>
+    <table>
+        <form  name="formularioModifica" method="post" action="modificaStadio">
+            <tr>
+                <td><label>Nome stadio: </label></td>
+                <td><input type="text" name="nomeStadioModifica" /></td>
+
+            </tr>
+            <tr>
+                <td><label>Capienza: </label></td>
+                <td><input type="text" name="capienzaModifica"/></td>
+
+            </tr>
+
+
+            <tr><!-- colonna -->
+                <td><input type="submit" name="modificaStadio" value="Modifica"></td>
+                <td><input type="reset" name="cancella" value="Cancella"></td>
+            </tr>
+        </form>
+
+    </table>
+
+</div>
+
+<script>
+    var divInsertStadio = document.getElementById("registraStadio");
+    var modificaStadio=document.getElementById("modifica");
+    modificaStadio.style.display="none";
+
+
+    function mostraModifica() {
+        modificaStadio.style.display="block";
+    }
+
+    function nascondeInsertStadio() {
+        divInsertStadio.style.display="none";
+
+    }
+
+</script>
 
 </body>
 </html>

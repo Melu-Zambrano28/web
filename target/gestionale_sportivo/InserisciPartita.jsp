@@ -19,13 +19,15 @@
 <head>
     <title>Inserisci Partita</title>
     <link href="front-end/css/InserisciPartitaStyle.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="front-end/img/gestore.jpg" type="image/ico" />
 </head>
 <body>
+<h1 id="registroPartita">Registro Partita</h1>
 
 <div class="partita">
     <div class="imaginesPartita">
 
-        <p id="inserisciPartita">INSERISCI PARTITA</p>
+
         <a href="#registraPartita">
             <img src="front-end/img/partita.jpg">
         </a>
@@ -33,7 +35,7 @@
 </div>
 
     <div class="registraPartita">
-
+        <h1>INSERISCI PARTITA</h1>
         <table>
 
             <form  name="registraPartita" method="get" action="/gestionaleSportivo/inserisciPartita">

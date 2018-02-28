@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Risposte</title>
+    <link rel="shortcut icon" href="front-end/img/gestore.jpg" type="image/ico" />
 </head>
 <body>
     <script>

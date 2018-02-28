@@ -3,7 +3,7 @@ body{
     background-color: #b5c3cc;
 }
 
-#inserisciPartita{
+#registroPartita, #registroStadio{
     text-align: center;
     text-shadow: 3px 2px cadetblue ;
     color: white;
@@ -11,16 +11,28 @@ body{
     font-size: 30px;
 
 }
+ .registraPartita h1{
+    text-align: left;
+    text-shadow: 3px 2px cadetblue ;
+    color: white;
+    font-style: italic;
+    font-size: 30px;
 
-.partita a img{
+
+}
+ h1{
+    text-align: left;
+    text-shadow: 3px 2px cadetblue ;
+    color: white;
+    font-style: italic;
+    font-size: 30px;
+
+}
+
+.imaginestadio a img, .partita a img{
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
-
-
 }
 
-.partita{
-
-}

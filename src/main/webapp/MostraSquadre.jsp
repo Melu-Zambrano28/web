@@ -20,6 +20,7 @@
 <head>
     <title>Mostra Squadra</title>
     <link href="front-end/css/MostraSquadrasStyle.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="front-end/img/gestore.jpg" type="image/ico" />
 </head>
 <body>
 <h1>Identifica il codice della squadra/Stadio assocciato al nome:</h1>
