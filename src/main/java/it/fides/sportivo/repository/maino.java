@@ -1,12 +1,15 @@
 package it.fides.sportivo.repository;
 
 import it.fides.sportivo.Util.GeneraSerialBiglietto;
+import it.fides.sportivo.Util.PoliticheSconto;
 import it.fides.sportivo.Util.Util_Data_Time;
+import it.fides.sportivo.entity.Cliente;
 import it.fides.sportivo.entity.Partita;
 import it.fides.sportivo.servicesimplementation.ServicePartitaDao;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class maino {
@@ -81,18 +84,27 @@ public class maino {
 //
 //        ServiceClienteDao.chiudiTutto();
 
-        ServicePartitaDao partitaDao = new ServicePartitaDao();
-        ArrayList<Partita> elencoP = partitaDao.elencoOrdinatoPerData();
-        for(int i=0; i<elencoP.size(); i++){
-            System.out.println("codice partita: "+elencoP.get(i).getId());
-            System.out.println("data: "+elencoP.get(i).getData_partita().getGregorianChange());
-            System.out.println("Stadio: "+elencoP.get(i).getStadio().getNome());
+//        ServicePartitaDao partitaDao = new ServicePartitaDao();
+//        ArrayList<Partita> elencoP = partitaDao.elencoOrdinatoPerData();
+//        for(int i=0; i<elencoP.size(); i++){
+//            System.out.println("codice partita: "+elencoP.get(i).getId());
+//            System.out.println("data: "+elencoP.get(i).getData_partita().getGregorianChange());
+//            System.out.println("Stadio: "+elencoP.get(i).getStadio().getNome());
+//
+//            System.out.println("home: "+elencoP.get(i).getSquadra_home().getNome());
+//            System.out.println("visitor: "+elencoP.get(i).getSquadra_visitor().getNome());
+//
+//        }
 
-            System.out.println("home: "+elencoP.get(i).getSquadra_home().getNome());
-            System.out.println("visitor: "+elencoP.get(i).getSquadra_visitor().getNome());
+        Cliente melu = new Cliente();
+        melu.setNome("melu");
+        melu.setCognome("guzman");
+        melu.setId(2);
 
-        }
-
+//        int anni=date.get(Calendar.YEAR);
+        GregorianCalendar oggi = new GregorianCalendar(1999,9,28);
+        melu.setData_nascita(oggi);
+        System.out.println(PoliticheSconto.isOver65(melu));
 
 
 

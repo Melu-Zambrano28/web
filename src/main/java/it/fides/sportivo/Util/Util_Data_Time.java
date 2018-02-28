@@ -94,6 +94,13 @@ public class Util_Data_Time {
         return dataPartitaG;
     }
 
+    public static int getAnnoCorrente(){
+        GregorianCalendar oggi = new GregorianCalendar();
+        int anno=oggi.get(Calendar.YEAR);
+        return anno;
+
+    }
+
 
 
 
