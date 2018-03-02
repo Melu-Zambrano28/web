@@ -1,9 +1,9 @@
-<%@ page import="it.fides.sportivo.servicesimplementation.ServicePartitaDao" %>
-<%@ page import="it.fides.sportivo.servicesimplementation.ServiceSquadraDao" %>
+<%@ page import="it.esempio.sportivo.servicesimplementation.ServicePartitaDao" %>
+<%@ page import="it.esempio.sportivo.servicesimplementation.ServiceSquadraDao" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="it.fides.sportivo.entity.Squadra" %>
-<%@ page import="it.fides.sportivo.servicesimplementation.ServiceStadioDao" %>
-<%@ page import="it.fides.sportivo.entity.Stadio" %><%--
+<%@ page import="it.esempio.sportivo.entity.Squadra" %>
+<%@ page import="it.esempio.sportivo.servicesimplementation.ServiceStadioDao" %>
+<%@ page import="it.esempio.sportivo.entity.Stadio" %><%--
   Created by IntelliJ IDEA.
   User: Fides
   Date: 14/02/2018

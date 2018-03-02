@@ -1,11 +1,11 @@
-<%@ page import="it.fides.sportivo.servicesimplementation.ServicePartitaDao" %>
-<%@ page import="it.fides.sportivo.servicesimplementation.ServiceSquadraDao" %>
-<%@ page import="it.fides.sportivo.servicesimplementation.ServiceStadioDao" %>
+<%@ page import="it.esempio.sportivo.servicesimplementation.ServicePartitaDao" %>
+<%@ page import="it.esempio.sportivo.servicesimplementation.ServiceSquadraDao" %>
+<%@ page import="it.esempio.sportivo.servicesimplementation.ServiceStadioDao" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="it.fides.sportivo.entity.Partita" %>
+<%@ page import="it.esempio.sportivo.entity.Partita" %>
 <%@ page import="java.util.GregorianCalendar" %>
 <%@ page import="com.sun.webkit.network.Util" %>
-<%@ page import="it.fides.sportivo.Util.Util_Data_Time" %><%--
+<%@ page import="it.esempio.sportivo.Util.Util_Data_Time" %><%--
   Created by IntelliJ IDEA.
   User: Fides
   Date: 26/02/2018

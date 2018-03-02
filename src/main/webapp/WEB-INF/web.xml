@@ -6,27 +6,27 @@
     <display-name>gestionaleSportivo</display-name>
     <servlet>
         <servlet-name>ServletInserisciStadio</servlet-name>
-        <servlet-class>it.fides.sportivo.servlet.ServletInserisciStadio</servlet-class>
+        <servlet-class>it.esempio.sportivo.servlet.ServletInserisciStadio</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletInserisciSquadra</servlet-name>
-        <servlet-class>it.fides.sportivo.servlet.ServletInserisciSquadra</servlet-class>
+        <servlet-class>it.esempio.sportivo.servlet.ServletInserisciSquadra</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletInserisciPartita</servlet-name>
-        <servlet-class>it.fides.sportivo.servlet.ServletInserisciPartita</servlet-class>
+        <servlet-class>it.esempio.sportivo.servlet.ServletInserisciPartita</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletInserisciCliente</servlet-name>
-        <servlet-class>it.fides.sportivo.servlet.ServletInserisciCliente</servlet-class>
+        <servlet-class>it.esempio.sportivo.servlet.ServletInserisciCliente</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletPartitaAjax</servlet-name>
-        <servlet-class>it.fides.sportivo.servlet.ServletPartitaAjax</servlet-class>
+        <servlet-class>it.esempio.sportivo.servlet.ServletPartitaAjax</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletModificaStadio</servlet-name>
-        <servlet-class>it.fides.sportivo.servlet.ServletModificaStadio</servlet-class>
+        <servlet-class>it.esempio.sportivo.servlet.ServletModificaStadio</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletInserisciStadio</servlet-name>

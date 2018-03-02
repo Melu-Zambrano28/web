@@ -1,12 +1,12 @@
-<%@ page import="it.fides.sportivo.entity.Squadra" %>
+<%@ page import="it.esempio.sportivo.entity.Squadra" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="it.fides.sportivo.servicesimplementation.ServiceSquadraDao" %>
-<%@ page import="it.fides.sportivo.repository.DataSourceSingleton" %>
+<%@ page import="it.esempio.sportivo.servicesimplementation.ServiceSquadraDao" %>
+<%@ page import="it.esempio.sportivo.repository.DataSourceSingleton" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="it.fides.sportivo.entity.Stadio" %>
-<%@ page import="it.fides.sportivo.servicesimplementation.ServiceStadioDao" %><%--
+<%@ page import="it.esempio.sportivo.entity.Stadio" %>
+<%@ page import="it.esempio.sportivo.servicesimplementation.ServiceStadioDao" %><%--
   Created by IntelliJ IDEA.
   User: Fides
   Date: 12/02/2018
