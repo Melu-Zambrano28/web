@@ -82,6 +82,16 @@ public class Util_Data_Time {
         return dateFormatted;
 
     }
+
+    public static String convertiGregorianCalendarDataTime_String (GregorianCalendar data){
+        SimpleDateFormat fmt = new SimpleDateFormat("dd-MMM-yyyy hh:mm");
+        fmt.setCalendar(data);
+        String dateFormatted = fmt.format(data.getGregorianChange());
+        return dateFormatted;
+
+    }
+
+
     //splita una string e la ritorna come gregorianCalendar
     public static GregorianCalendar convertiStringDataTime_GregorianCalendar(String data){
        String [] dataSplit=data.split("\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/");

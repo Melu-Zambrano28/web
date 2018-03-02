@@ -53,8 +53,7 @@ public class ServiceStatoBigliettoDao{
 
             System.out.println("id_StatoBiglietto: "+id+" \nDescrizione: "+desc);
         }
-
-
-
     }
+
+
 }

@@ -14,4 +14,5 @@ public class GeneraSerialBiglietto {
         return serialeString; //return string
 
     }
+
 }

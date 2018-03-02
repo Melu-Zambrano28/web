@@ -120,12 +120,13 @@
                         nomeVisitor= elencoPartita2.get(i).getSquadra_visitor().getNome();
                         nomeStadio= elencoPartita2.get(i).getStadio().getNome();
                         prezzo=elencoPartita.get(i).getStadio().getCosto_biglietto();
+                        String dataPartitaString=Util_Data_Time.convertiGregorianCalendarDataTime_String(data);
 
 
 
                 %>
                 <td><%=id_Partita1%></td>
-                <td style="background: burlywood"><%=Util_Data_Time.convertiGregorianCalendar_String(data)%></td>
+                <td style="background: burlywood"><%=dataPartitaString%></td>
                 <td><%=nomeStadio%></td>
                 <td><%=nomeHome%></td>
                 <td><%=nomeVisitor%></td>

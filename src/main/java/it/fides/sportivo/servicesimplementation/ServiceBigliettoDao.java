@@ -20,6 +20,21 @@ public class ServiceBigliettoDao {
         private final static String update_biglietto = "UPDATE biglietto SET id_partecipazione = ?," +
                 " nome = ?, cognome = ?, id_sconto = ?, id_stato_biglietto = ? WHERE seriale_biglietto = ?";
         private final static String delete_biglietto = "DELETE FROM biglietto WHERE seriale_biglietto = ?";
+        private final static String listaBiglietti="\n" +
+                "SELECT biglietto.seriale_biglietto seriale,\n" +
+                "cliente.nome nome,\n" +
+                "cliente.cognome cognome,\n" +
+                "sconto.descrizione descrizione,\n" +
+                "partita.data_partita data_p,\n" +
+                "s1.nome home,\n" +
+                "s2.nome visitor\n" +
+                "FROM biglietto\n" +
+                "INNER JOIN cliente ON biglietto.id_cliente=cliente.id\n" +
+                "INNER JOIN sconto ON biglietto.id_sconto=sconto.id\n" +
+                "INNER JOIN partecipazione ON partecipazione.id = biglietto.id_partecipazione AND partecipazione.id_cliente = biglietto.id_cliente\n" +
+                "INNER JOIN partita ON partecipazione.id_partita= partita.id\n" +
+                "INNER JOIN squadra AS s1 ON partita.id_sq_home=s1.id\n" +
+                "INNER JOIN squadra AS s2 ON partita.id_sq_visitor=s2.id\n";
 
         public static void inserisciBiglietto(Biglietto biglietto) throws SQLException, ClassNotFoundException {
             conex = DataSourceSingleton.getInstance().getConnection();

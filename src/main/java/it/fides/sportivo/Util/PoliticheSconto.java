@@ -21,4 +21,7 @@ public class PoliticheSconto {
         int etaCliente =Util_Data_Time.getAnnoCorrente()-anno;
         return etaCliente>=65;
     }
+
+
+    
 }

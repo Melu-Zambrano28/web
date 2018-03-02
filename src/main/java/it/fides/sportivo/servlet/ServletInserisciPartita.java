@@ -33,10 +33,10 @@ public class ServletInserisciPartita extends HttpServlet {
                 visitor = ServiceSquadraDao.selectSquadra(idVisitor);
                 stadio = ServiceStadioDao.TrovaStadioById(idStadio);
                 partita.setData_partita(dataPartita);
-               ServicePartitaDao.inserisciPartita(partita, home, visitor, stadio);
+                request.setAttribute("partita", partita);
+                ServicePartitaDao.inserisciPartita(partita, home, visitor, stadio);
             } catch (Exception e) {
-                e.printStackTrace();
-                //mandarla a un mesaggio di errore di DB
+               response.sendRedirect("BackEndError.jsp");
             }
             response.sendRedirect("Gestore.jsp");
         }else {
