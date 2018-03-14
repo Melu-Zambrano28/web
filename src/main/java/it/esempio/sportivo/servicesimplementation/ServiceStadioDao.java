@@ -19,7 +19,15 @@ public class ServiceStadioDao {
     private static final String insert_stadio = "INSERT INTO stadio (nome, capienza, costo_blg) VALUES (?,?,?)";
     private static final String delete_stadio = "DELETE FROM stadio WHERE id = ?";
     private static final String update_stadio= "UPDATE stadio SET nome = ? , capienza = ? ,costo_blg= ? WHERE id = ?";
-
+    private static final String incasso_per_stadio="SELECT SUM(biglietto.prezzo_finale) totale,\n" +
+            "stadio.nome nomeStadio,\n" +
+            "stadio.id stadioId\n" +
+            "FROM biglietto\n" +
+            "INNER JOIN stato_biglietto ON biglietto.id_stato_biglietto=stato_biglietto.id\n" +
+            "INNER JOIN partita ON biglietto.id_partita=partita.id\n" +
+            "INNER JOIN stadio ON partita.id_stadio=stadio.id\n" +
+            "GROUP BY stadio.nome , stato_biglietto.id\n" +
+            "HAVING stato_biglietto.id =3 AND stadio.id=? ";
 
     public static void insertStadio(Stadio stadio) throws SQLException, ClassNotFoundException {
         conex = DataSourceSingleton.getInstance().getConnection();
@@ -100,6 +108,23 @@ public class ServiceStadioDao {
                             rs.getDouble(4)));
         }
         return lista_stadio;
+    }
+
+    public static Stadio incassoTotalePerStadio(int id) throws SQLException, ClassNotFoundException {
+        conex= DataSourceSingleton.getInstance().getConnection();
+        st= conex.prepareStatement(incasso_per_stadio);
+        st.setInt(1, id);
+        Stadio stadio = null;
+        rs=st.executeQuery();
+        while (rs.next()){
+            stadio = new Stadio();
+            stadio.setId(rs.getInt("stadioId"));
+            stadio.setCosto_biglietto(rs.getDouble("totale"));
+            stadio.setNome(rs.getString("nomeStadio"));
+        }
+        st.close();
+        conex.close();
+        return stadio;
     }
 
 
