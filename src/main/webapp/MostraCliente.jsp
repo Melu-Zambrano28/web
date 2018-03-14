@@ -13,11 +13,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% Cliente clio = (Cliente) request.getAttribute("cliente"); %>
-<%! ServicePartitaDao daoPartita = new ServicePartitaDao();%>
-<%! String nome = ""; %>
+<%! String nomeCliente = ""; %> <%! String cognomeCliente = ""; %>
 <html>
 <head>
-    <title>Ciao <% if (clio != null) { nome = clio.getNome(); } %> <%= nome %>
+    <title>Ciao <% if (clio != null) { nomeCliente = clio.getNome(); cognomeCliente = clio.getCognome();
+    } %> <%= nomeCliente %>
     </title>
     <link rel="stylesheet" type="text/css" href="front-end/css/InserisciClienteStyle.css">
     <link rel="stylesheet" type="text/css" href="front-end/css/MostraCliente.css">
@@ -35,7 +35,7 @@
     </div>
 </header>
 
-<h1 id="benvenuto"> Ciao <%=  nome %>
+<h1 id="benvenuto"> Ciao <%=  nomeCliente %>
 </h1>
 
 
@@ -60,6 +60,13 @@
         <button type="reset" value="Reset">Reset</button>
     </div>
 </form>
+
+<script>
+
+    //Assegnamento dei valori di java a delle variabili globali javascript
+    var nomeCliente = "<%=  nomeCliente %>";
+    var cognomeCliente = "<%= cognomeCliente %>";
+</script>
 
 <script type="text/javascript" src="front-end/js/MostraPartita.js"></script>
 

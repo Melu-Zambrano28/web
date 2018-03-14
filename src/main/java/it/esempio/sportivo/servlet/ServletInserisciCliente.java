@@ -43,6 +43,6 @@ public class ServletInserisciCliente extends HttpServlet {
             resp.sendRedirect("BackEndError.jsp");
         }
 
-        resp.sendRedirect("MostraCliente.jsp");
+        req.getRequestDispatcher("MostraCliente.jsp").forward(req, resp);
     }
 }

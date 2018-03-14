@@ -4,8 +4,11 @@ import it.esempio.sportivo.Util.GeneraSerialBiglietto;
 import it.esempio.sportivo.Util.PoliticheSconto;
 import it.esempio.sportivo.Util.Util_Data_Time;
 import it.esempio.sportivo.entity.Cliente;
+import it.esempio.sportivo.entity.Partita;
+import it.esempio.sportivo.servicesimplementation.ServicePartitaDao;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Random;
 
@@ -57,6 +60,11 @@ public class maino {
 
         GregorianCalendar data = Util_Data_Time.convertiStringDataTime_GregorianCalendar("28-08-1994,12:23");
         System.out.println(data.getGregorianChange());
+        ServicePartitaDao dd = new ServicePartitaDao();
+
+        ArrayList<Partita> sce = dd.listaPartitaOrig("orario");
+        ArrayList<Partita> sceMelissa = dd.elencoOrdinatoPerData();
+        for(Partita parti : sceMelissa) System.out.println(parti);
 
 
 

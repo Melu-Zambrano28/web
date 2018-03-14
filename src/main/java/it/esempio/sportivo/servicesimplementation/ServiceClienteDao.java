@@ -81,8 +81,16 @@ public class ServiceClienteDao  {
         cliente=ServiceClienteDao.mappaturaCliente(rs);
       }
       return cliente;
+    }
 
-
+    public static  Cliente TrovaclienteByDati(int id) throws SQLException, ClassNotFoundException {
+        conex =DataSourceSingleton.getInstance().getConnection();
+        rs=st.executeQuery("SELECT * FROM  cliente WHERE id="+id);
+        Cliente cliente=null;
+        while ((rs.next())){
+            cliente=ServiceClienteDao.mappaturaCliente(rs);
+        }
+        return cliente;
     }
 
     public ArrayList<Cliente> listaCliente() throws SQLException, ClassNotFoundException {
