@@ -36,7 +36,7 @@ public class ServiceScontoDao {
         ResultSet resultSet = stmt.executeQuery();
         while (resultSet.next()) {
             sconto = new Sconto(resultSet.getInt(1), resultSet.getString(2),resultSet.getDouble(3));
-            System.out.println(sconto.toString());
+
         }
         stmt.close();
         conn.close();

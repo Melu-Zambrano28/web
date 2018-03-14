@@ -4,8 +4,12 @@ import it.esempio.sportivo.Util.GeneraSerialBiglietto;
 import it.esempio.sportivo.Util.PoliticheSconto;
 import it.esempio.sportivo.Util.Util_Data_Time;
 import it.esempio.sportivo.entity.Cliente;
+import it.esempio.sportivo.entity.Partita;
+import it.esempio.sportivo.services.ServicePartita;
+import it.esempio.sportivo.servicesimplementation.ServicePartitaDao;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Random;
 
@@ -70,6 +74,7 @@ public class maino {
 
 
 
+
 //        Cliente cliente = new Cliente();
 //        cliente.setNome("Elsa");
 //        cliente.setCognome("Mera");
@@ -99,11 +104,17 @@ public class maino {
         melu.setId(2);
 
 //        int anni=date.get(Calendar.YEAR);
-        GregorianCalendar oggi = new GregorianCalendar(2017,12,28);
+        GregorianCalendar oggi = new GregorianCalendar(1945,12,28);
         melu.setData_nascita(oggi);
         System.out.println(PoliticheSconto.isOver65(melu));
         Random r = new Random();
         System.out.println(Util_Data_Time.getDaysOfMoth(oggi));
+        ServicePartitaDao partite = new ServicePartitaDao();
+
+        ArrayList<Partita> elenco = partite.elencoOrdinatoPerData();
+        Partita pronta = elenco.get(1);
+        System.out.println(PoliticheSconto.calcolaSconto(melu, pronta));
+
 
 
 
