@@ -19,11 +19,11 @@
     <%
         Cliente cliente =(Cliente) request.getAttribute("cliente");
     %>
-    <title>Benvenuto <%=cliente.getNome()%>></title>
+    <title>Benvenuto></title>
     <link rel="stylesheet" type="text/css" href="front-end/css/InserisciClienteStyle.css">
 </head>
 <body>
-<h1 id="benvenuto"> Benvenuto <%=cliente.getNome()%></h1>
+<h1 id="benvenuto"> Benvenuto</h1>
 
 <div class="areasquadre">
     <h1>Partite:</h1>

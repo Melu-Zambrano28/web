@@ -99,11 +99,11 @@ public class maino {
         melu.setId(2);
 
 //        int anni=date.get(Calendar.YEAR);
-        GregorianCalendar oggi = new GregorianCalendar(2016,3,28);
+        GregorianCalendar oggi = new GregorianCalendar(2017,12,28);
         melu.setData_nascita(oggi);
         System.out.println(PoliticheSconto.isOver65(melu));
         Random r = new Random();
-        System.out.println(Util_Data_Time.getDaysOfMoth("2016-15-12"));
+        System.out.println(Util_Data_Time.getDaysOfMoth(oggi));
 
 
 

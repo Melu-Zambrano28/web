@@ -29,10 +29,12 @@ public class PoliticheSconto {
         GregorianCalendar dataGregorian = Util_Data_Time.convertiStringDate_GregorianDate(data);
         int giornoRange= dataGregorian.get(Calendar.DAY_OF_MONTH);
         Random random= new Random();
-        int giornoFortunato= random.nextInt(giornoRange);
+        int giornoFortunato= random.nextInt();
 
         return giornoFortunato;
     }
+
+
 
 
     

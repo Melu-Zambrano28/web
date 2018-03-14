@@ -111,15 +111,14 @@ public class Util_Data_Time {
     }
 
 
-    public static int getDaysOfMoth(String data) {
-        GregorianCalendar dataGregorian = Util_Data_Time.convertiStringDate_GregorianDate(data);
-        int mese = dataGregorian.get(Calendar.MONTH)+1;
-        int anno = dataGregorian.get(Calendar.YEAR);
+    public static int getDaysOfMoth(GregorianCalendar data) {
+        int mese = data.get(Calendar.MONTH);
+        int anno = data.get(Calendar.YEAR);
         int giorni = 0;
         if (mese == 4 || mese == 6 || mese == 9 || mese == 11) {
             giorni = 30;
         } else if (mese == 2) {
-            giorni = dataGregorian.isLeapYear(anno) ? 29 : 28;
+            giorni = data.isLeapYear(anno) ? 29 : 28;
         } else {
             giorni = 31;
         }
