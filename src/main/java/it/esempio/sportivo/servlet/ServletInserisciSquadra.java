@@ -32,7 +32,7 @@ public class ServletInserisciSquadra extends HttpServlet {
 
                     } catch (Exception e) {
                         e.printStackTrace();
-                        response.sendRedirect("backendError.jsp");
+                        response.sendRedirect("BackEndError.jsp");
                     }
 
                 }

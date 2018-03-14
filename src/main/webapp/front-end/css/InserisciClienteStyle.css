@@ -58,3 +58,9 @@ input[type="submit"],[type="reset"] {
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
+
+#demo {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}

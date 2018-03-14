@@ -1,9 +1,8 @@
 <%@ page import="it.esempio.sportivo.entity.Cliente" %>
-<%@ page import="it.esempio.sportivo.services.ServicePartita" %>
 <%@ page import="it.esempio.sportivo.servicesimplementation.ServicePartitaDao" %>
-<%@ page import="it.esempio.sportivo.entity.Partita" %>
-<%@ page import="java.util.ArrayList" %><%--
-<%@ page import="it.fides.sportivo.entity.Partita" %>
+<%@ page import="it.esempio.sportivo.entity.Cliente" %>
+<%@ page import="it.esempio.sportivo.servicesimplementation.ServicePartitaDao" %>
+<%--
 <%@ page import="it.fides.sportivo.servicesimplementation.ServicePartitaDao" %><%--
   Created by IntelliJ IDEA.
   User: User
@@ -12,62 +11,60 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<%! ServicePartitaDao daoPartita= new ServicePartitaDao();%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% Cliente clio = (Cliente) request.getAttribute("cliente"); %>
+<%! ServicePartitaDao daoPartita = new ServicePartitaDao();%>
+<%! String nome = ""; %>
 <html>
 <head>
-    <%
-        Cliente cliente =(Cliente) request.getAttribute("cliente");
-    %>
-    <title>Benvenuto></title>
+    <title>Ciao <% if (clio != null) { nome = clio.getNome(); } %> <%= nome %>
+    </title>
     <link rel="stylesheet" type="text/css" href="front-end/css/InserisciClienteStyle.css">
+    <link rel="stylesheet" type="text/css" href="front-end/css/MostraCliente.css">
+    <script src="webjars/jquery/3.3.1/jquery.min.js"></script>
+    <script src="webjars/kendo-ui-core/2016.3.1317/js/kendo.ui.core.min.js"></script>
 </head>
 <body>
-<h1 id="benvenuto"> Benvenuto</h1>
 
-<div class="areasquadre">
-    <h1>Partite:</h1>
-    <table class="listaSquadre">
+<header class="header">
+    <a href="Gestore.jsp" class="header-sinistra">Gestore</a>
+    <div class="header-destra">
+        <a href>Contatti</a>
+        <a href>Accedi</a>
+        <a href>Su di noi</a>
+    </div>
+</header>
 
-        <tr>
-            <th>Data</th>
-            <th>Squadra home</th>
-            <th>Squadra visitor</th>
-        </tr>
+<h1 id="benvenuto"> Ciao <%=  nome %>
+</h1>
 
 
-    </table>
+<div id="demo">
+    <h2>Visualizzatore delle partite</h2>
+    <!--<button type="button" id="btn-ajax" class="genCenter"> Mutazione </button> -->
+    <select id="selezione" name="selezione" class="genCenter" autofocus>
+        <option value="">Selezione l'ordine delle partite ...</option>
+        <option value="orario">Ordina in base all'orario</option>
+        <option value="stadio.id">Ordina in base allo stadio</option>
+        <option value="lessicografico">Ordina in base all'ordine lessicografico</option>
+    </select>
 </div>
 
-<form action="InserisciCliente.jsp">
-    <input type="submit" value="Go to Home" />
+<form action="acquistaBiglietto" method="post" id="maschera">
+    <div id="form">
+        <br><label>Data:</label><input type="text" placeholder="nome" name="nome" class="zebra" ><br>
+        <br><label>Squadra home</label><input type="text" placeholder="cognome" name="cognome" class="zebra"><br>
+        <br><label>Squadra visitor:</label><input type="date" name="data-nascita" class="zebra"><br>
+        <br><label><input type="submit" value="Acquista" class="button" id="acquista"></label>
+        <br><label><input type="submit" value="Prenota" class="button" id="prenota"></label>
+        <button type="reset" value="Reset">Reset</button>
+    </div>
 </form>
 
-
-    <div id="demo">
-        <h2>The XMLHttpRequest for Squadre in A Object</h2>
-        <button type="button" onclick="loadDoc()">Change Content</button>
-    </div>
-
-    <script>
-        var giasone;
-        var listaPartite;
-        function loadDoc() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    giasone = this.responseText;
-                    listaPartite = JSON.parse(giasone);
-                    document.getElementById("demo").innerHTML =
-                        this.responseText;
-                }
-            };
-            xhttp.open("GET", "/ajaxPartita", true);
-            xhttp.send();
-        }
-
-    </script>
+<script type="text/javascript" src="front-end/js/MostraPartita.js"></script>
 
 
-</body>
-</html>
+
+<center>
+<%@ include file = "footer.jsp" %>
+

@@ -1,0 +1,51 @@
+.header {
+    background-color: royalblue;
+    padding: 20px 10px;
+    color: white;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+.header a:hover {
+    background-color: darkorange;
+    color:white;
+}
+
+.header-sinistra {
+    font-size: 30px;
+}
+
+.header-destra {
+    float: right;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.genCenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.radioStyle {
+    width: 25px;
+    height: 25px;
+    border-radius: 40px;
+    background-color: navy;
+}
+
+.radioStyle:hover {
+    cursor: pointer;
+}
+
+.radioStyle:checked {
+    background-color: crimson;
+}
+
+#maschera {
+    display: none;
+}
