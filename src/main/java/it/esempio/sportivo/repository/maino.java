@@ -7,6 +7,7 @@ import it.esempio.sportivo.entity.Cliente;
 
 import java.sql.*;
 import java.util.GregorianCalendar;
+import java.util.Random;
 
 public class maino {
 
@@ -98,9 +99,13 @@ public class maino {
         melu.setId(2);
 
 //        int anni=date.get(Calendar.YEAR);
-        GregorianCalendar oggi = new GregorianCalendar(1999,9,28);
+        GregorianCalendar oggi = new GregorianCalendar(2016,3,28);
         melu.setData_nascita(oggi);
         System.out.println(PoliticheSconto.isOver65(melu));
+        Random r = new Random();
+        System.out.println(Util_Data_Time.getDaysOfMoth("2016-15-12"));
+
+
 
 
 

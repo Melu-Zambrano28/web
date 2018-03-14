@@ -3,15 +3,17 @@
 function convalidaForm() {
     var nome = document.getElementById("nomeStadio").value;
     var capienza=parseInt(document.getElementById("capienza").value);
+
     var prezzo = parseFloat(document.getElementById("prezzo").value);
-    console.log(prezzo);
+    console.log(typeof prezzo);
+
     var capienzaNumber=0;
     if(nome.length==0){
         document.getElementById("nomeStadio").focus();
         alert("inserisci il nome");
     }
 
-    else if(capienza.length<=0){
+    else if(capienza<=0){
         document.getElementById("capienza").focus();
          alert("Capienza incoretta");
 

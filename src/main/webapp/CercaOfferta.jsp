@@ -9,12 +9,22 @@
 <html>
 <head>
     <title>Cerca Offerte</title>
+    <link rel="shortcut icon" href="front-end/img/lupa.png" type="image/ico" />
+
+
 </head>
 <body>
 
 <div id="cercaSconto">
     <table>
-        <form  method="post" action="">
+        <form  method="post" action="sconto">
+            <tr>
+                <td>
+                    <a href="MostraPartiteCliente.jsp">
+                        <input type="button" name="bottoneVisualizza" value="Seleziona data partita">
+                    </a>
+                </td>
+            </tr>
             <tr>
                 <td><label>Nome: </label></td>
                 <td><input type="text" name="nomeCliente" /></td>
@@ -28,20 +38,13 @@
 
             <tr>
                 <td><label>Data di nascita </label></td>
-                <td><input type="date" name="cognomeCliente"/></td>
+                <td><input type="date" name="dataNascita"/></td>
 
             </tr>
 
-            <tr>
-                <td>
-                    <a href="MostraPartiteCliente.jsp">
-                         <input type="button" name="bottoneVisualizza" value="Seleziona partita">
-                    </a>
-                </td>
-            </tr>
             <div id="rispostaServer">
-                <td><label>cosa sucede: </label></td>
-                <td><%=request.getParameter("data")%></td>
+                <td><label>Data Partita: </label></td>
+                <td><input type="text" name="dataPartita" value=<%=request.getParameter("data")%>></td>
             </div>
 
 
@@ -55,18 +58,7 @@
 
 </div>
 
-    <script>
-        var divRispostaServer= document.getElementById("rispostaServer");
-        console.log(divRispostaServer);
-            divRispostaServer.style.display="none";
 
-
-
-        function  mostaRispostaServer() {
-            divRispostaServer.style.display="block";
-
-        }
-    </script>
 
 </body>
 </html>

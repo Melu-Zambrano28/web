@@ -29,7 +29,7 @@
 <head>
     <title>Visualizza Partita</title>
     <link href="front-end/css/VisualizzaPartitaStyle.css" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="front-end/img/gestore.jpg" type="image/ico" />
+    <link rel="shortcut icon" href="front-end/img/lupa.png" type="image/ico" />
     <%--<script type="text/javascript" src="front-end/js/FunzioniPartite.js"></script>--%>
 
 

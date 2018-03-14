@@ -59,24 +59,23 @@ public class Util_Data_Time {
         String data_Partita = data;
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         java.util.Date date = null;
-        GregorianCalendar cal = null;
-        java.sql.Date dataSql=null;
-        GregorianCalendar dataPartitaG=null;
+        GregorianCalendar dataGregorian = null;
+
         try {
             date = df.parse(data_Partita);
-            cal = new GregorianCalendar();
-            cal.setTime(date);
-            dataPartitaG = Util_Data_Time.convertiDataSql_Gregorian(dataSql); //util
+            dataGregorian = new GregorianCalendar();
+            dataGregorian.setTime(date);
 
 
-        } catch (ParseException e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return dataPartitaG;
+        return dataGregorian;
     }
 
     public static String convertiGregorianCalendar_String (GregorianCalendar data){
-        SimpleDateFormat fmt = new SimpleDateFormat("dd-MMM-yyyy");
+        SimpleDateFormat fmt = new SimpleDateFormat("dd-MM-yyyy");
         fmt.setCalendar(data);
         String dateFormatted = fmt.format(data.getGregorianChange());
         return dateFormatted;
@@ -84,7 +83,7 @@ public class Util_Data_Time {
     }
 
     public static String convertiGregorianCalendarDataTime_String (GregorianCalendar data){
-        SimpleDateFormat fmt = new SimpleDateFormat("dd-MMM-yyyy hh:mm");
+        SimpleDateFormat fmt = new SimpleDateFormat("dd-MM-yyyy hh:mm");
         fmt.setCalendar(data);
         String dateFormatted = fmt.format(data.getGregorianChange());
         return dateFormatted;
@@ -110,6 +109,23 @@ public class Util_Data_Time {
         return anno;
 
     }
+
+
+    public static int getDaysOfMoth(String data) {
+        GregorianCalendar dataGregorian = Util_Data_Time.convertiStringDate_GregorianDate(data);
+        int mese = dataGregorian.get(Calendar.MONTH)+1;
+        int anno = dataGregorian.get(Calendar.YEAR);
+        int giorni = 0;
+        if (mese == 4 || mese == 6 || mese == 9 || mese == 11) {
+            giorni = 30;
+        } else if (mese == 2) {
+            giorni = dataGregorian.isLeapYear(anno) ? 29 : 28;
+        } else {
+            giorni = 31;
+        }
+        return giorni;
+    }
+
 
 
 
