@@ -14,14 +14,12 @@ public class ServiceBigliettoDao {
         private static PreparedStatement st = null;
         private static ResultSet rs = null;
 
-        private final static String insert_biglietto = "INSERT INTO biglietto (seriale_biglietto, id_partecipazione, nome, " +
-                "cognome, id_sconto, id_stato_biglietto) VALUES (?, ?, ?, ?, ?, ?)";
+        private final static String insert_biglietto = "INSERT INTO biglietto (seriale_biglietto, nome, " +
+                "cognome, id_stato_biglietto) VALUES (?, ?, ?, ?)";
         private final static String select_biglietto = "SELECT * FROM biglietto WHERE seriale_biglietto = ?";
-        private final static String update_biglietto = "UPDATE biglietto SET id_partecipazione = ?," +
-                " nome = ?, cognome = ?, id_sconto = ?, id_stato_biglietto = ? WHERE seriale_biglietto = ?";
+        private final static String update_biglietto = "UPDATE biglietto SET nome = ?, cognome = ?, id_sconto = ?, id_stato_biglietto = ? WHERE seriale_biglietto = ?";
         private final static String delete_biglietto = "DELETE FROM biglietto WHERE seriale_biglietto = ?";
-        private final static String listaBiglietti="\n" +
-                "SELECT biglietto.seriale_biglietto seriale,\n" +
+        private final static String listaBiglietti="SELECT biglietto.seriale_biglietto seriale,\n" +
                 "cliente.nome nome,\n" +
                 "cliente.cognome cognome,\n" +
                 "sconto.descrizione descrizione,\n" +
@@ -31,8 +29,6 @@ public class ServiceBigliettoDao {
                 "FROM biglietto\n" +
                 "INNER JOIN cliente ON biglietto.id_cliente=cliente.id\n" +
                 "INNER JOIN sconto ON biglietto.id_sconto=sconto.id\n" +
-                "INNER JOIN partecipazione ON partecipazione.id = biglietto.id_partecipazione AND partecipazione.id_cliente = biglietto.id_cliente\n" +
-                "INNER JOIN partita ON partecipazione.id_partita= partita.id\n" +
                 "INNER JOIN squadra AS s1 ON partita.id_sq_home=s1.id\n" +
                 "INNER JOIN squadra AS s2 ON partita.id_sq_visitor=s2.id\n";
 
@@ -41,11 +37,9 @@ public class ServiceBigliettoDao {
             st = conex.prepareStatement(insert_biglietto);
             String seriale= GeneraSerialBiglietto.getSeriale();
             st.setString(1, seriale); //sicuro: cosi i seriali vengono generati solo per insrimento
-            st.setInt(2, biglietto.getId_partecipazione());
-            st.setString(3, biglietto.getNome());
-            st.setString(4, biglietto.getCognome());
-            st.setInt(5, biglietto.getId_sconto());
-            st.setInt(6, biglietto.getId_stato_biglietto());
+            st.setString(2, biglietto.getNome());
+            st.setString(3, biglietto.getCognome());
+            st.setInt(4, biglietto.getId_stato_biglietto());
             st.execute();
             st.close();
             conex.close();
@@ -54,12 +48,11 @@ public class ServiceBigliettoDao {
         public static void aggiornaBiglietto(Biglietto biglietto) throws SQLException, ClassNotFoundException {
             conex = DataSourceSingleton.getInstance().getConnection();
             st = conex.prepareStatement(update_biglietto);
-            st.setInt(1, biglietto.getId_partecipazione());
-            st.setString(2, biglietto.getNome());
-            st.setString(3, biglietto.getCognome());
-            st.setInt(4, biglietto.getId_sconto());
-            st.setInt(5, biglietto.getId_stato_biglietto());
-            st.setString(6, biglietto.getSeriale_biglietto());
+            st.setString(1, biglietto.getNome());
+            st.setString(2, biglietto.getCognome());
+            st.setInt(3, biglietto.getId_sconto());
+            st.setInt(4, biglietto.getId_stato_biglietto());
+            st.setString(5, biglietto.getSeriale_biglietto());
             st.execute();
             st.close();
             conex.close();
@@ -72,11 +65,10 @@ public class ServiceBigliettoDao {
             rs = st.executeQuery();
             while(rs.next()) {
                 String seriale_biglietto2 = rs.getString(1);
-                int id_partecipazione = rs.getInt(2);
-                String nome = rs.getString(3);
-                String cognome = rs.getString(4);
-                int id_sconto = rs.getInt(5);
-                int stato_biglietto = rs.getInt(6);
+                String nome = rs.getString(2);
+                String cognome = rs.getString(3);
+                int id_sconto = rs.getInt(4);
+                int stato_biglietto = rs.getInt(5);
                 biglietto = new Biglietto();
             }
             return biglietto;
