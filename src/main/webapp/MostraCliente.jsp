@@ -12,6 +12,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <% Cliente clio = (Cliente) request.getAttribute("cliente"); %>
 <%! String nomeCliente = ""; %> <%! String cognomeCliente = ""; %>
 <html>
@@ -35,7 +36,7 @@
     </div>
 </header>
 
-<h1 id="benvenuto"> Ciao <%=  nomeCliente %>
+<h1 id="benvenuto"> Ciao <%=  nomeCliente %>   ${cliente.cognome}
 </h1>
 
 
@@ -47,6 +48,9 @@
         <option value="orario">Ordina in base all'orario</option>
         <option value="stadio.id">Ordina in base allo stadio</option>
         <option value="lessicografico">Ordina in base all'ordine lessicografico</option>
+    </select>
+    <select id="selezione-stadio">
+        <option>Seleziona uno stadio ...</option>
     </select>
 </div>
 

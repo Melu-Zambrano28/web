@@ -36,6 +36,10 @@
         <servlet-name>ServletVissualizzaPartita</servlet-name>
         <servlet-class>it.esempio.sportivo.servlet.ServletVisualizzaPartita</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletCalcolaPrezzo</servlet-name>
+        <servlet-class>it.esempio.sportivo.servlet.ServletCalcolaPrezzo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletInserisciStadio</servlet-name>
         <url-pattern>/inserisciStadio</url-pattern>
@@ -67,6 +71,10 @@
     <servlet-mapping>
         <servlet-name>ServletVissualizzaPartita</servlet-name>
         <url-pattern>/vediPartita</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletCalcolaPrezzo</servlet-name>
+        <url-pattern>/calcolaPrezzo</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>Gestore.jsp</welcome-file>

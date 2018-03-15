@@ -53,8 +53,8 @@ public class ServiceStadioDao {
             stadio.setCapienza(rs.getInt("capienza"));
             stadio.setCosto_biglietto(rs.getDouble("costo_blg"));
         }
-        st.close();
-        conex.close();
+        //st.close();
+        //conex.close();
         return stadio;
     }
 

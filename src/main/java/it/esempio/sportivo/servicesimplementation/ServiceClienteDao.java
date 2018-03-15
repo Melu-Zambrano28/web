@@ -116,15 +116,15 @@ public class ServiceClienteDao  {
     }
 
     public static Cliente getClienteByNameSurname(String name, String surname) throws SQLException, ClassNotFoundException{
-
+        Cliente c = null;
         conex = DataSourceSingleton.getInstance().getConnection();
         st = conex.prepareStatement(querySelectClientebyNameSurname);
         st.setString(1, name);
         st.setString(2, surname);
         rs = st.executeQuery();
-
-        Cliente c = ServiceClienteDao.mappaturaCliente(rs);
-
+        while(rs.next()) {
+             c = ServiceClienteDao.mappaturaCliente(rs);
+        }
         return c;
 
     }

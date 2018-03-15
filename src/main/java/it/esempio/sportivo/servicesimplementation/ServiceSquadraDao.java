@@ -50,8 +50,8 @@ public class ServiceSquadraDao {
             squadra = new Squadra(resultSet.getInt(1), resultSet.getString(2));
             System.out.println(squadra.toString());
         }
-        st.close();
-        conex.close();
+        //st.close();
+        //conex.close();
         return squadra;
     }
 

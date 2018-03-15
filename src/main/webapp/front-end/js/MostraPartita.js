@@ -79,7 +79,7 @@ function tabellario(listaPartite) {
     document.createElement("input", "submit");
     //attributi form
     form.id = "formo";
-    form.method = "get";
+    form.method = "post";
     form.action = "calcolaPrezzo";
     form.appendChild(tbl);
     form.appendChild(inp);
@@ -105,17 +105,17 @@ function loadTable() {
 }
 
 
-function invio_scelta() {
+function invio_scelta(event) {
     "use strict";
     var up = document.getElementsByTagName("select");
     var sur = up.selezione.value;
     var ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function() {
         if(this.readyState === 4 && this.status === 200) {
-            //console.log(sur);
+            console.log(event.target.id);
             json = this.responseText;
             listaPartite = JSON.parse(json);
-            //setInterval(3000);
+            setTimeout(3000);
             tabellario(listaPartite);
         }
     };
