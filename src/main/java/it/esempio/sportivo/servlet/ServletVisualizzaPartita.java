@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ServletVissualizzaPartita extends HttpServlet {
+public class ServletVisualizzaPartita extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServicePartitaDao partita = new ServicePartitaDao();
         try {

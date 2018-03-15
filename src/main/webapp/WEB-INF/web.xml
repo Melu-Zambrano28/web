@@ -34,7 +34,7 @@
     </servlet>
     <servlet>
         <servlet-name>ServletVissualizzaPartita</servlet-name>
-        <servlet-class>it.esempio.sportivo.servlet.ServletVissualizzaPartita</servlet-class>
+        <servlet-class>it.esempio.sportivo.servlet.ServletVisualizzaPartita</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletInserisciStadio</servlet-name>

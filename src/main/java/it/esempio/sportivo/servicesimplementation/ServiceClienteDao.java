@@ -4,6 +4,7 @@ import it.esempio.sportivo.Util.Util_Data_Time;
 import it.esempio.sportivo.entity.Cliente;
 import it.esempio.sportivo.repository.DataSourceSingleton;
 
+import javax.servlet.ServletException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -17,6 +18,7 @@ public class ServiceClienteDao  {
   private static final String queryUpdateUtente="UPDATE cliente SET nome=?, cognome=?, data_nascita=? " +" WHERE id=? ";
   private static final String queryDeleteUtente="DELETE FROM cliente WHERE id=?";
   private static final String querySelect="SELECT * FROM cliente";
+  private static final String querySelectClientebyNameSurname = "SELECT * FROM cliente WHERE nome=? AND cognome=?";
 
 
     public static void  createCliente(Cliente cliente) throws SQLException, ClassNotFoundException {
@@ -104,6 +106,22 @@ public class ServiceClienteDao  {
         }
         return elencoCliente;
     }
+
+    public static Cliente getClienteByNameSurname(String name, String surname) throws SQLException, ClassNotFoundException{
+
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(querySelectClientebyNameSurname);
+        st.setString(1, name);
+        st.setString(2, surname);
+        rs = st.executeQuery();
+
+        Cliente c = ServiceClienteDao.mappaturaCliente(rs);
+
+        return c;
+
+    }
+
+
 
 
 

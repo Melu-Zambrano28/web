@@ -39,6 +39,7 @@ public class ServicePartitaDao {
             " INNER JOIN squadra sq2 ON partita.id_sq_visitor = sq2.id \n" +
             " INNER JOIN stadio stad ON partita.id_stadio = stad.id\n" +
             " ORDER BY orario";
+    private static final String querySelectPartitaById="SELECT * FROM partita WHERE id=?";
 
 
     public static void inserisciPartita(Partita partita, Squadra sq_home, Squadra sq_visitor, Stadio stadio) throws SQLException, ClassNotFoundException {
@@ -144,6 +145,27 @@ public class ServicePartitaDao {
 
 
     }
+
+    public static Partita getPartitaById(int id) throws SQLException, ClassNotFoundException{
+        Partita p;
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(querySelectPartitaById);
+        st.setInt(1, id);
+        rs = st.executeQuery();
+
+        p = ServicePartitaDao.mappaturaPartita(rs);
+
+        return p;
+
+    }
+
+    private static Partita mappaturaPartita(ResultSet result){
+        Partita p = new Partita();
+
+        return p;
+
+    }
+
 
 }
 

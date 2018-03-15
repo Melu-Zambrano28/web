@@ -53,7 +53,7 @@ public class PoliticheSconto {
     
 
 
-    public static double calcolaSconto2(Cliente c, Partita p ){
+    public static double calcolaSconto(Cliente c, Partita p ){
         double sconto_max=0;
 
 
