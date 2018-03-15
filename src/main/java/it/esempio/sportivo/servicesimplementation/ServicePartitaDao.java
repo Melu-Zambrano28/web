@@ -205,8 +205,17 @@ public class ServicePartitaDao {
 
     }
 
-    private static Partita mappaturaPartita(ResultSet result) {
+    private static Partita mappaturaPartita(ResultSet result) throws SQLException, ClassNotFoundException {
         Partita p = new Partita();
+        p.setId(result.getInt("id"));
+        java.sql.Date sqlDate=result.getDate("data_partita");
+        GregorianCalendar newDate= Util_Data_Time.convertiDataSql_Gregorian(sqlDate);
+        p.setData_partita(newDate);
+        p.setSquadra_home(ServiceSquadraDao.selectSquadra(result.getInt("squadra_home")));
+        p.setSquadra_visitor(ServiceSquadraDao.selectSquadra(result.getInt("squadra_visitor")));
+        p.setGol_home(result.getInt("gol_home"));
+        p.setGol_visitor(result.getInt("gol_visitor"));
+        p.set_stadio(ServiceStadioDao.TrovaStadioById(result.getInt("id_stadio")));
 
         return p;
     }
