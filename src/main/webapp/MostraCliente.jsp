@@ -2,6 +2,8 @@
 <%@ page import="it.esempio.sportivo.servicesimplementation.ServicePartitaDao" %>
 <%@ page import="it.esempio.sportivo.entity.Cliente" %>
 <%@ page import="it.esempio.sportivo.servicesimplementation.ServicePartitaDao" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="it.esempio.sportivo.entity.Stadio" %>
 <%--
 <%@ page import="it.fides.sportivo.servicesimplementation.ServicePartitaDao" %><%--
   Created by IntelliJ IDEA.
@@ -36,7 +38,7 @@
     </div>
 </header>
 
-<h1 id="benvenuto"> Ciao <%=  nomeCliente %>   ${cliente.cognome}
+<h1 id="benvenuto"> Ciao <%=  nomeCliente %>   ${cliente.cognome} ${listaStadio[1].nome}
 </h1>
 
 
@@ -51,7 +53,15 @@
     </select>
     <select id="selezione-stadio">
         <option>Seleziona uno stadio ...</option>
+        <c:forEach items="${stadio}" var="elem">
+            <option>${elem.nome}</option>
+        </c:forEach>
     </select>
+    <div>
+
+
+
+
 </div>
 
 <form action="acquistaBiglietto" method="post" id="maschera">

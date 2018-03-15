@@ -3,6 +3,7 @@ var listaPartite;
 var sur;
 
 
+
 function tabellario(listaPartite) {
     //"use strict";
     var c = document.getElementById("tabella");
@@ -54,6 +55,7 @@ function tabellario(listaPartite) {
         checky.className = "radioStyle";
         var data = document.createElement("INPUT");
         data.setAttribute("type", "hidden");
+        data.className = "zebra";
         data.value = listaPartite[z].id;
         row.appendChild(campo1);
         row.appendChild(campo2);
@@ -70,8 +72,10 @@ function tabellario(listaPartite) {
     //crea submit button
     var inp = document.createElement("INPUT");
     inp.setAttribute("type", "submit");
+    inp.id = "checkout";
     var nome = document.createElement("INPUT"); nome.setAttribute("type", "hidden"); nome.name = "nome";
     var cognome = document.createElement("INPUT"); cognome.setAttribute("type", "hidden"); cognome.name = "cognome";
+    nome.className = "zebra"; cognome.className = "zebra";
     nome.value = nomeCliente; cognome.value = cognomeCliente;
     form.appendChild(nome);
     form.appendChild(cognome);
@@ -117,10 +121,24 @@ function invio_scelta(event) {
             listaPartite = JSON.parse(json);
             setTimeout(3000);
             tabellario(listaPartite);
+            scripter();
         }
     };
     ajax.open("POST", "/ajaxPartita?ordinePartite=" + sur, true);
     ajax.send();
+}
+
+
+var fvalida  = function valida() {
+    que = document.getElementsByClassName("radioStyle");
+    var inputs = document.getElementById("maschera").getElementsByClassName("zebra");
+    for (var i = 0; i < que.length; i++) {
+        if (que[i].checked === false) {
+            alert("Seleziona un biglietto");
+            event.preventDefault()
+            return;
+        }
+    }
 }
 
 function mostraAvanti() {
@@ -128,6 +146,11 @@ function mostraAvanti() {
     "use strict";
     document.getElementById("");
 
+}
+
+function scripter() {
+    var check_campi = document.getElementById("checkout");
+    check_campi.addEventListener("click", fvalida);
 }
 
 
@@ -138,6 +161,7 @@ var radio_yes = document.getElementsByClassName("radioStyle");
 for(var u = 0; u < radio_yes.length; u++) {
     radio_yes[u].addEventListener("click", mostraAvanti);
 }
+
 
 
 /*

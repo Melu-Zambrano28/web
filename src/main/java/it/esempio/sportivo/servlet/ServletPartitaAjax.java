@@ -3,6 +3,7 @@ package it.esempio.sportivo.servlet;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import it.esempio.sportivo.entity.Partita;
+import it.esempio.sportivo.entity.Stadio;
 import it.esempio.sportivo.servicesimplementation.ServicePartitaDao;
 import it.esempio.sportivo.servicesimplementation.ServiceStadioDao;
 
@@ -22,15 +23,6 @@ public class ServletPartitaAjax extends HttpServlet {
 
         Gson giasone = new GsonBuilder().create();
 
-
-        ServiceStadioDao stadio = new ServiceStadioDao();
-        try {
-            stadio.listaStadio();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
 
         ArrayList<Partita> elencoPartita=null;
         //ServicePartitaDao partitaDao = new ServicePartitaDao();
