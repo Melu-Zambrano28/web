@@ -30,7 +30,7 @@ public class ServletSconto extends HttpServlet {
 
         PrintWriter out= response.getWriter();
         Gson giasone = new GsonBuilder().create();
-        String json="melissa, belen, guzman";
+        String json="";
         json = giasone.toJson(cliente);
         out.write(json);
 
