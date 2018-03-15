@@ -49,6 +49,7 @@ public class ServicePartitaDao {
             "on partita.id_stadio = stadio.id " +
             "HAVING orario > now() " +
             "order by "; //+
+    private static final String querySelectPartitaById="SELECT * FROM partita WHERE id=?";
 
 
     public static void inserisciPartita(Partita partita, Squadra sq_home, Squadra sq_visitor, Stadio stadio) throws SQLException, ClassNotFoundException {
@@ -191,7 +192,24 @@ public class ServicePartitaDao {
         conex.close();
         return elencoPartite;
     }
+    public static Partita getPartitaById(int id) throws SQLException, ClassNotFoundException{
+        Partita p;
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(querySelectPartitaById);
+        st.setInt(1, id);
+        rs = st.executeQuery();
 
+        p = ServicePartitaDao.mappaturaPartita(rs);
+
+        return p;
+
+    }
+
+    private static Partita mappaturaPartita(ResultSet result) {
+        Partita p = new Partita();
+
+        return p;
+    }
 
 }
 
