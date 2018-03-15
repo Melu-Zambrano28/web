@@ -18,14 +18,14 @@ body img {
 
 }
 
-.stadio, .squadra , .partita, .areaVisualizza{ /*dv stadio e tutte i div si metterenno accanto l'altro per il float, */
+.stadio, .squadra , .partita, .areaVisualizza, .areaIncasso{ /*dv stadio e tutte i div si metterenno accanto l'altro per il float, */
 
     float: left; /*per mettere qualcosa accanto*/
     padding: 20px;
 }
 
 
-#inserisciPartita,#inserisciSquadra, #inserisciStadio, #imagineVisualizza{
+#inserisciPartita,#inserisciSquadra, #inserisciStadio, #imagineVisualizza, #registraStadio, #imagineSoldi{
     text-align: left;
     text-shadow: 3px 2px cadetblue ;
     color: white;
@@ -72,6 +72,9 @@ a{
     text-decoration: none;
 }
 
+#imagineSoldi img{
+    width: 220px;
+}
 
 
 
