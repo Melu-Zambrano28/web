@@ -16,6 +16,7 @@ public class ServiceStadioDao {
     private static final String trovaIdperNome="SELECT id FROM stadio WHERE nome=?";
     private static final String select="SELECT * FROM stadio";
     private static final String trova_per_id ="SELECT * FROM stadio WHERE id=?";
+    private static final String trova_per_nome ="SELECT id, nome, capienza, costo_blg FROM stadio WHERE nome = ?";
     private static final String insert_stadio = "INSERT INTO stadio (nome, capienza, costo_blg) VALUES (?,?,?)";
     private static final String delete_stadio = "DELETE FROM stadio WHERE id = ?";
     private static final String update_stadio= "UPDATE stadio SET nome = ? , capienza = ? ,costo_blg= ? WHERE id = ?";
@@ -52,8 +53,8 @@ public class ServiceStadioDao {
             stadio.setCapienza(rs.getInt("capienza"));
             stadio.setCosto_biglietto(rs.getDouble("costo_blg"));
         }
-        st.close();
-        conex.close();
+        //st.close();
+        //conex.close();
         return stadio;
     }
 
@@ -110,6 +111,26 @@ public class ServiceStadioDao {
         return lista_stadio;
     }
 
+
+    public static Stadio TrovaStadioByName(String stadio_nome) throws SQLException, ClassNotFoundException {
+        conex = DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(trova_per_nome);
+        st.setString(1, stadio_nome);
+        rs= st.executeQuery();
+        while (rs.next()) {
+            int id = rs.getInt("id");
+            String nome = rs.getString("nome");
+            int capienza = rs.getInt("capienza");
+            double bigl = rs.getDouble("costo_blg");
+            /*stadio.setId(rs.getInt("id"));
+            stadio.setNome(rs.getString("nome"));
+            stadio.setCapienza(rs.getInt("capienza"));
+            stadio.setCosto_biglietto(rs.getDouble("costo_blg"));*/
+            stadio = new Stadio(id, nome, capienza, bigl);
+        }
+        return stadio;
+    }
+
     public static Stadio incassoTotalePerStadio(int id) throws SQLException, ClassNotFoundException {
         conex= DataSourceSingleton.getInstance().getConnection();
         st= conex.prepareStatement(incasso_per_stadio);
@@ -126,6 +147,7 @@ public class ServiceStadioDao {
         conex.close();
         return stadio;
     }
+
 
 
 

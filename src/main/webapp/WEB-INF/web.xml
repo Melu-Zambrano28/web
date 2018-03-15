@@ -33,10 +33,6 @@
         <servlet-class>it.esempio.sportivo.servlet.ServletSconto</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletVissualizzaPartita</servlet-name>
-        <servlet-class>it.esempio.sportivo.servlet.ServletVissualizzaPartita</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ServletIncasso</servlet-name>
         <servlet-class>it.esempio.sportivo.servlet.ServletIncasso</servlet-class>
     </servlet>
@@ -67,10 +63,6 @@
     <servlet-mapping>
         <servlet-name>ServletSconto</servlet-name>
         <url-pattern>/sconto</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletVissualizzaPartita</servlet-name>
-        <url-pattern>/vediPartita</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletIncasso</servlet-name>

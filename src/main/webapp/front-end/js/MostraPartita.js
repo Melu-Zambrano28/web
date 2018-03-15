@@ -6,10 +6,13 @@ var sur;
 function tabellario(listaPartite) {
     //"use strict";
     var c = document.getElementById("tabella");
-    if( c !== null) {
+    var d = document.getElementById("formo");
+    if( c !== null && d !== null) {
         c.remove();
+        d.remove();
     }
     var body = document.getElementById("demo");
+    var form = document.createElement("FORM");
     var tbl = document.createElement("table");
     var tblBody = document.createElement("tbody");
     var squadra_home = document.createElement("th");
@@ -47,20 +50,40 @@ function tabellario(listaPartite) {
         checky.setAttribute("type", "radio");
         checky.value = listaPartite[z].id;
         //Se i radio button non hanno lo stesso nome i radio rimangono selezionati.
-        checky.name = "comune";
+        checky.name = "id-partita";
         checky.className = "radioStyle";
+        var data = document.createElement("INPUT");
+        data.setAttribute("type", "hidden");
+        data.value = listaPartite[z].id;
         row.appendChild(campo1);
         row.appendChild(campo2);
         row.appendChild(campo3);
         row.appendChild(campo4);
         row.appendChild(checky);
+        row.appendChild(data);
         tblBody.appendChild(row);
     }
     tbl.appendChild(tblBody);
     tbl.setAttribute("border", 4);
     tbl.id = "tabella";
     tbl.className = "center";
-    body.appendChild(tbl);
+    //crea submit button
+    var inp = document.createElement("INPUT");
+    inp.setAttribute("type", "submit");
+    var nome = document.createElement("INPUT"); nome.setAttribute("type", "hidden"); nome.name = "nome";
+    var cognome = document.createElement("INPUT"); cognome.setAttribute("type", "hidden"); cognome.name = "cognome";
+    nome.value = nomeCliente; cognome.value = cognomeCliente;
+    form.appendChild(nome);
+    form.appendChild(cognome);
+    inp.value = "Procedi";
+    document.createElement("input", "submit");
+    //attributi form
+    form.id = "formo";
+    form.method = "post";
+    form.action = "calcolaPrezzo";
+    form.appendChild(tbl);
+    form.appendChild(inp);
+    body.appendChild(form);
 }
 
 
@@ -82,17 +105,17 @@ function loadTable() {
 }
 
 
-function invio_scelta() {
+function invio_scelta(event) {
     "use strict";
     var up = document.getElementsByTagName("select");
     var sur = up.selezione.value;
     var ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function() {
         if(this.readyState === 4 && this.status === 200) {
-            //console.log(sur);
+            console.log(event.target.id);
             json = this.responseText;
             listaPartite = JSON.parse(json);
-            //setInterval(3000);
+            setTimeout(3000);
             tabellario(listaPartite);
         }
     };
