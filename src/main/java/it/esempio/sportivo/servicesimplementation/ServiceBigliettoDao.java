@@ -15,7 +15,7 @@ public class ServiceBigliettoDao {
         private static ResultSet rs = null;
 
         private final static String insert_biglietto = "INSERT INTO biglietto (seriale_biglietto, nome, " +
-                "cognome, id_sconto, id_stato_biglietto) VALUES (?, ?, ?, ?, ?)";
+                "cognome, id_stato_biglietto) VALUES (?, ?, ?, ?)";
         private final static String select_biglietto = "SELECT * FROM biglietto WHERE seriale_biglietto = ?";
         private final static String update_biglietto = "UPDATE biglietto SET nome = ?, cognome = ?, id_sconto = ?, id_stato_biglietto = ? WHERE seriale_biglietto = ?";
         private final static String delete_biglietto = "DELETE FROM biglietto WHERE seriale_biglietto = ?";
@@ -39,8 +39,7 @@ public class ServiceBigliettoDao {
             st.setString(1, seriale); //sicuro: cosi i seriali vengono generati solo per insrimento
             st.setString(2, biglietto.getNome());
             st.setString(3, biglietto.getCognome());
-            st.setInt(4, biglietto.getId_sconto());
-            st.setInt(5, biglietto.getId_stato_biglietto());
+            st.setInt(4, biglietto.getId_stato_biglietto());
             st.execute();
             st.close();
             conex.close();
