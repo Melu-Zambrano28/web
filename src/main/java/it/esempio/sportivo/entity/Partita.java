@@ -18,6 +18,15 @@ public class Partita {
     public Partita() {
     }
 
+    public Partita(int id, GregorianCalendar data_partita_gregoriana, Squadra partita_sq_home, Squadra partita_sq_visitor, int gh, int gv, Stadio stadio) {
+        this.id = id;
+        this.data_partita = data_partita_gregoriana;
+        this.squadra_home = partita_sq_home;
+        this.squadra_visitor = partita_sq_visitor;
+        this.gol_home = gh;
+        this.gol_visitor = gv;
+        this.stadio = stadio;
+    }
 
 
     public int getId() {

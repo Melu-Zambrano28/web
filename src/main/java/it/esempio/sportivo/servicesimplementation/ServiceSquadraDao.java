@@ -15,6 +15,7 @@ public class ServiceSquadraDao {
     private static ResultSet rs;
     private static PreparedStatement st;
     private static final String trovaSqPerNome="SELECT id FROM squadra WHERE nome=?";
+    private static final String select_squadra_nome = "SELECT id, nome FROM squadra WHERE nome = ?";
     private static final String insert_squadra = "INSERT INTO squadra (nome) VALUES (?)";
     private static final String delete_squadra = "DELETE FROM squadra WHERE id = ?";
     private static final String update_squadra = "UPDATE squadra SET nome = ? WHERE id = ?";
@@ -65,6 +66,18 @@ public class ServiceSquadraDao {
         }
 
         return idSquadra;
+    }
+
+    public static Squadra selectSquadra(String sq_nome) throws SQLException, ClassNotFoundException {
+        conex= DataSourceSingleton.getInstance().getConnection();
+        st = conex.prepareStatement(select_squadra_nome);
+        Squadra squadra = null;
+        st.setString(1, sq_nome);
+        ResultSet resultSet = st.executeQuery();
+        while (resultSet.next()) {
+            squadra = new Squadra(resultSet.getInt(1), resultSet.getString(2));
+        }
+        return squadra;
     }
 
     public static void deleteSquadra(int id) throws SQLException, ClassNotFoundException {

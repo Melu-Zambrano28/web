@@ -16,15 +16,16 @@ public class ServletPartitaAjax extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //System.out.println("CUCU");
         response.setContentType("application/json");
+        String ordine = request.getParameter("ordinePartite");
 
         Gson giasone = new GsonBuilder().create();
 
 
         ArrayList<Partita> elencoPartita=null;
-        ServicePartitaDao partitaDao = new ServicePartitaDao();
+        //ServicePartitaDao partitaDao = new ServicePartitaDao();
         String giasoneJ="";
         try {
-            elencoPartita=partitaDao.elencoOrdinatoPerData() ;
+            elencoPartita= ServicePartitaDao.listaPartitaOrig(ordine);
             giasoneJ = giasone.toJson(elencoPartita);
 
 

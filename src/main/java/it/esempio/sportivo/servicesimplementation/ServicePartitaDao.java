@@ -39,7 +39,16 @@ public class ServicePartitaDao {
             " INNER JOIN squadra sq2 ON partita.id_sq_visitor = sq2.id \n" +
             " INNER JOIN stadio stad ON partita.id_stadio = stad.id\n" +
             " ORDER BY orario";
-    private static final String querySelectPartitaById="SELECT * FROM partita WHERE id=?";
+
+    private static final String select_stringa_partita = "SELECT partita.id as id, sq1.nome as sq_home, partita.goal_sq_home as goal_home, sq2.nome as sq_visitor, partita.goal_sq_visitor as goal_visitor, stadio.nome as stadio, partita.data_partita as orario FROM partita" +
+            " inner join squadra sq1 " +
+            "on partita.id_sq_home = sq1.id " +
+            "inner join squadra sq2 " +
+            "on partita.id_sq_visitor = sq2.id " +
+            "inner join stadio stadio " +
+            "on partita.id_stadio = stadio.id " +
+            "HAVING orario > now() " +
+            "order by "; //+
 
 
     public static void inserisciPartita(Partita partita, Squadra sq_home, Squadra sq_visitor, Stadio stadio) throws SQLException, ClassNotFoundException {
@@ -146,24 +155,41 @@ public class ServicePartitaDao {
 
     }
 
-    public static Partita getPartitaById(int id) throws SQLException, ClassNotFoundException{
-        Partita p;
+    public static ArrayList<Partita> listaPartitaOrig(String ordine) throws SQLException, ClassNotFoundException {
+        PreparedStatement stmt;
+        ResultSet resultSet;
+        ArrayList<Partita> elencoPartite = new ArrayList<Partita>();
         conex = DataSourceSingleton.getInstance().getConnection();
-        st = conex.prepareStatement(querySelectPartitaById);
-        st.setInt(1, id);
-        rs = st.executeQuery();
-
-        p = ServicePartitaDao.mappaturaPartita(rs);
-
-        return p;
-
-    }
-
-    private static Partita mappaturaPartita(ResultSet result){
-        Partita p = new Partita();
-
-        return p;
-
+        stmt = conex.prepareStatement(select_stringa_partita + ordine);
+        Partita partita;
+        Squadra partita_sq_home;
+        Squadra partita_sq_visitor;
+        Stadio stadio;
+        int gh, gv, id;
+        resultSet = stmt.executeQuery();
+        while (true) {
+            if (!(resultSet.next())) break;
+            id = resultSet.getInt("id");
+            java.sql.Date data_partita = resultSet.getDate("orario");
+            //String data_partita = resultSet.getString("orario");
+            gh = resultSet.getInt("goal_home");
+            gv = resultSet.getInt("goal_visitor");
+            String squadraA = resultSet.getString("sq_home");
+            String squadraB = resultSet.getString("sq_visitor");
+            String stadio_n = resultSet.getString("stadio");
+            partita_sq_home = ServiceSquadraDao.selectSquadra(squadraA);
+            partita_sq_visitor = ServiceSquadraDao.selectSquadra(squadraB);
+            stadio = ServiceStadioDao.TrovaStadioByName(stadio_n);
+            GregorianCalendar data_partita_gregoriana =  Util_Data_Time.convertiTimeStampSql_GregorianCalendar(resultSet.getTimestamp("orario"));
+            System.out.println(data_partita);
+            System.out.println(data_partita_gregoriana);
+            partita = new Partita(id, data_partita_gregoriana,
+                    partita_sq_home, partita_sq_visitor, gh, gv,
+                    stadio);
+            elencoPartite.add(partita);
+        }
+        conex.close();
+        return elencoPartite;
     }
 
 

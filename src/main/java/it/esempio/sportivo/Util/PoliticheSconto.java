@@ -50,7 +50,7 @@ public class PoliticheSconto {
 
         return percentuale;
     }
-    
+
 
 
     public static double calcolaSconto(Cliente c, Partita p ){

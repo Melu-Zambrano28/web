@@ -76,19 +76,34 @@
                 </a>
 
             </div>
-    <script>
-        var divBottoni=document.getElementById("bottoni");
-        function nascondi () {
-            divBottoni.style.display="none";
-        }
 
-
-        function mostra() {
-            divBottoni.style.display="block";
-        }
-    </script>
 
 
 </div>
+<div class="areaIncasso">
+
+    <div id="imagineSoldi">
+        <p id="titoloSoldi">TOTALE INCASSO</p>
+        <a href="Incasso.jsp">
+            <img src="front-end/img/soldi.jpg">
+        </a>
+    </div>
+
+
+
+</div>
+
+<script>
+    var divBottoni=document.getElementById("bottoni");
+    function nascondi () {
+        divBottoni.style.display="none";
+    }
+
+
+    function mostra() {
+        divBottoni.style.display="block";
+    }
+</script>
+
 </body>
 </html>

@@ -5,8 +5,13 @@ import it.esempio.sportivo.Util.PoliticheSconto;
 import it.esempio.sportivo.Util.Util_Data_Time;
 import it.esempio.sportivo.entity.Cliente;
 import it.esempio.sportivo.entity.Partita;
+
+import it.esempio.sportivo.servicesimplementation.ServicePartitaDao;
+
 import it.esempio.sportivo.services.ServicePartita;
 import it.esempio.sportivo.servicesimplementation.ServicePartitaDao;
+import it.esempio.sportivo.servicesimplementation.ServiceStadioDao;
+
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -61,6 +66,11 @@ public class maino {
 
         GregorianCalendar data = Util_Data_Time.convertiStringDataTime_GregorianCalendar("28-08-1994,12:23");
         System.out.println(data.getGregorianChange());
+        ServicePartitaDao dd = new ServicePartitaDao();
+
+        ArrayList<Partita> sce = dd.listaPartitaOrig("orario");
+        ArrayList<Partita> sceMelissa = dd.elencoOrdinatoPerData();
+        for(Partita parti : sceMelissa) System.out.println(parti);
 
 
 
@@ -114,6 +124,7 @@ public class maino {
         ArrayList<Partita> elenco = partite.elencoOrdinatoPerData();
         Partita pronta = elenco.get(1);
         System.out.println(PoliticheSconto.calcolaSconto(melu, pronta));
+        System.out.println(ServiceStadioDao.incassoTotalePerStadio(9).getCosto_biglietto());
 
 
 
