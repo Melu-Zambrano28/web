@@ -130,11 +130,11 @@ function invio_scelta(event) {
 
 var fvalida  = function valida() {
     que = document.getElementsByClassName("radioStyle");
+    var conta = 0;
     var inputs = document.getElementById("maschera").getElementsByClassName("zebra");
     for (var i = 0; i < que.length; i++) {
-        if (que[i].checked === true) {
-            console.log("O.K");
-            return;
+        if (que[i].checked == true) {
+            conta++;
         } else {
             alert("Seleziona un biglietto");
             event.preventDefault()

@@ -29,7 +29,7 @@
 <h1>Informazioni Biglietto partita selezionata</h1>
 <p> </p>
 <form action="acquistaBiglietto" method="post">
-    <label>Data partita:<%= dataPartita = partita.getData_partita().getGregorianChange() %> </label><br>
+    <label>Data partita:<%= dataPartita = partita.getData_partita().getTime() %> </label><br>
     <label>Squadra home:${PartitaSel.squadra_home.nome}</label><br>
     <label>Squadra visitor:${PartitaSel.squadra_visitor.nome}</label><br>
     <label>Prezzo:<%= prezzo %></label><br>
