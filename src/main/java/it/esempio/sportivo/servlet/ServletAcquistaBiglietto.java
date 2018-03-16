@@ -17,7 +17,7 @@ public class ServletAcquistaBiglietto extends HttpServlet {
         int idPartita = Integer.parseInt(req.getParameter("id-partita"));
         String nome = req.getParameter("nome");
         String cognome = req.getParameter("cognome");
-        int prezzo = Integer.parseInt("prezzo");
+        double prezzo = Double.parseDouble(req.getParameter("prezzo"));
         Biglietto b = new Biglietto(idStatoBiglietto, idPartita, prezzo, nome, cognome);
         try {
             ServiceBigliettoDao.inserisciBiglietto(b);

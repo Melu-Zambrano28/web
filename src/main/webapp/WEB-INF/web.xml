@@ -36,6 +36,14 @@
         <servlet-name>ServletIncasso</servlet-name>
         <servlet-class>it.esempio.sportivo.servlet.ServletIncasso</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletCalcolaPrezzo</servlet-name>
+        <servlet-class>it.esempio.sportivo.servlet.ServletCalcolaPrezzo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletAcquistaBiglietto</servlet-name>
+        <servlet-class>it.esempio.sportivo.servlet.ServletAcquistaBiglietto</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletInserisciStadio</servlet-name>
         <url-pattern>/inserisciStadio</url-pattern>
@@ -67,6 +75,14 @@
     <servlet-mapping>
         <servlet-name>ServletIncasso</servlet-name>
         <url-pattern>/Incasso</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletCalcolaPrezzo</servlet-name>
+        <url-pattern>/calcolaPrezzo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletAcquistaBiglietto</servlet-name>
+        <url-pattern>/acquistaBiglietto</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>Gestore.jsp</welcome-file>

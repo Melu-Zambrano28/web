@@ -121,7 +121,6 @@ function invio_scelta(event) {
             listaPartite = JSON.parse(json);
             setTimeout(3000);
             tabellario(listaPartite);
-            scripter();
         }
     };
     ajax.open("POST", "/ajaxPartita?ordinePartite=" + sur, true);
@@ -133,7 +132,10 @@ var fvalida  = function valida() {
     que = document.getElementsByClassName("radioStyle");
     var inputs = document.getElementById("maschera").getElementsByClassName("zebra");
     for (var i = 0; i < que.length; i++) {
-        if (que[i].checked === false) {
+        if (que[i].checked === true) {
+            console.log("O.K");
+            return;
+        } else {
             alert("Seleziona un biglietto");
             event.preventDefault()
             return;

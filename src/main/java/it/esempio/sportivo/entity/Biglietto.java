@@ -8,9 +8,9 @@ public class Biglietto
     private int id_partita;
     private String nome;
     private String cognome;
-    private int prezzo;
+    private double prezzo;
 
-    public int getPrezzo() {
+    public double getPrezzo() {
         return prezzo;
     }
 
@@ -20,7 +20,7 @@ public class Biglietto
 
     public Biglietto(){}
 
-    public Biglietto(int id_stato_biglietto, int id_partita, int prezzo, String nome, String cognome) {
+    public Biglietto(int id_stato_biglietto, int id_partita, double prezzo, String nome, String cognome) {
         this.id_stato_biglietto = id_stato_biglietto;
         this.nome = nome;
         this.cognome = cognome;

@@ -38,7 +38,7 @@
     </div>
 </header>
 
-<h1 id="benvenuto"> Ciao <%=  nomeCliente %>   ${cliente.cognome} ${listaStadio[1].nome}
+<h1 id="benvenuto"> Ciao <%=  nomeCliente %>   ${cliente.cognome}
 </h1>
 
 

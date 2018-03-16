@@ -39,7 +39,7 @@ public class ServiceBigliettoDao {
             st.setString(1, seriale); //sicuro: cosi i seriali vengono generati solo per insrimento
             st.setString(2, biglietto.getNome());
             st.setString(3, biglietto.getCognome());
-            st.setInt(4, biglietto.getId_stato_biglietto());
+            st.setDouble(4, biglietto.getId_stato_biglietto());
             st.execute();
             st.close();
             conex.close();

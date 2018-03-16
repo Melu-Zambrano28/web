@@ -31,6 +31,8 @@ public class ServletCalcolaPrezzo extends HttpServlet {
             double sconto = PoliticheSconto.calcolaSconto(c, p);
             double costoBase = p.getStadio().getCosto_biglietto();
             prezzoBiglietto = costoBase - costoBase / 100 * sconto;
+            req.setAttribute("PartitaSel", p);
+            req.setAttribute("ClienteSel", c);
         }
         catch (Exception e) {
             resp.sendRedirect("BackEndError.jsp");
@@ -42,7 +44,7 @@ public class ServletCalcolaPrezzo extends HttpServlet {
 
 
 
-        resp.sendRedirect("AcquistaBiglietto.jsp?" + prezzoBiglietto);
+        req.getRequestDispatcher("AcquistaBiglietto.jsp?prezzo=" + prezzoBiglietto).forward(req, resp);
 
 
 
