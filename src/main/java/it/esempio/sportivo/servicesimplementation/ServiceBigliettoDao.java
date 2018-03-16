@@ -14,8 +14,8 @@ public class ServiceBigliettoDao {
         private static PreparedStatement st = null;
         private static ResultSet rs = null;
 
-        private final static String insert_biglietto = "INSERT INTO biglietto (seriale_biglietto, nome, " +
-                "cognome, id_stato_biglietto) VALUES (?, ?, ?, ?)";
+        private final static String insert_biglietto = "INSERT INTO biglietto (seriale_biglietto, id_cliente, " +
+                "id_stato_biglietto, id_partita, prezzo_finale) VALUES (?, ?, ?, ?, ?)";
         private final static String select_biglietto = "SELECT * FROM biglietto WHERE seriale_biglietto = ?";
         private final static String update_biglietto = "UPDATE biglietto SET nome = ?, cognome = ?, id_sconto = ?, id_stato_biglietto = ? WHERE seriale_biglietto = ?";
         private final static String delete_biglietto = "DELETE FROM biglietto WHERE seriale_biglietto = ?";
@@ -32,14 +32,15 @@ public class ServiceBigliettoDao {
                 "INNER JOIN squadra AS s1 ON partita.id_sq_home=s1.id\n" +
                 "INNER JOIN squadra AS s2 ON partita.id_sq_visitor=s2.id\n";
 
-        public static void inserisciBiglietto(Biglietto biglietto) throws SQLException, ClassNotFoundException {
+        public static void inserisciBiglietto(int idStatoBiglietto, int idPartita, int idCliente, double prezzo) throws SQLException, ClassNotFoundException {
             conex = DataSourceSingleton.getInstance().getConnection();
             st = conex.prepareStatement(insert_biglietto);
             String seriale= GeneraSerialBiglietto.getSeriale();
             st.setString(1, seriale); //sicuro: cosi i seriali vengono generati solo per insrimento
-            st.setString(2, biglietto.getNome());
-            st.setString(3, biglietto.getCognome());
-            st.setDouble(4, biglietto.getId_stato_biglietto());
+            st.setInt(2, idStatoBiglietto);
+            st.setInt(3, idPartita);
+            st.setInt(4, idCliente);
+            st.setDouble(4, prezzo);
             st.execute();
             st.close();
             conex.close();

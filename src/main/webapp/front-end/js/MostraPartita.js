@@ -130,7 +130,7 @@ function invio_scelta(event) {
             scripter();
         }
     };
-    ajax.open("POST", "/ajaxPartita?ordinePartite=" + sur, true);
+    ajax.open("POST", "/gestionaleSportivo/ajaxPartita?ordinePartite="+sur, true);
     ajax.send();
 }
 
