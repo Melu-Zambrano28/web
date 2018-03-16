@@ -182,8 +182,8 @@ public class ServicePartitaDao {
             partita_sq_visitor = ServiceSquadraDao.selectSquadra(squadraB);
             stadio = ServiceStadioDao.TrovaStadioByName(stadio_n);
             GregorianCalendar data_partita_gregoriana = Util_Data_Time.convertiTimeStampSql_GregorianCalendar(resultSet.getTimestamp("orario"));
-            System.out.println(data_partita);
-            System.out.println(data_partita_gregoriana);
+            //System.out.println(data_partita);
+            //System.out.println(data_partita_gregoriana);
             partita = new Partita(id, data_partita_gregoriana,
                     partita_sq_home, partita_sq_visitor, gh, gv,
                     stadio);

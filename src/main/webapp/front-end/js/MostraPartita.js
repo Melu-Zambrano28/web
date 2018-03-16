@@ -41,8 +41,7 @@ function tabellario(listaPartite) {
         var nome2 = document.createTextNode(this.listaPartite[z].squadra_visitor.nome);
         campo2.appendChild(nome2);
         var campo3 = document.createElement("td");
-        var nome3 = document.createTextNode(this.listaPartite[z].data_partita.dayOfMonth + "/" + this.listaPartite[z].data_partita.month +
-            "/" + this.listaPartite[z].data_partita.year + "  " + this.listaPartite[z].data_partita.hourOfDay + ":" + this.listaPartite[z].data_partita.minute);
+        var nome3 = document.createTextNode(this.listaPartite[z].data_partita);
         campo3.appendChild(nome3);
         var campo4 = document.createElement("td");
         var nome4 = document.createTextNode(this.listaPartite[z].stadio.nome);
@@ -121,6 +120,7 @@ function invio_scelta(event) {
             listaPartite = JSON.parse(json);
             setTimeout(3000);
             tabellario(listaPartite);
+            scripter();
         }
     };
     ajax.open("POST", "/ajaxPartita?ordinePartite=" + sur, true);
@@ -152,7 +152,9 @@ function mostraAvanti() {
 
 function scripter() {
     var check_campi = document.getElementById("checkout");
-    check_campi.addEventListener("click", fvalida);
+    for(var g = 0; g < check_campi.length; g++) {
+        check_campi[g].addEventListener("click", fvalida);
+    }
 }
 
 

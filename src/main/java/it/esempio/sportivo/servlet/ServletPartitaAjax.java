@@ -2,6 +2,7 @@ package it.esempio.sportivo.servlet;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import it.esempio.sportivo.Util.CalendarJsonSerializer;
 import it.esempio.sportivo.entity.Partita;
 import it.esempio.sportivo.entity.Stadio;
 import it.esempio.sportivo.servicesimplementation.ServicePartitaDao;
@@ -21,7 +22,7 @@ public class ServletPartitaAjax extends HttpServlet {
         response.setContentType("application/json");
         String ordine = request.getParameter("ordinePartite");
 
-        Gson giasone = new GsonBuilder().create();
+        Gson giasone = new GsonBuilder().setPrettyPrinting().registerTypeAdapter(GregorianCalendar.class, new CalendarJsonSerializer()).create();
 
 
         ArrayList<Partita> elencoPartita=null;

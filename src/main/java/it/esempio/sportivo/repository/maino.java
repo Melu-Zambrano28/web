@@ -1,5 +1,8 @@
 package it.esempio.sportivo.repository;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import it.esempio.sportivo.Util.CalendarJsonSerializer;
 import it.esempio.sportivo.Util.GeneraSerialBiglietto;
 import it.esempio.sportivo.Util.PoliticheSconto;
 import it.esempio.sportivo.Util.Util_Data_Time;
@@ -14,7 +17,9 @@ import it.esempio.sportivo.servicesimplementation.ServiceStadioDao;
 
 
 import java.sql.*;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Random;
 
@@ -70,7 +75,12 @@ public class maino {
 
         ArrayList<Partita> sce = dd.listaPartitaOrig("orario");
         ArrayList<Partita> sceMelissa = dd.elencoOrdinatoPerData();
-        for(Partita parti : sceMelissa) System.out.println(parti);
+        for(Partita parti : sceMelissa) System.out.println(parti.getData_partita().getGregorianChange());
+
+
+        Gson gson2 = new GsonBuilder().setPrettyPrinting().registerTypeAdapter(GregorianCalendar.class, new CalendarJsonSerializer()).create();
+
+        System.out.println(gson2.toJson(sce));
 
 
 
@@ -114,7 +124,7 @@ public class maino {
         melu.setId(2);
 
 //        int anni=date.get(Calendar.YEAR);
-        GregorianCalendar oggi = new GregorianCalendar(1945,12,28);
+ /*       GregorianCalendar oggi = new GregorianCalendar(1945,12,28);
         melu.setData_nascita(oggi);
         System.out.println(PoliticheSconto.isOver65(melu));
         Random r = new Random();
@@ -124,7 +134,7 @@ public class maino {
         ArrayList<Partita> elenco = partite.elencoOrdinatoPerData();
         Partita pronta = elenco.get(1);
         System.out.println(PoliticheSconto.calcolaSconto(melu, pronta));
-        System.out.println(ServiceStadioDao.incassoTotalePerStadio(9).getCosto_biglietto());
+        System.out.println(ServiceStadioDao.incassoTotalePerStadio(9).getCosto_biglietto()); */
 
 
 
