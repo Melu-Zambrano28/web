@@ -36,6 +36,7 @@
     <label>Acquistare:</label><input type="radio" name="acquistato-prenotato" value="2" checked="checked">
     <label>Prenotare:</label><input type="radio" name="acquistato-prenotato" value="3"><br>
     <input type="hidden" name="id-partita" value="${PartitaSel.id}">
+    <input type="hidden" name="id-cliente" value="${ClienteSel.id}">
     <input type="hidden" name="nome" value="${ClienteSel.nome}">
     <input type="hidden" name="cognome" value="${ClienteSel.cognome}">
     <input type="hidden" name="prezzo" value="<%= prezzo %>">

@@ -3,12 +3,11 @@ var listaPartite;
 var sur;
 
 
-
 function tabellario(listaPartite) {
     //"use strict";
     var c = document.getElementById("tabella");
     var d = document.getElementById("formo");
-    if( c !== null && d !== null) {
+    if (c !== null && d !== null) {
         c.remove();
         d.remove();
     }
@@ -17,10 +16,10 @@ function tabellario(listaPartite) {
     var tbl = document.createElement("table");
     var tblBody = document.createElement("tbody");
     var squadra_home = document.createElement("th");
-    var squadra_home_title = document.createTextNode("Squadra A");
+    var squadra_home_title = document.createTextNode("Squadra Home");
     squadra_home.appendChild(squadra_home_title);
     var squadra_visitor = document.createElement("th");
-    var squadra_visitor_title = document.createTextNode("Squadra B");
+    var squadra_visitor_title = document.createTextNode("Squadra Visitor");
     squadra_visitor.appendChild(squadra_visitor_title);
     var data = document.createElement("th");
     var data_title = document.createTextNode("Data partita");
@@ -72,10 +71,16 @@ function tabellario(listaPartite) {
     var inp = document.createElement("INPUT");
     inp.setAttribute("type", "submit");
     inp.id = "checkout";
-    var nome = document.createElement("INPUT"); nome.setAttribute("type", "hidden"); nome.name = "nome";
-    var cognome = document.createElement("INPUT"); cognome.setAttribute("type", "hidden"); cognome.name = "cognome";
-    nome.className = "zebra"; cognome.className = "zebra";
-    nome.value = nomeCliente; cognome.value = cognomeCliente;
+    var nome = document.createElement("INPUT");
+    nome.setAttribute("type", "hidden");
+    nome.name = "nome";
+    var cognome = document.createElement("INPUT");
+    cognome.setAttribute("type", "hidden");
+    cognome.name = "cognome";
+    nome.className = "zebra";
+    cognome.className = "zebra";
+    nome.value = nomeCliente;
+    cognome.value = cognomeCliente;
     form.appendChild(nome);
     form.appendChild(cognome);
     inp.value = "Procedi";
@@ -107,14 +112,16 @@ function loadTable() {
     xhttp.send();
 }
 
+//Metodo richieste info AJAX ad ServletAjaxPartite
+
 
 function invio_scelta(event) {
     "use strict";
     var up = document.getElementsByTagName("select");
     var sur = up.selezione.value;
     var ajax = new XMLHttpRequest();
-    ajax.onreadystatechange = function() {
-        if(this.readyState === 4 && this.status === 200) {
+    ajax.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
             console.log(event.target.id);
             json = this.responseText;
             listaPartite = JSON.parse(json);
@@ -128,44 +135,36 @@ function invio_scelta(event) {
 }
 
 
-var fvalida  = function valida() {
-    que = document.getElementsByClassName("radioStyle");
-    var conta = 0;
-    var inputs = document.getElementById("maschera").getElementsByClassName("zebra");
-    for (var i = 0; i < que.length; i++) {
-        if (que[i].checked == true) {
-            conta++;
-        } else {
-            alert("Seleziona un biglietto");
-            event.preventDefault()
-            return;
-        }
-    }
-}
-
 function mostraAvanti() {
-
     "use strict";
     document.getElementById("");
+}
+
+function controlloParti() {
+    var count = 0;
+    var controllol = document.getElementsByClassName("radioStyle");
+        for (var i = 0; i < controllol.length; i++) if (controllol[i].checked == false) {
+            count++;
+        }
+        console.log(count);
 
 }
 
 function scripter() {
     var check_campi = document.getElementById("checkout");
-    for(var g = 0; g < check_campi.length; g++) {
-        check_campi[g].addEventListener("click", fvalida);
-    }
+    check_campi.addEventListener("click", controlloParti);
+    console.log("CIAO");
 }
 
 
 var select_ricerca = document.querySelector('select[name="selezione"]');
 select_ricerca.addEventListener("change", invio_scelta);
 
+/*
 var radio_yes = document.getElementsByClassName("radioStyle");
-for(var u = 0; u < radio_yes.length; u++) {
+for (var u = 0; u < radio_yes.length; u++) {
     radio_yes[u].addEventListener("click", mostraAvanti);
-}
-
+} */
 
 
 /*

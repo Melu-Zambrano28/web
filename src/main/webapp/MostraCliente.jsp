@@ -49,7 +49,7 @@
         <option value="">Selezione l'ordine delle partite ...</option>
         <option value="orario">Ordina in base all'orario</option>
         <option value="stadio.id">Ordina in base allo stadio</option>
-        <option value="lessicografico">Ordina in base all'ordine lessicografico</option>
+        <option value="concat(sq_home, sq_visitor)">Ordina in base all'ordine lessicografico</option>
     </select>
     <select id="selezione-stadio">
         <option>Seleziona uno stadio ...</option>

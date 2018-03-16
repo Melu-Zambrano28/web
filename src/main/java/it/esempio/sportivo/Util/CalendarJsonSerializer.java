@@ -12,7 +12,7 @@ import java.util.GregorianCalendar;
 
 public class CalendarJsonSerializer implements JsonSerializer<GregorianCalendar>, JsonDeserializer<GregorianCalendar>{
 
-    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy -- hh:MM:ss");
+    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy -- hh:mm:ss aa");
 
 
     @Override

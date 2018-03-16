@@ -26,13 +26,14 @@ public class ServletAcquistaBiglietto extends HttpServlet {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-
+        req.getRequestDispatcher(".jsp").forward(req, resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
     }
+
+
 }
 
