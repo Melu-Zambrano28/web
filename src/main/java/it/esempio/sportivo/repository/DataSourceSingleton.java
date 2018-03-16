@@ -39,9 +39,9 @@ public class DataSourceSingleton {
         return conn;
     } */
 
-    private final static String URL_DB = "jdbc:mysql://localhost:3333/gestionale_sportivo?useSSL=false";
+    private final static String URL_DB = "jdbc:mysql://localhost:3306/gestionale_sportivo?useSSL=false";
     private final static String USR_DB = "root";
-    private final static String PWD_DB = "password";
+    private final static String PWD_DB = "2809";
 
     private void initConnection() throws SQLException, ClassNotFoundException{
         Class.forName("com.mysql.jdbc.Driver");
