@@ -1,6 +1,5 @@
 package it.esempio.sportivo.servlet;
 
-import it.esempio.sportivo.entity.Biglietto;
 import it.esempio.sportivo.servicesimplementation.ServiceBigliettoDao;
 
 import javax.servlet.ServletException;
@@ -15,12 +14,10 @@ public class ServletAcquistaBiglietto extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int idStatoBiglietto = Integer.parseInt(req.getParameter("acquistato-prenotato"));
         int idPartita = Integer.parseInt(req.getParameter("id-partita"));
-        String nome = req.getParameter("nome");
-        String cognome = req.getParameter("cognome");
+        int idCliente = Integer.parseInt(req.getParameter("id-cliente"));
         double prezzo = Double.parseDouble(req.getParameter("prezzo"));
-        Biglietto b = new Biglietto(idStatoBiglietto, idPartita, prezzo, nome, cognome);
         try {
-            ServiceBigliettoDao.inserisciBiglietto(b);
+            ServiceBigliettoDao.inserisciBiglietto(idStatoBiglietto, idPartita, idCliente, prezzo);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
