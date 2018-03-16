@@ -42,15 +42,23 @@
     <%--<input type="submit" name="invia" value="cerca" >--%>
 
     </form>
-    <input type="submit" name="vedi" value="vedi" onclick="richiesta()">
+    <input type="submit" name="vedi" value="vedi" onclick="richiesta(), tabella()">
 </div>
     <div id="demo">
         <input type="text" id="scrive">
-        <table>
+        <table id="tabella">
             <tr>
                 <th>Nome stadio</th>
-                <th>capienza</th>
                 <th>Totale incasso</th>
+            </tr>
+            <%
+
+            %>
+
+            <tr>
+                <td></td>
+                <td></td>
+
             </tr>
 
         </table>
@@ -58,6 +66,9 @@
     </div>
 <script>
 
+    var totale =0;
+    var nome="";
+    var capienza=0;
 
 
     function richiesta() {
@@ -67,15 +78,23 @@
 
             if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
-                 document.getElementById("scrive").value = myObj.costo_biglietto;
-
+                 totale = myObj.costo_biglietto;
+                 nome=myObj.nome;
+                 capienza= myObj.capienza;
                 console.log(myObj);
+                console.log(totale+nome+capienza);
             }
         };
         xmlhttp.open("GET", "http://localhost:8080/gestionaleSportivo/Incasso?stadio="+selectValue, true);
         xmlhttp.send();
 
 
+    }
+
+    function tabella() {
+        var elencotd =document.getElementsByTagName("td");
+        elencotd[0].innerHTML=nome;
+        elencotd[1].innerHTML=totale;
     }
 
 
