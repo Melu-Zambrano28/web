@@ -3,21 +3,37 @@ package it.esempio.sportivo.entity;
 public class Biglietto
 {
     private String seriale_biglietto;
-    private int id_partecipazione;
     private int id_sconto;
     private int id_stato_biglietto;
+    private int id_partita;
     private String nome;
     private String cognome;
+    private int prezzo;
+
+    public int getPrezzo() {
+        return prezzo;
+    }
+
+    public void setPrezzo(int prezzo) {
+        this.prezzo = prezzo;
+    }
 
     public Biglietto(){}
 
-    public Biglietto(String seriale_biglietto, int id_partecipazione, int id_sconto, int id_stato_biglietto, String nome, String cognome) {
-        this.seriale_biglietto = seriale_biglietto;
-        this.id_partecipazione = id_partecipazione;
+    public Biglietto(int id_stato_biglietto, int id_partita, int prezzo, String nome, String cognome) {
+        this.id_stato_biglietto = id_stato_biglietto;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.prezzo = prezzo;
+        this.id_partita = id_partita;
+    }
+
+    public Biglietto(int id_sconto, int id_stato_biglietto, String nome, String cognome, int prezzo) {
         this.id_sconto = id_sconto;
         this.id_stato_biglietto = id_stato_biglietto;
         this.nome = nome;
         this.cognome = cognome;
+        this.prezzo = prezzo;
     }
 
     public String getSeriale_biglietto() {
@@ -26,14 +42,6 @@ public class Biglietto
 
     public void setSeriale_biglietto(String seriale_biglietto) {
         this.seriale_biglietto = seriale_biglietto;
-    }
-
-    public int getId_partecipazione() {
-        return id_partecipazione;
-    }
-
-    public void setId_partecipazione(int id_partecipazione) {
-        this.id_partecipazione = id_partecipazione;
     }
 
     public int getId_sconto() {
@@ -72,7 +80,6 @@ public class Biglietto
     public String toString() {
         return "Biglietto{" +
                 "seriale_biglietto='" + seriale_biglietto + '\'' +
-                ", id_partecipazione=" + id_partecipazione +
                 ", id_sconto=" + id_sconto +
                 ", id_stato_biglietto=" + id_stato_biglietto +
                 ", nome='" + nome + '\'' +
