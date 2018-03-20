@@ -9,6 +9,9 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="shortcut icon" href="front-end/img/login.png" type="image/ico" />
+    <link href="front-end/css/LoginGestoreStyle.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
     <div class="areaLogin">
@@ -18,7 +21,7 @@
             <br>
             Password: <input type="password" name="pwd">
             <br>
-            <input type="submit" value="Login" name="login">
+            <input id ="bottone" type="submit" value="Login" name="login">
         </form>
 
     </div>
