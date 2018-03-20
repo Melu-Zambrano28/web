@@ -1,7 +1,7 @@
 var json;
 var listaPartite;
 var sur;
-var certoStadio
+var certoStadio;
 
 
 function tabellario(listaPartite) {
@@ -169,6 +169,10 @@ document.addEventListener("click", function (e) {
         console.log(valore);
     }
 });
+
+function filtraStadio(array) {
+
+}
 
 function sceltaStadio(listaPartite)
 {
