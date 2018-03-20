@@ -22,6 +22,11 @@
     <link rel="shortcut icon" href="front-end/img/gestore.jpg" type="image/ico" />
 </head>
 <body>
+<%
+    if(request.getSession().getAttribute("usuario")== null){
+        response.sendRedirect("LoginGestore.jsp");
+    }
+%>
 <h1 id="registroPartita">Registro Partita</h1>
 
 <div class="partita">

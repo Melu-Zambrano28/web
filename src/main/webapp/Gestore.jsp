@@ -18,6 +18,15 @@
     <link rel="shortcut icon" href="front-end/img/gestore.jpg" type="image/ico" />
 </head>
 <body>
+<%
+
+
+
+        if (request.getSession().getAttribute("usuario") == null) {
+            response.sendRedirect("LoginGestore.jsp");
+        }
+
+%>
 <h1>GESTIONE</h1>
 
 
@@ -128,6 +137,12 @@
 </div>
 
 
+</div>
+
+<div id="chiudiSessione">
+    <a href="chiudi">
+        <input type="button" value="Chiude sessione">
+    </a>
 </div>
 
 
