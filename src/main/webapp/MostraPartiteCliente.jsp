@@ -35,6 +35,12 @@
 
 </head>
 <body>
+
+<%
+    if(request.getSession().getAttribute("usuario")== null){
+        response.sendRedirect("LoginGestore.jsp");
+    }
+%>
 <h1 id="titulo">Visualizza partita</h1>
 
 <div id="cronologico">

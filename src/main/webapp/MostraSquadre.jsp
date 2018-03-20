@@ -23,6 +23,12 @@
     <link rel="shortcut icon" href="front-end/img/gestore.jpg" type="image/ico" />
 </head>
 <body>
+
+<%
+    if(request.getSession().getAttribute("usuario")== null){
+        response.sendRedirect("LoginGestore.jsp");
+    }
+%>
 <h1>Identifica il codice della squadra/Stadio assocciato al nome:</h1>
 <div class="areasquadre">
     <h1>Codice Squadra:</h1>

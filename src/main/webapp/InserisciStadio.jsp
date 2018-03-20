@@ -14,6 +14,12 @@
     <script type="text/javascript" src="front-end/js/ConvalidaFormStadio.js"></script>
 </head>
 <body>
+
+<%
+    if(request.getSession().getAttribute("usuario")== null){
+        response.sendRedirect("LoginGestore.jsp");
+    }
+%>
 <h1 id="registroStadio">REGISTRO STADIO</h1>
 
 

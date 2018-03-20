@@ -12,5 +12,6 @@
 </head>
 <body>
     <h1>Ciao</h1>
+    <a href="Gestore.jsp">Mostra il gestionale</a>
 </body>
 </html>
