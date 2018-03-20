@@ -23,7 +23,7 @@ public class ServletAcquistaBiglietto extends HttpServlet {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        req.getRequestDispatcher(".jsp").forward(req, resp);
+        req.getRequestDispatcher("MostraCliente.jsp").forward(req, resp);
     }
 
     @Override

@@ -1,6 +1,7 @@
 var json;
 var listaPartite;
 var sur;
+var certoStadio
 
 
 function tabellario(listaPartite) {
@@ -98,17 +99,18 @@ function tabellario(listaPartite) {
 function loadTable() {
     "use strict";
     var xhttp = new XMLHttpRequest();
+    sur = "orario";
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             json = this.responseText;
             listaPartite = JSON.parse(json);
             // document.getElementById("demo").innerHTML =
             //     this.responseText;
-            tabellario(listaPartite);
-            document.getElementById("btn-ajax").style.display = "none";
+            //tabellario(listaPartite);
+            //document.getElementById("btn-ajax").style.display = "none";
         }
     };
-    xhttp.open("GET", "/ajaxPartita", true);
+    xhttp.open("POST", "/gestionaleSportivo/ajaxPartita?ordinePartite=" + sur, true);
     xhttp.send();
 }
 
@@ -130,23 +132,18 @@ function invio_scelta(event) {
             scripter();
         }
     };
-    ajax.open("POST", "/gestionaleSportivo/ajaxPartita?ordinePartite="+sur, true);
+    ajax.open("POST", "/gestionaleSportivo/ajaxPartita?ordinePartite=" + sur, true);
     ajax.send();
 }
 
 
-function mostraAvanti() {
-    "use strict";
-    document.getElementById("");
-}
-
 function controlloParti() {
     var count = 0;
     var controllol = document.getElementsByClassName("radioStyle");
-        for (var i = 0; i < controllol.length; i++) if (controllol[i].checked == false) {
-            count++;
-        }
-        console.log(count);
+    for (var i = 0; i < controllol.length; i++) if (controllol[i].checked == false) {
+        count++;
+    }
+    console.log(count);
 
 }
 
@@ -157,8 +154,36 @@ function scripter() {
 }
 
 
+document.addEventListener("click", function (e) {
+    var x = e.target;
+    var valore = x.id;
+    if (x.id === "acquisto") {
+        document.getElementById("partita-stadio").classList.toggle("visibile");
+        var c = document.getElementsByTagName("row").remove();
+        // var d = document.getElementById("formo").remove();
+    } else if (x.id === "biglietto") {
+        document.getElementById("demo").classList.toggle("visibile");
+        var c = document.getElementById("tabella").remove();
+        var d = document.getElementById("formo").remove();
+    } else if (x.id === "prenotazione") {
+        console.log(valore);
+    }
+});
+
+function sceltaStadio(listaPartite)
+{
+    loadTable();
+    certoStadio = listaPartite.filter(scemo => scemo.stadio.nome === "Sansiro");
+    console.log(certoStadio);
+    tabellario(certoStadio);
+}
+
+
 var select_ricerca = document.querySelector('select[name="selezione"]');
 select_ricerca.addEventListener("change", invio_scelta);
+
+var select_stadio = document.getElementById("selezione-stadio");
+select_stadio.addEventListener("change", sceltaStadio(listaPartite));
 
 /*
 var radio_yes = document.getElementsByClassName("radioStyle");

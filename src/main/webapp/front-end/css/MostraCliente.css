@@ -31,6 +31,26 @@
     margin-right: auto;
 }
 
+#menu-acquisti {
+    position: absolute;
+}
+
+#selezione {
+    padding: 8px;
+    font-family: Georgia;
+    font-size: medium;
+    border-spacing: 12px;
+    border-radius: 20px;
+}
+
+#selezione-stadio {
+    padding: 8px;
+    font-family: Georgia;
+    font-size: medium;
+    border-spacing: 12px;
+    border-radius: 20px;
+}
+
 .radioStyle {
     width: 25px;
     height: 25px;
@@ -48,4 +68,12 @@
 
 #maschera {
     display: none;
+}
+
+.nascosto {
+    display: none;
+}
+
+.visibile {
+    display: block;
 }

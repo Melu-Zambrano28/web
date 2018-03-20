@@ -40,7 +40,7 @@ public class ServiceBigliettoDao {
             st.setInt(2, idStatoBiglietto);
             st.setInt(3, idPartita);
             st.setInt(4, idCliente);
-            st.setDouble(4, prezzo);
+            st.setDouble(5, prezzo);
             st.execute();
             st.close();
             conex.close();

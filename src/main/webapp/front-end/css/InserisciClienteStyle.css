@@ -46,9 +46,11 @@ input[type="submit"],[type="reset"] {
 }
 
 .btn-cliente {
+    font-family: Georgia;
     background-color: #4f95ff;
     text-decoration: none;
     cursor: pointer;
+    border-radius: 13px;
     padding: 14px;
     margin: 4px 2px;
     color: black;

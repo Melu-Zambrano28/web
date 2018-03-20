@@ -19,7 +19,9 @@
 <%! String nomeCliente = ""; %> <%! String cognomeCliente = ""; %>
 <html>
 <head>
-    <title>Ciao <% if (clio != null) { nomeCliente = clio.getNome(); cognomeCliente = clio.getCognome();
+    <title>Ciao <% if (clio != null) {
+        nomeCliente = clio.getNome();
+        cognomeCliente = clio.getCognome();
     } %> <%= nomeCliente %>
     </title>
     <link rel="stylesheet" type="text/css" href="front-end/css/InserisciClienteStyle.css">
@@ -42,7 +44,16 @@
 </h1>
 
 
-<div id="demo">
+<div id="menu-acquisti" class="visibile">
+    <button class="btn-cliente" id="biglietto">Biglietteria</button>
+    <br>
+    <button class="btn-cliente" id="acquisto">I miei acquisti</button>
+    <br>
+    <button class="btn-cliente" id="prenotazione">Le mie prenotazioni</button>
+</div>
+
+
+<div id="demo" class="nascosto">
     <h2>Visualizzatore delle partite</h2>
     <!--<button type="button" id="btn-ajax" class="genCenter"> Mutazione </button> -->
     <select id="selezione" name="selezione" class="genCenter" autofocus>
@@ -59,24 +70,47 @@
     </select>
     <div>
 
+    </div>
+</div>
+
+<div class="nascosto" id="partita-stadio">
+    <form id="formo" method="post" action="calcolaPrezzo"><input type="hidden" name="nome" class="zebra" value=""><input
+            type="hidden" name="cognome" class="zebra" value="">
+        <table border="4" id="tabella" class="center">
+            <tbody>
+            <th>Squadra Home</th>
+            <th>Squadra Visitor</th>
+            <th>Data partita</th>
+            <th>Stadio</th>
+            <tr>
+                <td>Astana</td>
+                <td>Benevento</td>
+                <td>23/08/2018 -- 09:00:00 PM</td>
+                <td>Olimpico</td>
+                <input type="radio" value="13" name="id-partita" class="radioStyle"><input type="hidden" class="zebra"
+                                                                                           value="13">
+            </tr>
+            </tbody>
+        </table>
+        <input type="submit" id="checkout" value="Procedi"></form>
+</div>
 
 
+<div id="maschera" class="visibile">
+    <form action="acquistaBiglietto" method="post">
+        <div id="form">
+            <br><label>Data:</label><input type="text" placeholder="nome" name="nome" class="zebra"><br>
+            <br><label>Squadra home</label><input type="text" placeholder="cognome" name="cognome" class="zebra"><br>
+            <br><label>Squadra visitor:</label><input type="date" name="data-nascita" class="zebra"><br>
+            <br><label><input type="submit" value="Acquista" class="button" id="acquista"></label>
+            <br><label><input type="submit" value="Prenota" class="button" id="prenota"></label>
+            <button type="reset" value="Reset">Reset</button>
+        </div>
+    </form>
 
 </div>
 
-<form action="acquistaBiglietto" method="post" id="maschera">
-    <div id="form">
-        <br><label>Data:</label><input type="text" placeholder="nome" name="nome" class="zebra" ><br>
-        <br><label>Squadra home</label><input type="text" placeholder="cognome" name="cognome" class="zebra"><br>
-        <br><label>Squadra visitor:</label><input type="date" name="data-nascita" class="zebra"><br>
-        <br><label><input type="submit" value="Acquista" class="button" id="acquista"></label>
-        <br><label><input type="submit" value="Prenota" class="button" id="prenota"></label>
-        <button type="reset" value="Reset">Reset</button>
-    </div>
-</form>
-
 <script>
-
     //Assegnamento dei valori di java a delle variabili globali javascript
     var nomeCliente = "<%=  nomeCliente %>";
     var cognomeCliente = "<%= cognomeCliente %>";
@@ -85,7 +119,6 @@
 <script type="text/javascript" src="front-end/js/MostraPartita.js"></script>
 
 
-
 <center>
-<%@ include file = "footer.jsp" %>
+    <%@ include file="footer.jsp" %>
 
