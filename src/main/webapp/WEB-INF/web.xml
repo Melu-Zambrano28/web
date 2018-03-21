@@ -48,10 +48,7 @@
         <servlet-name>ServletLoginGestore</servlet-name>
         <servlet-class>it.esempio.sportivo.servlet.ServletValidaLogin</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ServletSessioneGestore</servlet-name>
-        <servlet-class>it.esempio.sportivo.servlet.ServletSessioneGestore</servlet-class>
-    </servlet>
+
     <servlet>
         <servlet-name>ServletChiudeSessione</servlet-name>
         <servlet-class>it.esempio.sportivo.servlet.ServletChiudeSessione</servlet-class>
@@ -99,10 +96,6 @@
     <servlet-mapping>
         <servlet-name>ServletLoginGestore</servlet-name>
         <url-pattern>/loginGestore</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletSessioneGestore</servlet-name>
-        <url-pattern>/sessionGestore</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletChiudeSessione</servlet-name>

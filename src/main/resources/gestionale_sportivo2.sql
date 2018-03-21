@@ -16,6 +16,24 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`gestionale_sportivo` /*!40100 DEFAULT C
 
 USE `gestionale_sportivo`;
 
+/*Table structure for table `amministratori` */
+
+DROP TABLE IF EXISTS `amministratori`;
+
+CREATE TABLE `amministratori` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) DEFAULT NULL,
+  `cognome` varchar(50) DEFAULT NULL,
+  `ruolo` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `pw` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+/*Data for the table `amministratori` */
+
+insert  into `amministratori`(`id`,`nome`,`cognome`,`ruolo`,`email`,`pw`) values (1,'melissa','guzman','amministratore','melissa.guzman@amministratore.it','12345'),(3,'nicolo','vernocchio','amministratore','nicolo.vernocchio@amministratore.it','3306'),(4,'marco','cherubin','amministratore','marco.cherubin@amministratore.it','18185');
+
 /*Table structure for table `biglietto` */
 
 DROP TABLE IF EXISTS `biglietto`;
@@ -52,11 +70,11 @@ CREATE TABLE `cliente` (
   `cognome` varchar(45) NOT NULL,
   `data_nascita` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 /*Data for the table `cliente` */
 
-insert  into `cliente`(`id`,`nome`,`cognome`,`data_nascita`) values (4,'ronny','guzman','1996-12-17'),(5,'Maria','zambrano','1976-05-08'),(7,'Maria','zambrano','3876-06-08'),(8,'Rodry','Espinoza','1977-04-08'),(13,'Mariana','villegas','1977-04-08'),(14,'Elisa ','Segura','1977-04-08'),(16,'Elisa ','Segura','1977-04-08'),(17,'melissa','raul','2018-02-27'),(18,'melissa','guzman','2018-02-27'),(19,'melissa','guzman','2018-02-27'),(20,'ronny','raul','2018-02-27'),(21,'ronny','raul','2018-02-27'),(22,'melissa','weffew','2018-02-27'),(23,'ronny','weffew','2018-02-27'),(24,'ronny','weffew','2018-02-27'),(25,'ronny','zambrano','2018-02-27'),(26,'sndkjis','dfjkoejn','2015-03-15'),(27,'melissa','guzman','2018-03-16'),(28,'melissa','raul','2018-03-10'),(29,'melissa','guzman','2018-03-08'),(30,'melissa','raul','2018-03-06'),(31,'melissa','raul','1994-03-22'),(32,'mohamet','human','1994-03-06'),(33,'mohamet','human','1994-03-06'),(34,'mohamet','human','1994-03-06'),(35,'mohamet','human','1994-03-06'),(36,'mohamed','cherbuin','1945-05-15'),(37,'mohamed','cherbuin','1945-05-15'),(38,'mohamed','cherbuin','1945-05-15'),(39,'mohamed','cherbuin','1945-05-15'),(40,'mohamed','cherbuin','1945-05-15'),(41,'mohamed','cherbuin','1945-05-15'),(42,'mohamed','cherbuin','1945-05-15'),(43,'mohamed','cherbuin','1945-05-15'),(44,'mohamed','cherbuin','1945-05-15'),(45,'mohamed','cherbuin','1945-05-15'),(46,'mohamed','cherbuin','1945-05-15'),(47,'mohamed','cherbuin','1945-05-15'),(48,'mohamed','cherbuin','1945-05-15'),(49,'mohamed','cherbuin','1945-05-15'),(50,'francesco','cirla','1988-04-21'),(51,'melissa','guzman','2018-03-14'),(52,'pietro','fossati','1995-02-23');
+insert  into `cliente`(`id`,`nome`,`cognome`,`data_nascita`) values (4,'ronny','guzman','1996-12-17'),(5,'Maria','zambrano','1976-05-08'),(7,'Maria','zambrano','3876-06-08'),(8,'Rodry','Espinoza','1977-04-08'),(13,'Mariana','villegas','1977-04-08'),(14,'Elisa ','Segura','1977-04-08'),(16,'Elisa ','Segura','1977-04-08'),(17,'melissa','raul','2018-02-27'),(18,'melissa','guzman','2018-02-27'),(19,'melissa','guzman','2018-02-27'),(20,'ronny','raul','2018-02-27'),(21,'ronny','raul','2018-02-27'),(22,'melissa','weffew','2018-02-27'),(23,'ronny','weffew','2018-02-27'),(24,'ronny','weffew','2018-02-27'),(25,'ronny','zambrano','2018-02-27'),(26,'sndkjis','dfjkoejn','2015-03-15'),(27,'melissa','guzman','2018-03-16'),(28,'melissa','raul','2018-03-10'),(29,'melissa','guzman','2018-03-08'),(30,'melissa','raul','2018-03-06'),(31,'melissa','raul','1994-03-22'),(32,'mohamet','human','1994-03-06'),(33,'mohamet','human','1994-03-06'),(34,'mohamet','human','1994-03-06'),(35,'mohamet','human','1994-03-06'),(36,'mohamed','cherbuin','1945-05-15'),(37,'mohamed','cherbuin','1945-05-15'),(38,'mohamed','cherbuin','1945-05-15'),(39,'mohamed','cherbuin','1945-05-15'),(40,'mohamed','cherbuin','1945-05-15'),(41,'mohamed','cherbuin','1945-05-15'),(42,'mohamed','cherbuin','1945-05-15'),(43,'mohamed','cherbuin','1945-05-15'),(44,'mohamed','cherbuin','1945-05-15'),(45,'mohamed','cherbuin','1945-05-15'),(46,'mohamed','cherbuin','1945-05-15'),(47,'mohamed','cherbuin','1945-05-15'),(48,'mohamed','cherbuin','1945-05-15'),(49,'mohamed','cherbuin','1945-05-15'),(50,'francesco','cirla','1988-04-21'),(51,'melissa','guzman','2018-03-14'),(52,'pietro','fossati','1995-02-23'),(53,'Luca','Rossi','1968-03-07'),(54,'luis','guzman','1994-03-22'),(55,'ciao','weffew','1966-03-16');
 
 /*Table structure for table `partecipazione` */
 

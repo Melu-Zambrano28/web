@@ -1,22 +1,27 @@
 package it.esempio.sportivo.servlet;
 
+import it.esempio.sportivo.servicesimplementation.ServiceAmministratoreDao;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ServletValidaLogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       //facendo così posso ancora vedere il gestore
-
-        String pwProva="12345";
-        String user=request.getParameter("user");
+        String nickname=request.getParameter("user");
         String pwUser=request.getParameter("pwd");
-        if(request.getParameter("login")!= null && user.length()>0 && pwUser.length()>0 ){
+        String ruolo=request.getParameter("ruolo");
+        String email=nickname+"@"+ruolo+".it";
+        try {
+            String pwDb = ServiceAmministratoreDao.trovaPwByEmail(email,ruolo);
 
-                if(pwUser.equals(pwProva)) {
+        if(request.getParameter("login")!= null && nickname.length()>0 && pwUser.length()>0 ){
+
+                if(pwUser.equals(pwDb)) {
 
                     HttpSession sessione = request.getSession(true);
-                    sessione.setAttribute("usuario",user);
+                    sessione.setAttribute("usuario",pwUser);
                     request.setAttribute("sessione", sessione);
 
                     response.sendRedirect("Gestore.jsp");
@@ -27,6 +32,10 @@ public class ServletValidaLogin extends HttpServlet {
 
         }else{
             response.sendRedirect("ErrorFormato.jsp");
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+
         }
     }
 
