@@ -104,9 +104,10 @@ function loadTable() {
         if (this.readyState === 4 && this.status === 200) {
             json = this.responseText;
             listaPartite = JSON.parse(json);
+            certoStadio = listaPartite.filter(scemo => scemo.stadio.nome === "Sansiro");
             // document.getElementById("demo").innerHTML =
             //     this.responseText;
-            //tabellario(listaPartite);
+            tabellario(certoStadio);
             //document.getElementById("btn-ajax").style.display = "none";
         }
     };
@@ -159,8 +160,8 @@ document.addEventListener("click", function (e) {
     var valore = x.id;
     if (x.id === "acquisto") {
         document.getElementById("partita-stadio").classList.toggle("visibile");
-        var c = document.getElementsByTagName("row").remove();
-        // var d = document.getElementById("formo").remove();
+        var c = document.getElementsByTagName("tabella").remove();
+         var d = document.getElementById("formo").remove();
     } else if (x.id === "biglietto") {
         document.getElementById("demo").classList.toggle("visibile");
         var c = document.getElementById("tabella").remove();
@@ -170,16 +171,12 @@ document.addEventListener("click", function (e) {
     }
 });
 
-function filtraStadio(array) {
-
+function filtraStadio(array, nome) {
+        return array.nome === nome;
 }
 
-function sceltaStadio(listaPartite)
-{
+function sceltaStadio(listaPartite) {
     loadTable();
-    certoStadio = listaPartite.filter(scemo => scemo.stadio.nome === "Sansiro");
-    console.log(certoStadio);
-    tabellario(certoStadio);
 }
 
 
