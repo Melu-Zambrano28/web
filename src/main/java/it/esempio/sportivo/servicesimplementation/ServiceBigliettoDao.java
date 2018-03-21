@@ -1,4 +1,5 @@
 package it.esempio.sportivo.servicesimplementation;
+import com.sun.prism.impl.BaseGraphics;
 import it.esempio.sportivo.Util.GeneraSerialBiglietto;
 import it.esempio.sportivo.entity.Biglietto;
 import it.esempio.sportivo.repository.DataSourceSingleton;
@@ -7,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ServiceBigliettoDao {
 
@@ -19,6 +21,12 @@ public class ServiceBigliettoDao {
         private final static String select_biglietto = "SELECT * FROM biglietto WHERE seriale_biglietto = ?";
         private final static String update_biglietto = "UPDATE biglietto SET nome = ?, cognome = ?, id_sconto = ?, id_stato_biglietto = ? WHERE seriale_biglietto = ?";
         private final static String delete_biglietto = "DELETE FROM biglietto WHERE seriale_biglietto = ?";
+        private final static String listone_biglietti = "SELECT partita.data_partita, sq1.nome, sq2.nome, prezzo_finale\n" +
+                " FROM gestionale_sportivo.biglietto bb\n" +
+                " inner join partita on partita.id = bb.id_partita\n" +
+                " inner join squadra as sq1 on sq1.id = partita.id_sq_home\n" +
+                "  inner join squadra as sq2 on sq2.id = partita.id_sq_visitor\n" +
+                "  where bb.id_stato_biglietto = ?";
         private final static String listaBiglietti="SELECT biglietto.seriale_biglietto seriale,\n" +
                 "cliente.nome nome,\n" +
                 "cliente.cognome cognome,\n" +
@@ -80,6 +88,20 @@ public class ServiceBigliettoDao {
             st = conex.prepareStatement(delete_biglietto);
             st.setString(1,s);
             st.execute();
+        }
+
+        public static ArrayList<Biglietto> listaraBiglietti() throws SQLException, ClassNotFoundException{
+            ArrayList<Biglietto> lista = null;
+            Biglietto bil = null;
+            conex = DataSourceSingleton.getInstance().getConnection();
+            st = conex.prepareStatement(listone_biglietti);
+            st.setInt(1, 2);
+            rs = st.executeQuery();
+            while (rs.next()) {
+                bil.setPrezzo(rs.getInt("prezzo_finale"));
+                bil.set
+            }
+            return lista;
         }
 
 

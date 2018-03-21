@@ -125,10 +125,9 @@ function invio_scelta(event) {
     var ajax = new XMLHttpRequest();
     ajax.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            console.log(event.target.id);
+            //console.log(event.target.id);
             json = this.responseText;
             listaPartite = JSON.parse(json);
-            setTimeout(3000);
             tabellario(listaPartite);
             scripter();
         }
