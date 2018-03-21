@@ -6,9 +6,11 @@ import it.esempio.sportivo.Util.CalendarJsonSerializer;
 import it.esempio.sportivo.Util.GeneraSerialBiglietto;
 import it.esempio.sportivo.Util.PoliticheSconto;
 import it.esempio.sportivo.Util.Util_Data_Time;
+import it.esempio.sportivo.entity.Amministratore;
 import it.esempio.sportivo.entity.Cliente;
 import it.esempio.sportivo.entity.Partita;
 
+import it.esempio.sportivo.servicesimplementation.ServiceAmministratoreDao;
 import it.esempio.sportivo.servicesimplementation.ServicePartitaDao;
 
 import it.esempio.sportivo.services.ServicePartita;
@@ -136,15 +138,13 @@ public class maino {
         System.out.println(PoliticheSconto.calcolaSconto(melu, pronta));
         System.out.println(ServiceStadioDao.incassoTotalePerStadio(9).getCosto_biglietto()); */
 
+        Amministratore ad = new Amministratore();
+        ad.setNome("melissa");
+        ad.setCognome("guzman");
+        ad.setRuolo("administratore");
 
-
-
-
-
-
-
-
-
+        System.out.println(ServiceAmministratoreDao.trovaAdminByID(1).getEmail());
+        System.out.println(ServiceAmministratoreDao.trovaPwByEmail(ad.getEmail(), ad.getRuolo()));
 
 
 

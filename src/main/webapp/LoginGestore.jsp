@@ -21,7 +21,16 @@
             <br>
             Password: <input type="password" name="pwd">
             <br>
+            Dominio:
+            <select name="ruolo">
+                <option value="amministratore">@Amministratore.it</option>
+                <option value="clliente">@Cliente.it</option>
+
+            </select>
+            <br>
+
             <input id ="bottone" type="submit" value="Login" name="login">
+
         </form>
 
     </div>

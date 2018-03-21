@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class ServletAcquistaBiglietto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int idStatoBiglietto = Integer.parseInt(req.getParameter("acquistato-prenotato"));
+        int idStatoBiglietto = 3;
         int idPartita = Integer.parseInt(req.getParameter("id-partita"));
         int idCliente = Integer.parseInt(req.getParameter("id-cliente"));
         double prezzo = Double.parseDouble(req.getParameter("prezzo"));
