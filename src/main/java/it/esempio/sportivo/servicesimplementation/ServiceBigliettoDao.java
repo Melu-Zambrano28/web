@@ -16,12 +16,12 @@ public class ServiceBigliettoDao {
         private static PreparedStatement st = null;
         private static ResultSet rs = null;
 
-        private final static String insert_biglietto = "INSERT INTO biglietto (seriale_biglietto, id_cliente, " +
-                "id_stato_biglietto, id_partita, prezzo_finale) VALUES (?, ?, ?, ?, ?)";
+        private final static String insert_biglietto = "INSERT INTO biglietto (seriale_biglietto, id_stato_biglietto, " +
+                "id_partita, id_cliente, prezzo_finale) VALUES (?, ?, ?, ?, ?)";
         private final static String select_biglietto = "SELECT * FROM biglietto WHERE seriale_biglietto = ?";
         private final static String update_biglietto = "UPDATE biglietto SET nome = ?, cognome = ?, id_sconto = ?, id_stato_biglietto = ? WHERE seriale_biglietto = ?";
         private final static String delete_biglietto = "DELETE FROM biglietto WHERE seriale_biglietto = ?";
-        private final static String listone_biglietti = "SELECT partita.data_partita, sq1.nome, sq2.nome, prezzo_finale\n" +
+        private final static String listone_biglietti = "SELECT seriale_biglietto, partita.data_partita, sq1.nome, sq2.nome, prezzo_finale, id_partita\n" +
                 " FROM gestionale_sportivo.biglietto bb\n" +
                 " inner join partita on partita.id = bb.id_partita\n" +
                 " inner join squadra as sq1 on sq1.id = partita.id_sq_home\n" +
@@ -91,16 +91,20 @@ public class ServiceBigliettoDao {
         }
 
         public static ArrayList<Biglietto> listaraBiglietti() throws SQLException, ClassNotFoundException{
-            ArrayList<Biglietto> lista = null;
-            Biglietto bil = null;
+            ArrayList<Biglietto> lista = new ArrayList<Biglietto>();
             conex = DataSourceSingleton.getInstance().getConnection();
             st = conex.prepareStatement(listone_biglietti);
-            st.setInt(1, 2);
+            st.setInt(1, 3);
             rs = st.executeQuery();
             while (rs.next()) {
-                bil.setPrezzo(rs.getInt("prezzo_finale"));
-                bil.set
+                Biglietto bil = new Biglietto();
+                bil.setSeriale_biglietto(rs.getString("seriale_biglietto"));
+                bil.setPrezzo(rs.getDouble("prezzo_finale"));
+                bil.setId_partita(rs.getInt("id_partita"));
+                lista.add(bil);
             }
+            st.close();
+            rs.close();
             return lista;
         }
 

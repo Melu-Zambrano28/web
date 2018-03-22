@@ -7,23 +7,20 @@ import it.esempio.sportivo.Util.GeneraSerialBiglietto;
 import it.esempio.sportivo.Util.PoliticheSconto;
 import it.esempio.sportivo.Util.Util_Data_Time;
 import it.esempio.sportivo.entity.Amministratore;
+import it.esempio.sportivo.entity.Biglietto;
 import it.esempio.sportivo.entity.Cliente;
 import it.esempio.sportivo.entity.Partita;
 
-import it.esempio.sportivo.servicesimplementation.ServiceAmministratoreDao;
-import it.esempio.sportivo.servicesimplementation.ServicePartitaDao;
+import it.esempio.sportivo.servicesimplementation.*;
 
 import it.esempio.sportivo.services.ServicePartita;
 import it.esempio.sportivo.servicesimplementation.ServicePartitaDao;
-import it.esempio.sportivo.servicesimplementation.ServiceStadioDao;
 
 
 import java.sql.*;
+import java.sql.Date;
 import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Random;
+import java.util.*;
 
 public class maino {
 
@@ -73,25 +70,15 @@ public class maino {
 
         GregorianCalendar data = Util_Data_Time.convertiStringDataTime_GregorianCalendar("28-08-1994,12:23");
         System.out.println(data.getGregorianChange());
-        ServicePartitaDao dd = new ServicePartitaDao();
-
-        ArrayList<Partita> sce = dd.listaPartitaOrig("orario");
-        ArrayList<Partita> sceMelissa = dd.elencoOrdinatoPerData();
-        for(Partita parti : sceMelissa) System.out.println(parti.getData_partita().getGregorianChange());
 
 
-        Gson gson2 = new GsonBuilder().setPrettyPrinting().registerTypeAdapter(GregorianCalendar.class, new CalendarJsonSerializer()).create();
-
-        System.out.println(gson2.toJson(sce));
-
-
-
-
-
-
-
-
-
+        ArrayList<Biglietto> billy = ServiceBigliettoDao.listaraBiglietti();
+        Gson goo = new Gson();
+        Iterator itty = billy.iterator();
+        while (itty.hasNext()) {
+            Biglietto v = (Biglietto) itty.next();
+            System.out.println(goo.toJson(v));
+        }
 
 
 

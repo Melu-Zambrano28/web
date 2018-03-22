@@ -8,6 +8,11 @@ public class Biglietto
     private int id_partita;
     private String nome;
     private String cognome;
+
+    public int getId_partita() {
+        return id_partita;
+    }
+
     private double prezzo;
 
     public double getPrezzo() {
@@ -15,6 +20,14 @@ public class Biglietto
     }
 
     public void setPrezzo(int prezzo) {
+        this.prezzo = prezzo;
+    }
+
+    public void setId_partita(int id_partita) {
+        this.id_partita = id_partita;
+    }
+
+    public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
     }
 
@@ -84,6 +97,8 @@ public class Biglietto
                 ", id_stato_biglietto=" + id_stato_biglietto +
                 ", nome='" + nome + '\'' +
                 ", cognome='" + cognome + '\'' +
+                ", id_partita='" + id_partita + '\'' +
+                ", prezzo finale='" + prezzo +'\'' +
                 '}';
     }
 }
