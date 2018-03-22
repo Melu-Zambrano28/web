@@ -90,7 +90,7 @@ public class ServiceBigliettoDao {
             st.execute();
         }
 
-        public static ArrayList<Biglietto> listaraBiglietti() throws SQLException, ClassNotFoundException{
+        public static ArrayList<Biglietto> listaBiglietti() throws SQLException, ClassNotFoundException{
             ArrayList<Biglietto> lista = new ArrayList<Biglietto>();
             conex = DataSourceSingleton.getInstance().getConnection();
             st = conex.prepareStatement(listone_biglietti);

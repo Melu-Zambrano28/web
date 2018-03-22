@@ -160,10 +160,10 @@ document.addEventListener("click", function (e) {
     if (x.id === "acquisto") {
         document.getElementById("partita-stadio").classList.toggle("visibile");
         var c = document.getElementsByTagName("tabella").remove();
-         var d = document.getElementById("formo").remove();
+        var d = document.getElementById("formo").remove();
     } else if (x.id === "biglietto") {
         document.getElementById("demo").classList.toggle("visibile");
-        var c = document.getElementById("tabella").remove();
+        var c = document.getElementsByTagName("tabella").remove();
         var d = document.getElementById("formo").remove();
     } else if (x.id === "prenotazione") {
         console.log(valore);

@@ -72,7 +72,7 @@ public class maino {
         System.out.println(data.getGregorianChange());
 
 
-        ArrayList<Biglietto> billy = ServiceBigliettoDao.listaraBiglietti();
+        ArrayList<Biglietto> billy = ServiceBigliettoDao.listaBiglietti();
         Gson goo = new Gson();
         Iterator itty = billy.iterator();
         while (itty.hasNext()) {
