@@ -1,3 +1,4 @@
+
 .erroreFormat h1:first-child{
     text-align: center;
     color:red;
@@ -25,34 +26,34 @@ div ul li{
 
 }
 
-body {
-    background: white;
-    animation-name: cambiaColore;
-    animation-delay: 2ms; /*ritardo*/
-    animation-duration: 1s; /*durazione di tutta la animation*/
-    animation-iteration-count: infinite; /*volte*/
-}
+/*body {*/
+    /*background: white;*/
+    /*!*animation-name: cambiaColore; lampeggia*!*/
+    /*animation-delay: 2ms; !*ritardo*!*/
+    /*animation-duration: 1s; !*durazione di tutta la animation*!*/
+    /*animation-iteration-count: infinite; !*volte*!*/
+/*}*/
 
-@keyframes cambiaColore {
-    from {
-        background: white;
-    }
+/*@keyframes cambiaColore {*/
+    /*from {*/
+        /*background: white;*/
+    /*}*/
 
-    to {
-        background: black;
-    }
-}
+    /*to {*/
+        /*background: black;*/
+    /*}*/
+/*}*/
 
 
-@keyframes cambiaColorebianco {
-    from {
-        background: black;
-    }
+/*@keyframes cambiaColorebianco {*/
+    /*from {*/
+        /*background: black;*/
+    /*}*/
 
-    to {
-        background: white;
-    }
-}
+    /*to {*/
+        /*background: white;*/
+    /*}*/
+/*}*/
 
 
     @keyframes lampeggio {
@@ -73,11 +74,11 @@ div:hover{ /*quando pasi il mouse sopra pausi la animation*/
 
 }
 
-body:hover{
-    animation-play-state: paused;
-    animation-name: cambiaColorebianco;
+/*body:hover{*/
+    /*animation-play-state: paused;*/
+    /*!*animation-name: cambiaColorebianco;*!*/
 
-}
+/*}*/
 .torna{
     width: 100px;
     height: 100px;

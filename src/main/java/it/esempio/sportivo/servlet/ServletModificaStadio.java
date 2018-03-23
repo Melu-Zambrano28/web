@@ -20,6 +20,7 @@ public class ServletModificaStadio extends HttpServlet {
             try {
                 int id= ServiceStadioDao.trovaStadioByName(nomeStadio);
                 stadio=ServiceStadioDao.TrovaStadioById(id);
+                stadio.setNome(nomeStadio);
                 stadio.setCapienza(capienza);
                 ServiceStadioDao.aggiornaStadio(stadio);
 

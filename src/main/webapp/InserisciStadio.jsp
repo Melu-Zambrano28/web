@@ -57,7 +57,7 @@
             <tr><!-- colonna -->
                 <td><input type="submit" name="invia" value="Invia" onclick="convalidaForm()"></td>
                 <td><input type="reset" name="cancella" value="Cancella"></td>
-                <td><input type="button" name="modifica" value="Modifica" onclick="mostraModifica(), nascondeInsertStadio()"></td>
+                <td><input type="button" name="modifica" value="Modifica stadio" onclick="mostraModifica(), nascondeInsertStadio()"></td>
 
             </tr>
         </form>
@@ -69,7 +69,7 @@
 </div>
 
 <div id="modifica">
-    <h1 style="text-align: left; color: white; text-shadow: 3px 2px cadetblue ;">Modifica capienza dello stadio</h1>
+    <h1 style="text-align: left; color: white; text-shadow: 3px 2px cadetblue ;">Modifica dello stadio </h1>
     <table>
         <form  name="formularioModifica" method="post" action="modificaStadio">
             <tr>

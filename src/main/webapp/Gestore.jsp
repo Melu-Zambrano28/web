@@ -141,7 +141,7 @@
 
 <div id="chiudiSessione">
     <a href="chiudi">
-        <input type="button" value="Chiude sessione">
+        <input type="button" value="Chiude sessione" id="chiudeS">
     </a>
 </div>
 

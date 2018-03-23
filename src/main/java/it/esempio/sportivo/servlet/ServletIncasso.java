@@ -16,6 +16,7 @@ import java.sql.SQLException;
 public class ServletIncasso extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int idstadio = Integer.parseInt(request.getParameter("stadio"));
+        String pippo="";
         Stadio stadio = null;
         try {
             stadio = ServiceStadioDao.incassoTotalePerStadio(idstadio);

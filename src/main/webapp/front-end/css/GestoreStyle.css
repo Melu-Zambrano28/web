@@ -15,7 +15,6 @@ body img {
     height: auto;
     margin: 5px;
     padding: auto;
-
 }
 
 .stadio, .squadra , .partita, .areaVisualizza, .areaIncasso{ /*dv stadio e tutte i div si metterenno accanto l'altro per il float, */
@@ -74,6 +73,18 @@ a{
 
 #imagineSoldi img{
     width: 220px;
+}
+
+
+#chiudeS{
+    width: 120px;
+    height: 80px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-style: italic;
+    padding: 3px;
+    background: #b5c3cc;
 }
 
 

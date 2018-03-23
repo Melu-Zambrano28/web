@@ -18,10 +18,9 @@ public class ServletAcquistaBiglietto extends HttpServlet {
         double prezzo = Double.parseDouble(req.getParameter("prezzo"));
         try {
             ServiceBigliettoDao.inserisciBiglietto(idStatoBiglietto, idPartita, idCliente, prezzo);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            resp.sendRedirect("BackEndError.jsp");
         }
         req.getRequestDispatcher("MostraCliente.jsp").forward(req, resp);
     }
