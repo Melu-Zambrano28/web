@@ -27,11 +27,11 @@ input{
     margin-top: 15px;
     padding: 5px;
     position: absolute;
-
-
+    float: right;
 }
 
  label{
     font-style: italic;
      color: #b30047;
  }
+

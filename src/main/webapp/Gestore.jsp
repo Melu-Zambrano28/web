@@ -187,11 +187,7 @@
         };
         xmlhttp.open("GET", "http://localhost:8080/gestionaleSportivo/Incasso?stadio="+selectValue, true);
         xmlhttp.send();
-
-
     }
-
-
 
 </script>
 

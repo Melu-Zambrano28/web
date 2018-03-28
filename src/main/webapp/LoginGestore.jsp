@@ -14,10 +14,10 @@
 
 </head>
 <body>
-    <div class="areaLogin">
+    <div class="areaLogin" id="login">
         <form action="loginGestore" method="get">
 
-            Username: <input type="text" name="user">
+            Username: <input type="text" name="user" id="nickname">
             <br>
             Password: <input type="password" name="pwd">
             <br>
@@ -29,11 +29,47 @@
             </select>
             <br>
 
-            <input id ="bottone" type="submit" value="Login" name="login">
-
+           <input id ="bottone" type="submit" value="Login" name="login">
         </form>
+
+        <div id="modifica" style="float: bottom;">
+            <input type="submit" value="modifica Password" name="modifica" onclick="mostramiFormModificaPassword(),nascondiLogin(), dammiNome()">
+        </div>
 
     </div>
 
+<div id="modificaPassword">
+    <form>
+
+        Username: <input type="text" name="userM" id="nomeModificato">
+        <br>
+        Password: <input type="passwordModificata" name="pwdM">
+        <br>
+
+        <input type="submit" value="Invia" name="modificaPwd">
+    </form>
+
+</div>
 </body>
+<script>
+    document.getElementById("modificaPassword").style.display="none";
+
+    function mostramiFormModificaPassword() {
+        document.getElementById("modificaPassword").style.display="block";
+    }
+
+    function nascondiLogin() {
+        document.getElementById("login").style.display='none';
+    }
+
+    function prendiNome() {
+        var nome= document.getElementById("nickname").value;
+        return nome;
+    }
+    function dammiNome() {
+        document.getElementById("nomeModificato").value =prendiNome(); //innerhtml non serve in questo caso, perchè l'elemtno appartiene al form
+
+    }
+
+</script>
 </html>
